@@ -1,0 +1,176 @@
+from testframework.base import *
+import uuid
+from nose_parameterized import parameterized
+
+
+class RegisterNewUserTests(BaseTest):
+
+
+    def setUp(self):
+        super(RegisterNewUserTests, self).setUp()
+        self.go_to_register_new_user_page()
+
+    def test001_register_new_user(self):
+        """ Register-New-User-1
+        *Test case for check register new user.*
+
+        **Test Scenario:**
+
+        #. fill input fields with valid parameters, should succeed
+        #. check registeration successfully, should succeed
+        """
+        self.lg('%s STARTED' % self._testID)
+        self.lg('fill input fields with valid parameters, should succeed')
+        self.fill_register_new_user()
+        self.assertTrue(self.element_is_enabled('register_button'))
+        self.register_new_user()
+        self.lg('check registeration successfully, should succeed')
+        #Currently registeration is unavilable, so will expect that as success
+        self.assertEqual(self.get_text('registration_error'),
+                         'Registration failed! Please try again later.')
+        self.lg('%s ENDED' % self._testID)
+
+    def test002_register_new_user_invaild_email(self):
+        """ Register-New-User-2
+        *Test case for check register new user with invaild email.*
+
+        **Test Scenario:**
+
+        #. fill email filed with invalid/short value, should succeed
+        #. fill email filed with invalid value, should succeed
+        #. fill input fields with valid parameters, should succeed
+        #. check registeration successfully, should succeed
+        """
+        self.lg('%s STARTED' % self._testID)
+        self.lg('fill email filed with invalid/short value, should succeed')
+        self.fill_register_new_user(email='ss')
+        self.assertEqual(self.get_text('registration_invalidmail'),
+                         'Your e-mail is invalid.')
+        self.assertEqual(self.get_text('registration_invalidmaillenght'),
+                         'Your e-mail is required to be at least 5 characters.')
+        self.assertFalse(self.element_is_enabled('register_button'))
+        self.lg('fill email filed with invalid value, should succeed')
+        self.fill_register_new_user(email='ss2ss.s')
+        self.assertEqual(self.get_text('registration_invalidmail'),
+                         'Your e-mail is invalid.')
+        self.assertFalse(self.element_is_displayed('registration_invalidmaillenght'))
+        self.assertFalse(self.element_is_enabled('register_button'))
+        self.lg('fill input fields with valid parameters, should succeed')
+        self.fill_register_new_user()
+        self.assertTrue(self.element_is_enabled('register_button'))
+        self.assertFalse(self.element_is_displayed('registration_invalidmail'))
+        self.assertFalse(self.element_is_displayed('registration_invalidmaillenght'))
+        self.register_new_user()
+        self.lg('check registeration successfully, should succeed')
+        #Currently registeration is unavilable, so will expect that as success
+        self.assertEqual(self.get_text('registration_error'),
+                         'Registration failed! Please try again later.')
+        self.lg('%s ENDED' % self._testID)
+
+    @parameterized.expand([('normal email', str(uuid.uuid4())),
+                           ('long email', 'X'*1000),
+                           ('numeric email', 9876543210),
+                           ('special chars email', '+_=-)(*&^#!~`{}[];\',.<>\/')])
+    def test003_register_new_user_invaild_email(self, _, email):
+        """ Register-New-User-3
+        *Test case for check register new user with invaild email.*
+
+        **Test Scenario:**
+
+        #. fill email filed with invalid value, should succeed
+        #. fill input fields with valid parameters, should succeed
+        #. check registeration successfully, should succeed
+        """
+        self.lg('%s STARTED' % self._testID)
+        self.lg('fill email filed with invalid value, should succeed')
+        self.fill_register_new_user(email=email)
+        self.assertEqual(self.get_text('registration_invalidmail'),
+                         'Your e-mail is invalid.')
+        self.assertFalse(self.element_is_displayed('registration_invalidmaillenght'))
+        self.assertFalse(self.element_is_enabled('register_button'))
+        self.lg('fill input fields with valid parameters, should succeed')
+        self.fill_register_new_user()
+        self.assertTrue(self.element_is_enabled('register_button'))
+        self.assertFalse(self.element_is_displayed('registration_invalidmail'))
+        self.assertFalse(self.element_is_displayed('registration_invalidmaillenght'))
+        self.register_new_user()
+        self.lg('check registeration successfully, should succeed')
+        #Currently registeration is unavilable, so will expect that as success
+        self.assertEqual(self.get_text('registration_error'),
+                         'Registration failed! Please try again later.')
+        self.lg('%s ENDED' % self._testID)
+
+    def test004_register_new_user_invaild_password(self):
+        """ Register-New-User-4
+        *Test case for check register new user with invaild password.*
+
+        **Test Scenario:**
+
+        #. fill password filed with invalid/short value, should succeed
+        #. fill password filed with invalid value, should succeed
+        #. fill input fields with valid parameters, should succeed
+        #. check registeration successfully, should succeed
+        """
+        self.lg('%s STARTED' % self._testID)
+        self.lg('fill password filed with invalid/short value, should succeed')
+        self.fill_register_new_user(newpasswd='ss', passwdcfm='ss')
+        self.assertEqual(self.get_text('registration_invalidpasswdlenght'),
+                         'Your password is required to be at least 5 characters.')
+        self.assertEqual(self.get_text('registration_invalidcnfpasswdlenght'),
+                         'Your confirmation password is required to be at least 5 characters.')
+        self.assertFalse(self.element_is_enabled('register_button'))
+        self.lg('fill input fields with valid parameters, should succeed')
+        self.fill_register_new_user()
+        self.assertTrue(self.element_is_enabled('register_button'))
+        self.assertFalse(self.element_is_displayed('registration_invalidmail'))
+        self.assertFalse(self.element_is_displayed('registration_invalidmaillenght'))
+        self.register_new_user()
+        self.lg('check registeration successfully, should succeed')
+        #Currently registeration is unavilable, so will expect that as success
+        self.assertEqual(self.get_text('registration_error'),
+                         'Registration failed! Please try again later.')
+        self.lg('%s ENDED' % self._testID)
+
+    def test005_register_new_user_required_fileds(self):
+        """ Register-New-User-5
+        *Test case for check register new user with invaild password.*
+
+        **Test Scenario:**
+
+        #. fill password filed with invalid/short value, should succeed
+        #. fill password filed with invalid value, should succeed
+        #. fill input fields with valid parameters, should succeed
+        #. check registeration successfully, should succeed
+        """
+        self.lg('%s STARTED' % self._testID)
+        self.lg('fill password filed with invalid/short value, should succeed')
+        self.fill_register_new_user()
+        self.fill_register_new_user(login='', email='', newpasswd='', passwdcfm='')
+        self.assertEqual(self.get_text('registration_loginreq'),
+                         'Your login is required.')
+        self.assertEqual(self.get_text('registration_mailreq'),
+                         'Your e-mail is required.')
+        self.assertEqual(self.get_text('registration_passwdreq'),
+                         'Your password is required.')
+        self.assertEqual(self.get_text('registration_cnfpasswdreq'),
+                         'Your confirmation password is required.')
+        self.assertFalse(self.element_is_enabled('register_button'))
+        self.lg('fill input fields with valid parameters, should succeed')
+        self.fill_register_new_user()
+        self.assertTrue(self.element_is_enabled('register_button'))
+        self.assertFalse(self.element_is_displayed('registration_loginreq'))
+        self.assertFalse(self.element_is_displayed('registration_mailreq'))
+        self.assertFalse(self.element_is_displayed('registration_passwdreq'))
+        self.assertFalse(self.element_is_displayed('registration_cnfpasswdreq'))
+        self.register_new_user()
+        self.lg('check registeration successfully, should succeed')
+        #Currently registeration is unavilable, so will expect that as success
+        self.assertEqual(self.get_text('registration_error'),
+                         'Registration failed! Please try again later.')
+        self.lg('%s ENDED' % self._testID)
+
+    def test006_register_new_user_password_strength(self):
+        pass
+
+    def test006_register_new_user_password_not_match(self):
+        pass
