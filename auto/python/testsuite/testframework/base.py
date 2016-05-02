@@ -90,6 +90,23 @@ class BaseTest(unittest.TestCase):
         self.driver.find_element_by_xpath(self.elements['register_passwdcfm']).clear()
         self.driver.find_element_by_xpath(self.elements['register_passwdcfm']).send_keys(passwdcfm)
 
+    def fill_settings(self, firstname='Administrator', lastname='Administrator',
+                            email='admin@localhost'):
+        self.wait_until_element_located(self.elements['settings_firstname'])
+        self.driver.find_element_by_xpath(self.elements['settings_firstname']).clear()
+        self.driver.find_element_by_xpath(self.elements['settings_firstname']).send_keys(firstname)
+        self.driver.find_element_by_xpath(self.elements['settings_lastname']).clear()
+        self.driver.find_element_by_xpath(self.elements['settings_lastname']).send_keys(lastname)
+        self.driver.find_element_by_xpath(self.elements['settings_email']).clear()
+        self.driver.find_element_by_xpath(self.elements['settings_email']).send_keys(email)
+
+    def fill_passwords(self, newpasswd=12345, passwdcfm=12345):
+        self.wait_until_element_located(self.elements['passwords_newpasswd'])
+        self.driver.find_element_by_xpath(self.elements['passwords_newpasswd']).clear()
+        self.driver.find_element_by_xpath(self.elements['passwords_newpasswd']).send_keys(newpasswd)
+        self.driver.find_element_by_xpath(self.elements['passwords_passwdcnf']).clear()
+        self.driver.find_element_by_xpath(self.elements['passwords_passwdcnf']).send_keys(passwdcfm)
+
     def register_new_user(self):
         self.wait_until_element_located(self.elements['register_button'])
         self.click('register_button')

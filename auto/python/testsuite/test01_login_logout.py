@@ -23,7 +23,8 @@ class LoginLogoutTests(BaseTest):
         self.lg('do login using admin username/password, should succeed')
         self.login()
         self.lg('check the login successfully, should succeed')
-        self.assertEqual(self.get_text('logged'), 'You are logged in as user "admin".')
+        self.assertEqual(self.get_text('logged'),
+                         'You are logged in as user "%s".' % self.admin_username)
         self.lg('%s ENDED' % self._testID)
 
     def test002_logout(self):
@@ -42,7 +43,8 @@ class LoginLogoutTests(BaseTest):
         self.lg('do login using admin username/password, should succeed')
         self.login()
         self.lg('check the login successfully, should succeed')
-        self.assertEqual(self.get_text('logged'), 'You are logged in as user "admin".')
+        self.assertEqual(self.get_text('logged'),
+                         'You are logged in as user "%s".' % self.admin_username)
         self.lg('do logout, should succeed')
         self.logout()
         self.assertEqual(self.get_text('login_text'), 'Click here to login')
@@ -50,7 +52,8 @@ class LoginLogoutTests(BaseTest):
         self.go_to_login_page()
         self.login()
         self.lg('check the login successfully, should succeed')
-        self.assertEqual(self.get_text('logged'), 'You are logged in as user "admin".')
+        self.assertEqual(self.get_text('logged'),
+                         'You are logged in as user "%s".' % self.admin_username)
         self.lg('%s ENDED' % self._testID)
 
     @parameterized.expand([('normal username', str(uuid.uuid4())),
@@ -79,7 +82,8 @@ class LoginLogoutTests(BaseTest):
         self.lg('do login using admin username/password, should succeed')
         self.login()
         self.lg('check the login successfully, should succeed')
-        self.assertEqual(self.get_text('logged'), 'You are logged in as user "admin".')
+        self.assertEqual(self.get_text('logged'),
+                         'You are logged in as user "%s".' % self.admin_username)
         self.lg('do logout, should succeed')
         self.logout()
         self.assertEqual(self.get_text('login_text'), 'Click here to login')
@@ -112,7 +116,8 @@ class LoginLogoutTests(BaseTest):
         self.lg('do login using admin username/password, should succeed')
         self.login()
         self.lg('check the login successfully, should succeed')
-        self.assertEqual(self.get_text('logged'), 'You are logged in as user "admin".')
+        self.assertEqual(self.get_text('logged'),
+                         'You are logged in as user "%s".' % self.admin_username)
         self.lg('do logout, should succeed')
         self.logout()
         self.assertEqual(self.get_text('login_text'), 'Click here to login')
@@ -145,7 +150,8 @@ class LoginLogoutTests(BaseTest):
         self.lg('do login using admin username/password, should succeed')
         self.login()
         self.lg('check the login successfully, should succeed')
-        self.assertEqual(self.get_text('logged'), 'You are logged in as user "admin".')
+        self.assertEqual(self.get_text('logged'),
+                         'You are logged in as user "%s".' % self.admin_username)
         self.lg('do logout, should succeed')
         self.logout()
         self.assertEqual(self.get_text('login_text'), 'Click here to login')

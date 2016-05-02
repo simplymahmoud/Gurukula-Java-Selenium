@@ -122,8 +122,7 @@ class RegisterNewUserTests(BaseTest):
         self.lg('fill input fields with valid parameters, should succeed')
         self.fill_register_new_user()
         self.assertTrue(self.element_is_enabled('register_button'))
-        self.assertFalse(self.element_is_displayed('registration_invalidmail'))
-        self.assertFalse(self.element_is_displayed('registration_invalidmaillenght'))
+        self.assertFalse(self.element_is_displayed('registration_invalidpasswdlenght'))
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
         #Currently registeration is unavilable, so will expect that as success
@@ -222,7 +221,6 @@ class RegisterNewUserTests(BaseTest):
                          'rgba(0, 255, 0, 1)')
         self.lg('%s ENDED' % self._testID)
 
-
     def test007_register_new_user_password_length(self):
         """ Register-New-User-7
         *Test case for check register new user with password max length.*
@@ -265,7 +263,6 @@ class RegisterNewUserTests(BaseTest):
         self.fill_register_new_user(newpasswd='sssss', passwdcfm='SSSSS')
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
         self.assertEqual(self.get_text('registration_passmissmatch'),
                          'The password and its confirmation do not match!')
         self.lg('%s ENDED' % self._testID)
