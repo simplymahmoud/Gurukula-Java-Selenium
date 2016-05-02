@@ -39,8 +39,14 @@ BaseTest.elements = {'login': "//html/body/div[3]/div[1]/div/div/div[2]/div/div[
                      'registration_invalidmail': "//html/body/div[3]/div[1]/div/div/div/form/div[2]/div/p[2]",
                      'registration_invalidmaillenght': "//html/body/div[3]/div[1]/div/div/div/form/div[2]/div/p[3]",
                      'registration_invalidpasswdlenght': "//html/body/div[3]/div[1]/div/div/div/form/div[3]/div[1]/p[2]",
+                     'registration_maxpasswdlenght': "//html/body/div[3]/div[1]/div/div/div/form/div[3]/div[1]/p[3]",
                      'registration_passwdreq': "//html/body/div[3]/div[1]/div/div/div/form/div[3]/div[1]/p[1]",
                      'registration_invalidcnfpasswdlenght': "//html/body/div[3]/div[1]/div/div/div/form/div[4]/div/p[2]",
                      'registration_cnfpasswdreq': "//html/body/div[3]/div[1]/div/div/div/form/div[4]/div/p[1]",
-                     
+                     'registration_passmissmatch': "//html/body/div[3]/div[1]/div/div/div/div[5]",
+                     'registration_passbar1': ".//*[@id='strengthBar']/li[1]",
+                     'registration_passbar2': ".//*[@id='strengthBar']/li[2]",
+                     'registration_passbar3': ".//*[@id='strengthBar']/li[3]",
+                     'registration_passbar4': ".//*[@id='strengthBar']/li[4]",
+                     'registration_passbar5': ".//*[@id='strengthBar']/li[5]",
                      }

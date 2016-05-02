@@ -100,6 +100,10 @@ class BaseTest(unittest.TestCase):
     def element_is_displayed(self, element):
         return self.driver.find_element_by_xpath(self.elements[element]).is_displayed()
 
+    def element_background_color(self, element):
+        return str(self.driver.find_element_by_xpath(self.elements[element])\
+                   .value_of_css_property('background-color'))
+
     def wait_until_element_located(self, name):
         self.wait.until(EC.visibility_of_element_located((By.XPATH, name)))
 
