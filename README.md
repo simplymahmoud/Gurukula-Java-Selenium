@@ -25,9 +25,16 @@ Register a new User
 # What needs to be done:
 Please use any language or framework (preferably Selenium) of your preference to automate the various use cases. Upload your automation tests to a Git hub location and share this information when done. Please add information with respect to framework, tests covered, how to launch automation tests  and any other information to a document in the same Git hub location. 
 
-# Used technologies:
-Python, Java, Selenium
 
 # Folders:
+
 manual: for manual test cases.
-auto: for auto test cases written in (python, java)
+
+auto: for auto test cases written in (python, java, js)
+
+# Used technologies:
+Python/Selenium
+
+Java/Selenium
+
+JavaScript/Protractor-Jasmine
