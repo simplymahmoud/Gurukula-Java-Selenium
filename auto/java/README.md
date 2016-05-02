@@ -1,4 +1,4 @@
-# Gurukula-python-testsuite
+# Gurukula-java-testsuite
 Java testsuite for simple Gurukula project
 
 # Features of the application:
@@ -14,3 +14,4 @@ Login/Logout as existing user
 
 Register a new User
 
+java/selenium
