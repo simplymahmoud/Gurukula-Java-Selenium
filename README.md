@@ -32,6 +32,8 @@ manual: for manual test cases.
 
 auto: for auto test cases written in (python, java, js)
 
+auto/testplan: containing the test plan suggested for the testsuites
+
 # Used technologies:
 Python/Selenium
 
