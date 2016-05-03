@@ -40,3 +40,13 @@ Python/Selenium
 Java/Selenium
 
 JavaScript/Protractor-Jasmine
+
+# Known issues:
+1- Register new user.
+
+2- Edit logged user settings and password.
+
+3- Save new (staff) without selecting (branch) needs proper error message.
+
+4- Delete (branch) assigned with existing (staff) needs proper error message.
+
