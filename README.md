@@ -1,5 +1,5 @@
-# Gurukula-Java-Selenium
-Java testsuite for simple website
+# Gurukula-Testsuite
+Gurukula testsuite for simple website
 
 
 # Instructions:
@@ -30,16 +30,18 @@ Please use any language or framework (preferably Selenium) of your preference to
 
 manual: for manual test cases.
 
-auto: for auto test cases written in (python, java, js)
+auto: for auto test cases written in (python, java, js).
 
-auto/testplan: containing the test plan suggested for the testsuites
+auto/testplan: containing the test plan suggested for the testsuites to cover the usecases.
 
 # Used technologies:
-Python/Selenium
+Python/Selenium - > finished
 
-Java/Selenium
+Java/Selenium -> in progress
 
-JavaScript/Protractor-Jasmine
+JavaScript/Protractor-Jasmine -> in progress
+
+Testplan - > finished
 
 # Known issues:
 1- Register new user.
