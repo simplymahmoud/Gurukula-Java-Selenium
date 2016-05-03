@@ -1,0 +1,68 @@
+Staff-1: Test case for check create new staff.
+Test Scenario:
+#. do create staff with valid, should succeed
+#. check new staff created successfully, should succeed
+
+
+Staff-2: Test case for validate create new staff parameters.
+Test Scenario:
+#. click create new staff, should succeed
+#. validate create new staff requirements, should succeed
+#. do create staff with invaild characters, should succeed
+#. validate create new staff requirements, should succeed
+#. proper error message, should succeed
+#. do create staff with invaild max length, should succeed
+#. validate create new staff requirements, should succeed
+#. proper error message, should succeed
+#. do create staff with valid, should succeed
+#. click cancel staff, should succeed
+#. check new staff not created, should succeed
+
+
+Staff-3: Test case for check view/delete staff.
+Test Scenario:
+#. do create staff with valid, should succeed
+#. check new staff created successfully, should succeed
+#. view staff with valid, should succeed
+#. check new staff updated successfully, should succeed
+#. delete staff, should succeed
+
+
+Staff-4: Test case for check edit/delete created staff.
+Test Scenario:
+#. do create staff with valid, should succeed
+#. check new staff created successfully, should succeed
+#. edit staff with valid, should succeed
+#. check new staff updated successfully, should succeed
+#. delete staff, should succeed
+
+
+Staff-5: Test case for validate create edit staff parameters.
+Test Scenario:
+#. click create new staff, should succeed
+#. validate create new staff requirements, should succeed
+#. edit staff with invaild characters, should succeed
+#. validate create new staff requirements, should succeed
+#. proper error message, should succeed
+#. edit staff with invaild max length, should succeed
+#. validate create new staff requirements, should succeed
+#. proper error message, should succeed
+#. do create staff with valid, should succeed
+#. click cancel edit staff, should succeed
+#. check created staff not updated, should succeed
+
+
+Staff-6: Test case for validate search/delete staff.
+Test Scenario:
+#. do create new staff, should succeed
+#. search new staff, should succeed
+#. delete staff, should succeed
+#. search new staff, should fail
+
+
+Staff-7: Test case for validate search/delete invalid staff.
+Test Scenario:
+#. do create new staff, should succeed
+#. search invalid staff, should fail
+#. delete staff, should succeed
+#. search invalid staff, should fail

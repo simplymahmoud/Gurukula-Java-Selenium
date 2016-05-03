@@ -1,0 +1,64 @@
+mahmoud@mahmoud-ThinkPad-T530:~/repos/servicenow/Gurukula-Java-Selenium/auto/python$ nosetests -xv testsuite --tc-file config.ini
+Login-Logout-1: Test case for check user potal login.* ... ok
+Login-Logout-2: Test case for check user potal logout.* ... ok
+Login-Logout-3: Test case for check user potal login with wrong username.* [with _='normal username', username='bcfa7a6a-a15a-4d09-a817-5f273a2bf7e3'] ... ok
+Login-Logout-3: Test case for check user potal login with wrong username.* [with _='long username', username='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'] ... ok
+Login-Logout-3: Test case for check user potal login with wrong username.* [with _='numeric username', username=9876543210] ... ok
+Login-Logout-3: Test case for check user potal login with wrong username.* [with _='special chars username', username="+_=-)(*&^#@!~`{}[];',.<>\\/"] ... ok
+Login-Logout-4: Test case for check user potal login with wrong password.* [with _='normal password', password='6c0da6b4-de22-4596-99ed-ac0ca9abc4f4'] ... ok
+Login-Logout-4: Test case for check user potal login with wrong password.* [with _='long password', password='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'] ... ok
+Login-Logout-4: Test case for check user potal login with wrong password.* [with _='numeric password', password=9876543210] ... ok
+Login-Logout-4: Test case for check user potal login with wrong password.* [with _='special chars password', password="+_=-)(*&^#@!~`{}[];',.<>\\/"] ... ok
+Login-Logout-5: Test case for check user potal login with wrong username/password.* [with _='normal username/password', name='2b9ce00e-a887-4fc5-9b69-e9249bc94523'] ... ok
+Login-Logout-5: Test case for check user potal login with wrong username/password.* [with _='long username/password', name='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'] ... ok
+Login-Logout-5: Test case for check user potal login with wrong username/password.* [with _='numeric username/password', name=9876543210] ... ok
+Login-Logout-5: Test case for check user potal login with wrong username/password.* [with _='special chars username/password', name="+_=-)(*&^#@!~`{}[];',.<>\\/"] ... ok
+Login-Logout-6: Test case for check user potal login with saved username/password.* ... ok
+Register-New-User-1: Test case for check register new user.* ... ok
+Register-New-User-2: Test case for check register new user with invaild email.* ... ok
+Register-New-User-3: Test case for check register new user with invaild email.* [with _='normal email', email='301be005-d011-49b2-bce5-4a488d7cf6dc'] ... ok
+Register-New-User-3: Test case for check register new user with invaild email.* [with _='long email', email='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'] ... ok
+Register-New-User-3: Test case for check register new user with invaild email.* [with _='numeric email', email=9876543210] ... ok
+Register-New-User-3: Test case for check register new user with invaild email.* [with _='special chars email', email="+_=-)(*&^#!~`{}[];',.<>\\/"] ... ok
+Register-New-User-4: Test case for check register new user with invaild password.* ... ok
+Register-New-User-5: Test case for check register new user with empty fields.* ... ok
+Register-New-User-6: Test case for check register new user check password strength.* ... ok
+Register-New-User-7: Test case for check register new user with password max length.* ... ok
+Register-New-User-8: Test case for check register new user with password not match.* ... ok
+Account-1: Test case for check view/save account settings.* ... ok
+Account-2: Test case for check save account settings with invaild/short email.* ... ok
+Account-3: Test case for check save account settings with invaild email.* [with _='normal email', email='3b906084-5195-434d-a3c9-82798a5f226a'] ... ok
+Account-3: Test case for check save account settings with invaild email.* [with _='long email', email='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'] ... ok
+Account-3: Test case for check save account settings with invaild email.* [with _='numeric email', email=9876543210] ... ok
+Account-3: Test case for check save account settings with invaild email.* [with _='special chars email', email="+_=-)(*&^#!~`{}[];',.<>\\/"] ... ok
+Account-4: Test case for check save account settings with empty fields.* ... ok
+Account-5: Test case for check save account passwords with invaild password.* ... ok
+Account-6: Test case for check save account passwords with empty fields.* ... ok
+Account-7: Test case for check register new user check password strength.* ... ok
+Account-8: Test case for check save account passwords with password max length.* ... ok
+Account-9: Test case for check save account passwords with password not match.* ... ok
+Branch-1: Test case for check create new branch.* ... ok
+Branch-2: Test case for validate create new branch parameters.* ... ok
+Branch-3: Test case for check view/delete branch.* ... ok
+Branch-4: Test case for check edit/delete created branch.* ... ok
+Branch-5: Test case for validate create edit branch parameters.* ... ok
+Branch-6: Test case for validate search/delete branch.* ... ok
+Branch-7: Test case for validate search/delete invalid branch.* [with _='normal name', name='bd932f45-e555-4c89-b938-ea5633b65126'] ... ok
+Branch-7: Test case for validate search/delete invalid branch.* [with _='long name', name='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'] ... ok
+Branch-7: Test case for validate search/delete invalid branch.* [with _='numeric name', name=9876543210] ... ok
+Branch-7: Test case for validate search/delete invalid branch.* [with _='special chars name', name="+_=-)(*&^#@!~`{}[];',.<>\\/"] ... ok
+Staff-1: Test case for check create new staff.* ... ok
+Staff-2: Test case for validate create new staff parameters.* ... ok
+Staff-3: Test case for check view/delete staff.* ... ok
+Staff-4: Test case for check edit/delete created staff.* ... ok
+Staff-5: Test case for validate create edit staff parameters.* ... ok
+Staff-6: Test case for validate search/delete staff.* ... ok
+Staff-7: Test case for validate search/delete invalid staff.* [with _='normal name', name='a3bd9ad3-e818-4c41-b376-b04b8edef217'] ... ok
+Staff-7: Test case for validate search/delete invalid staff.* [with _='long name', name='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'] ... ok
+Staff-7: Test case for validate search/delete invalid staff.* [with _='numeric name', name=9876543210] ... ok
+Staff-7: Test case for validate search/delete invalid staff.* [with _='special chars name', name="+_=-)(*&^#@!~`{}[];',.<>\\/"] ... ok
+
+----------------------------------------------------------------------
+Ran 58 tests in 505.002s
+
+OK

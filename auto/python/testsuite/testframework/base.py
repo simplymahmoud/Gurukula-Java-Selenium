@@ -43,11 +43,27 @@ class BaseTest(unittest.TestCase):
     def lg(self, msg):
         self._logger.info(msg)
 
-    def go_to_login_page(self):
-        self.click('login')
+    def element_is_enabled(self, element):
+        return self.driver.find_element_by_xpath(self.elements[element]).is_enabled()
 
-    def go_to_register_new_user_page(self):
-        self.click('register_new_user')
+    def element_is_displayed(self, element):
+        return self.driver.find_element_by_xpath(self.elements[element]).is_displayed()
+
+    def element_is_readonly(self, element):
+        return self.driver.find_element_by_xpath(self.elements[element]).get_attribute("readonly")
+
+    def element_background_color(self, element):
+        return str(self.driver.find_element_by_xpath(self.elements[element])\
+                   .value_of_css_property('background-color'))
+
+    def wait_until_element_located(self, name):
+        self.wait.until(EC.visibility_of_element_located((By.XPATH, name)))
+
+    def set_browser(self):
+        if self.browser == 'chrome':
+            self.driver = webdriver.Chrome()
+        else:
+            self.driver = webdriver.Firefox()
 
     def click(self, element):
         element = self.elements[element]
@@ -74,6 +90,12 @@ class BaseTest(unittest.TestCase):
         table = self.elements[table]
         self.wait_until_element_located(table)
         return self.driver.find_element_by_xpath(table)
+
+    def go_to_login_page(self):
+        self.click('login')
+
+    def go_to_register_new_user_page(self):
+        self.click('register_new_user')
 
     def login(self, username='', password='', nopassword=False):
         username = username or self.admin_username
@@ -111,23 +133,6 @@ class BaseTest(unittest.TestCase):
     def click_account_settings_save(self):
         self.click('settings_save_button')
 
-    def fill_register_new_user(self, login='login', email='email@mail.com', newpasswd=12345,
-                               passwdcfm=12345):
-        self.set_text('register_login', login)
-        self.set_text('register_email', email)
-        self.set_text('register_newpasswd', newpasswd)
-        self.set_text('register_passwdcfm', passwdcfm)
-
-    def fill_settings(self, firstname='Administrator', lastname='Administrator',
-                            email='admin@localhost'):
-        self.set_text('settings_firstname', firstname)
-        self.set_text('settings_lastname', lastname)
-        self.set_text('settings_email', email)
-
-    def fill_passwords(self, newpasswd=12345, passwdcfm=12345):
-        self.set_text('passwords_newpasswd', newpasswd)
-        self.set_text('passwords_passwdcnf', passwdcfm)
-
     def register_new_user(self):
         self.click('register_button')
 
@@ -150,6 +155,40 @@ class BaseTest(unittest.TestCase):
 
     def click_cancel_edit_branch(self):
         self.click('cancel_edit_branch_button')
+
+    def click_create_new_staff(self):
+        time.sleep(.5)
+        self.click('create_new_branch_button')
+        time.sleep(.5)
+
+    def click_save_staff(self):
+        self.click('save_staff_button')
+
+    def click_cancel_staff(self):
+        self.click('cancel_staff_button')
+
+    def click_save_edit_staff(self):
+        self.click('save_edit_staff_button')
+
+    def click_cancel_edit_staff(self):
+        self.click('cancel_edit_staff_button')
+
+    def fill_register_new_user(self, login='login', email='email@mail.com', newpasswd=12345,
+                               passwdcfm=12345):
+        self.set_text('register_login', login)
+        self.set_text('register_email', email)
+        self.set_text('register_newpasswd', newpasswd)
+        self.set_text('register_passwdcfm', passwdcfm)
+
+    def fill_settings(self, firstname='Administrator', lastname='Administrator',
+                            email='admin@localhost'):
+        self.set_text('settings_firstname', firstname)
+        self.set_text('settings_lastname', lastname)
+        self.set_text('settings_email', email)
+
+    def fill_passwords(self, newpasswd=12345, passwdcfm=12345):
+        self.set_text('passwords_newpasswd', newpasswd)
+        self.set_text('passwords_passwdcnf', passwdcfm)
 
     def create_new_branch(self, name='', code=''):
         name = name or 'ABCDEabcde'
@@ -225,25 +264,71 @@ class BaseTest(unittest.TestCase):
             all_rows = tbody[0].find_elements_by_tag_name("tr")
 
 
-    def element_is_enabled(self, element):
-        return self.driver.find_element_by_xpath(self.elements[element]).is_enabled()
+    def create_new_staff(self, staff=''):
+        staff = staff or 'ABCDEabcde'
+        self.set_text('new_staff_name', staff)
+        self.wait_until_element_located(self.elements['staff_dropdown'])
+        self.driver.find_element_by_xpath(self.elements['staff_dropdown'] + "/option[text()='%s']" % self.name).click()
+        self.staff = staff
+        time.sleep(.5)
 
-    def element_is_displayed(self, element):
-        return self.driver.find_element_by_xpath(self.elements[element]).is_displayed()
+    def edit_created_staff(self, staff=''):
+        staff = staff or 'abcde'
+        self.set_text('new_staff_name', staff)
+        self.staff = staff
+        time.sleep(.5)
 
-    def element_is_readonly(self, element):
-        return self.driver.find_element_by_xpath(self.elements[element]).get_attribute("readonly")
+    def search_staff(self, staff):
+        self.set_text('search_branch_text', staff)
+        staff_table = self.get_table('search_branch_table')
+        tbody = staff_table.find_elements_by_tag_name("tbody")
+        all_rows = tbody[0].find_elements_by_tag_name("tr")
+        for row in all_rows:
+            cells = row.find_elements_by_tag_name("td")
+            if cells[1].text == staff and cells[2].text == self.name:
+                return True
 
-    def element_background_color(self, element):
-        return str(self.driver.find_element_by_xpath(self.elements[element])\
-                   .value_of_css_property('background-color'))
-
-    def wait_until_element_located(self, name):
-        self.wait.until(EC.visibility_of_element_located((By.XPATH, name)))
-
-    def set_browser(self):
-        if self.browser == 'chrome':
-            self.driver = webdriver.Chrome()
-        else:
-            self.driver = webdriver.Firefox()
+        return False
         
+    def view_staff(self, staff, name):
+        time.sleep(.5)
+        self.set_text('search_branch_text', staff)
+        staff_table = self.get_table('search_branch_table')
+        tbody = staff_table.find_elements_by_tag_name("tbody")
+        all_rows = tbody[0].find_elements_by_tag_name("tr")
+        for row in all_rows:
+            cells = row.find_elements_by_tag_name("td")
+            if cells[1].text == staff and cells[2].text == name:
+                cells[3].find_elements_by_tag_name("button")[0].click()
+                return True
+
+        return False
+
+    def edit_staff(self, staff, name):
+        time.sleep(.5)
+        self.set_text('search_branch_text', staff)
+        staff_table = self.get_table('search_branch_table')
+        tbody = staff_table.find_elements_by_tag_name("tbody")
+        all_rows = tbody[0].find_elements_by_tag_name("tr")
+        for row in all_rows:
+            cells = row.find_elements_by_tag_name("td")
+            if cells[1].text == staff and cells[2].text == name:
+                cells[3].find_elements_by_tag_name("button")[1].click()
+                return True
+
+        return False
+
+    def delete_created_staff(self, staff):
+        self.set_text('search_branch_text', staff)
+        staff_table = self.get_table('search_branch_table')
+        tbody = staff_table.find_elements_by_tag_name("tbody")
+        all_rows = tbody[0].find_elements_by_tag_name("tr")
+        for _ in all_rows:
+            cells = all_rows[0].find_elements_by_tag_name("td")
+            cells[3].find_elements_by_tag_name("button")[2].click()
+            self.click('search_staff_confirm_delete')
+            time.sleep(.5)
+            self.set_text('search_branch_text', staff)
+            staff_table = self.get_table('search_branch_table')
+            tbody = staff_table.find_elements_by_tag_name("tbody")
+            all_rows = tbody[0].find_elements_by_tag_name("tr")

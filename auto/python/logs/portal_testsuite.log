@@ -1,0 +1,670 @@
+03-05-2016 18:49:25 EET [Login-Logout-1] [INFO] Testcase test001_login Started at 1462294165.22
+03-05-2016 18:49:28 EET [Login-Logout-1] [INFO] test001_login STARTED
+03-05-2016 18:49:28 EET [Login-Logout-1] [INFO] do login using username/password, should succeed
+03-05-2016 18:49:28 EET [Login-Logout-1] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:49:28 EET [Login-Logout-1] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:49:28 EET [Login-Logout-1] [INFO] check the login successfully, should succeed
+03-05-2016 18:49:29 EET [Login-Logout-1] [INFO] test001_login ENDED
+03-05-2016 18:49:29 EET [Login-Logout-1] [INFO] Testcase test001_login ExecutionTime is 3.84757494926 sec.
+03-05-2016 18:49:29 EET [Login-Logout-2] [INFO] Testcase test002_logout Started at 1462294169.06
+03-05-2016 18:49:31 EET [Login-Logout-2] [INFO] test002_logout STARTED
+03-05-2016 18:49:31 EET [Login-Logout-2] [INFO] do login using username/password, should succeed
+03-05-2016 18:49:31 EET [Login-Logout-2] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:49:32 EET [Login-Logout-2] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:49:32 EET [Login-Logout-2] [INFO] check the login successfully, should succeed
+03-05-2016 18:49:32 EET [Login-Logout-2] [INFO] do logout, should succeed
+03-05-2016 18:49:32 EET [Login-Logout-2] [INFO] Do logout
+03-05-2016 18:49:33 EET [Login-Logout-2] [INFO] Logout done successfully
+03-05-2016 18:49:33 EET [Login-Logout-2] [INFO] do login using username/password again, should succeed
+03-05-2016 18:49:33 EET [Login-Logout-2] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:49:33 EET [Login-Logout-2] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:49:33 EET [Login-Logout-2] [INFO] check the login successfully, should succeed
+03-05-2016 18:49:34 EET [Login-Logout-2] [INFO] test002_logout ENDED
+03-05-2016 18:49:34 EET [Login-Logout-2] [INFO] Testcase test002_logout ExecutionTime is 5.16647195816 sec.
+03-05-2016 18:49:34 EET [Login-Logout-3] [INFO] Testcase test003_login_wrong_username_0_normal_username Started at 1462294174.23
+03-05-2016 18:49:37 EET [Login-Logout-3] [INFO] test003_login_wrong_username_0_normal_username STARTED
+03-05-2016 18:49:37 EET [Login-Logout-3] [INFO] do login using wrong username, should succeed
+03-05-2016 18:49:37 EET [Login-Logout-3] [INFO] Do login using username [bcfa7a6a-a15a-4d09-a817-5f273a2bf7e3] and passsword [admin]
+03-05-2016 18:49:37 EET [Login-Logout-3] [INFO] Login successfully using username [bcfa7a6a-a15a-4d09-a817-5f273a2bf7e3] and passsword [admin]
+03-05-2016 18:49:37 EET [Login-Logout-3] [INFO] proper error message, should succeed
+03-05-2016 18:49:38 EET [Login-Logout-3] [INFO] do login using username/password, should succeed
+03-05-2016 18:49:38 EET [Login-Logout-3] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:49:38 EET [Login-Logout-3] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:49:38 EET [Login-Logout-3] [INFO] check the login successfully, should succeed
+03-05-2016 18:49:39 EET [Login-Logout-3] [INFO] do logout, should succeed
+03-05-2016 18:49:39 EET [Login-Logout-3] [INFO] Do logout
+03-05-2016 18:49:39 EET [Login-Logout-3] [INFO] Logout done successfully
+03-05-2016 18:49:39 EET [Login-Logout-3] [INFO] test003_login_wrong_username_0_normal_username ENDED
+03-05-2016 18:49:39 EET [Login-Logout-3] [INFO] Testcase test003_login_wrong_username_0_normal_username ExecutionTime is 5.18992900848 sec.
+03-05-2016 18:49:39 EET [Login-Logout-3] [INFO] Testcase test003_login_wrong_username_1_long_username Started at 1462294179.42
+03-05-2016 18:49:42 EET [Login-Logout-3] [INFO] test003_login_wrong_username_1_long_username STARTED
+03-05-2016 18:49:42 EET [Login-Logout-3] [INFO] do login using wrong username, should succeed
+03-05-2016 18:49:42 EET [Login-Logout-3] [INFO] Do login using username [XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX] and passsword [admin]
+03-05-2016 18:49:46 EET [Login-Logout-3] [INFO] Login successfully using username [XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX] and passsword [admin]
+03-05-2016 18:49:46 EET [Login-Logout-3] [INFO] proper error message, should succeed
+03-05-2016 18:49:46 EET [Login-Logout-3] [INFO] do login using username/password, should succeed
+03-05-2016 18:49:46 EET [Login-Logout-3] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:49:47 EET [Login-Logout-3] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:49:47 EET [Login-Logout-3] [INFO] check the login successfully, should succeed
+03-05-2016 18:49:47 EET [Login-Logout-3] [INFO] do logout, should succeed
+03-05-2016 18:49:47 EET [Login-Logout-3] [INFO] Do logout
+03-05-2016 18:49:48 EET [Login-Logout-3] [INFO] Logout done successfully
+03-05-2016 18:49:48 EET [Login-Logout-3] [INFO] test003_login_wrong_username_1_long_username ENDED
+03-05-2016 18:49:48 EET [Login-Logout-3] [INFO] Testcase test003_login_wrong_username_1_long_username ExecutionTime is 8.69273400307 sec.
+03-05-2016 18:49:48 EET [Login-Logout-3] [INFO] Testcase test003_login_wrong_username_2_numeric_username Started at 1462294188.12
+03-05-2016 18:49:51 EET [Login-Logout-3] [INFO] test003_login_wrong_username_2_numeric_username STARTED
+03-05-2016 18:49:51 EET [Login-Logout-3] [INFO] do login using wrong username, should succeed
+03-05-2016 18:49:51 EET [Login-Logout-3] [INFO] Do login using username [9876543210] and passsword [admin]
+03-05-2016 18:49:51 EET [Login-Logout-3] [INFO] Login successfully using username [9876543210] and passsword [admin]
+03-05-2016 18:49:51 EET [Login-Logout-3] [INFO] proper error message, should succeed
+03-05-2016 18:49:52 EET [Login-Logout-3] [INFO] do login using username/password, should succeed
+03-05-2016 18:49:52 EET [Login-Logout-3] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:49:52 EET [Login-Logout-3] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:49:52 EET [Login-Logout-3] [INFO] check the login successfully, should succeed
+03-05-2016 18:49:52 EET [Login-Logout-3] [INFO] do logout, should succeed
+03-05-2016 18:49:52 EET [Login-Logout-3] [INFO] Do logout
+03-05-2016 18:49:53 EET [Login-Logout-3] [INFO] Logout done successfully
+03-05-2016 18:49:53 EET [Login-Logout-3] [INFO] test003_login_wrong_username_2_numeric_username ENDED
+03-05-2016 18:49:53 EET [Login-Logout-3] [INFO] Testcase test003_login_wrong_username_2_numeric_username ExecutionTime is 5.26169395447 sec.
+03-05-2016 18:49:53 EET [Login-Logout-3] [INFO] Testcase test003_login_wrong_username_3_special_chars_username Started at 1462294193.38
+03-05-2016 18:49:56 EET [Login-Logout-3] [INFO] test003_login_wrong_username_3_special_chars_username STARTED
+03-05-2016 18:49:56 EET [Login-Logout-3] [INFO] do login using wrong username, should succeed
+03-05-2016 18:49:56 EET [Login-Logout-3] [INFO] Do login using username [+_=-)(*&^#@!~`{}[];',.<>\/] and passsword [admin]
+03-05-2016 18:49:56 EET [Login-Logout-3] [INFO] Login successfully using username [+_=-)(*&^#@!~`{}[];',.<>\/] and passsword [admin]
+03-05-2016 18:49:56 EET [Login-Logout-3] [INFO] proper error message, should succeed
+03-05-2016 18:49:57 EET [Login-Logout-3] [INFO] do login using username/password, should succeed
+03-05-2016 18:49:57 EET [Login-Logout-3] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:49:57 EET [Login-Logout-3] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:49:57 EET [Login-Logout-3] [INFO] check the login successfully, should succeed
+03-05-2016 18:49:58 EET [Login-Logout-3] [INFO] do logout, should succeed
+03-05-2016 18:49:58 EET [Login-Logout-3] [INFO] Do logout
+03-05-2016 18:49:58 EET [Login-Logout-3] [INFO] Logout done successfully
+03-05-2016 18:49:58 EET [Login-Logout-3] [INFO] test003_login_wrong_username_3_special_chars_username ENDED
+03-05-2016 18:49:58 EET [Login-Logout-3] [INFO] Testcase test003_login_wrong_username_3_special_chars_username ExecutionTime is 5.24707889557 sec.
+03-05-2016 18:49:58 EET [Login-Logout-4] [INFO] Testcase test004_login_wrong_password_0_normal_password Started at 1462294198.63
+03-05-2016 18:50:01 EET [Login-Logout-4] [INFO] test004_login_wrong_password_0_normal_password STARTED
+03-05-2016 18:50:01 EET [Login-Logout-4] [INFO] do login using wrong password, should succeed
+03-05-2016 18:50:01 EET [Login-Logout-4] [INFO] Do login using username [admin] and passsword [6c0da6b4-de22-4596-99ed-ac0ca9abc4f4]
+03-05-2016 18:50:01 EET [Login-Logout-4] [INFO] Login successfully using username [admin] and passsword [6c0da6b4-de22-4596-99ed-ac0ca9abc4f4]
+03-05-2016 18:50:01 EET [Login-Logout-4] [INFO] proper error message, should succeed
+03-05-2016 18:50:02 EET [Login-Logout-4] [INFO] do login using username/password, should succeed
+03-05-2016 18:50:02 EET [Login-Logout-4] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:02 EET [Login-Logout-4] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:02 EET [Login-Logout-4] [INFO] check the login successfully, should succeed
+03-05-2016 18:50:03 EET [Login-Logout-4] [INFO] do logout, should succeed
+03-05-2016 18:50:03 EET [Login-Logout-4] [INFO] Do logout
+03-05-2016 18:50:03 EET [Login-Logout-4] [INFO] Logout done successfully
+03-05-2016 18:50:03 EET [Login-Logout-4] [INFO] test004_login_wrong_password_0_normal_password ENDED
+03-05-2016 18:50:03 EET [Login-Logout-4] [INFO] Testcase test004_login_wrong_password_0_normal_password ExecutionTime is 5.14045715332 sec.
+03-05-2016 18:50:03 EET [Login-Logout-4] [INFO] Testcase test004_login_wrong_password_1_long_password Started at 1462294203.77
+03-05-2016 18:50:06 EET [Login-Logout-4] [INFO] test004_login_wrong_password_1_long_password STARTED
+03-05-2016 18:50:06 EET [Login-Logout-4] [INFO] do login using wrong password, should succeed
+03-05-2016 18:50:06 EET [Login-Logout-4] [INFO] Do login using username [admin] and passsword [XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX]
+03-05-2016 18:50:10 EET [Login-Logout-4] [INFO] Login successfully using username [admin] and passsword [XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX]
+03-05-2016 18:50:10 EET [Login-Logout-4] [INFO] proper error message, should succeed
+03-05-2016 18:50:11 EET [Login-Logout-4] [INFO] do login using username/password, should succeed
+03-05-2016 18:50:11 EET [Login-Logout-4] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:11 EET [Login-Logout-4] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:11 EET [Login-Logout-4] [INFO] check the login successfully, should succeed
+03-05-2016 18:50:12 EET [Login-Logout-4] [INFO] do logout, should succeed
+03-05-2016 18:50:12 EET [Login-Logout-4] [INFO] Do logout
+03-05-2016 18:50:12 EET [Login-Logout-4] [INFO] Logout done successfully
+03-05-2016 18:50:12 EET [Login-Logout-4] [INFO] test004_login_wrong_password_1_long_password ENDED
+03-05-2016 18:50:12 EET [Login-Logout-4] [INFO] Testcase test004_login_wrong_password_1_long_password ExecutionTime is 8.60227704048 sec.
+03-05-2016 18:50:12 EET [Login-Logout-4] [INFO] Testcase test004_login_wrong_password_2_numeric_password Started at 1462294212.37
+03-05-2016 18:50:15 EET [Login-Logout-4] [INFO] test004_login_wrong_password_2_numeric_password STARTED
+03-05-2016 18:50:15 EET [Login-Logout-4] [INFO] do login using wrong password, should succeed
+03-05-2016 18:50:15 EET [Login-Logout-4] [INFO] Do login using username [admin] and passsword [9876543210]
+03-05-2016 18:50:15 EET [Login-Logout-4] [INFO] Login successfully using username [admin] and passsword [9876543210]
+03-05-2016 18:50:15 EET [Login-Logout-4] [INFO] proper error message, should succeed
+03-05-2016 18:50:16 EET [Login-Logout-4] [INFO] do login using username/password, should succeed
+03-05-2016 18:50:16 EET [Login-Logout-4] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:16 EET [Login-Logout-4] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:16 EET [Login-Logout-4] [INFO] check the login successfully, should succeed
+03-05-2016 18:50:17 EET [Login-Logout-4] [INFO] do logout, should succeed
+03-05-2016 18:50:17 EET [Login-Logout-4] [INFO] Do logout
+03-05-2016 18:50:17 EET [Login-Logout-4] [INFO] Logout done successfully
+03-05-2016 18:50:17 EET [Login-Logout-4] [INFO] test004_login_wrong_password_2_numeric_password ENDED
+03-05-2016 18:50:17 EET [Login-Logout-4] [INFO] Testcase test004_login_wrong_password_2_numeric_password ExecutionTime is 5.11664199829 sec.
+03-05-2016 18:50:17 EET [Login-Logout-4] [INFO] Testcase test004_login_wrong_password_3_special_chars_password Started at 1462294217.49
+03-05-2016 18:50:20 EET [Login-Logout-4] [INFO] test004_login_wrong_password_3_special_chars_password STARTED
+03-05-2016 18:50:20 EET [Login-Logout-4] [INFO] do login using wrong password, should succeed
+03-05-2016 18:50:20 EET [Login-Logout-4] [INFO] Do login using username [admin] and passsword [+_=-)(*&^#@!~`{}[];',.<>\/]
+03-05-2016 18:50:20 EET [Login-Logout-4] [INFO] Login successfully using username [admin] and passsword [+_=-)(*&^#@!~`{}[];',.<>\/]
+03-05-2016 18:50:20 EET [Login-Logout-4] [INFO] proper error message, should succeed
+03-05-2016 18:50:21 EET [Login-Logout-4] [INFO] do login using username/password, should succeed
+03-05-2016 18:50:21 EET [Login-Logout-4] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:21 EET [Login-Logout-4] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:21 EET [Login-Logout-4] [INFO] check the login successfully, should succeed
+03-05-2016 18:50:22 EET [Login-Logout-4] [INFO] do logout, should succeed
+03-05-2016 18:50:22 EET [Login-Logout-4] [INFO] Do logout
+03-05-2016 18:50:22 EET [Login-Logout-4] [INFO] Logout done successfully
+03-05-2016 18:50:22 EET [Login-Logout-4] [INFO] test004_login_wrong_password_3_special_chars_password ENDED
+03-05-2016 18:50:22 EET [Login-Logout-4] [INFO] Testcase test004_login_wrong_password_3_special_chars_password ExecutionTime is 5.20542097092 sec.
+03-05-2016 18:50:22 EET [Login-Logout-5] [INFO] Testcase test005_login_wrong_username_password_0_normal_username_password Started at 1462294222.69
+03-05-2016 18:50:25 EET [Login-Logout-5] [INFO] test005_login_wrong_username_password_0_normal_username_password STARTED
+03-05-2016 18:50:25 EET [Login-Logout-5] [INFO] do login using wrong username/password, should succeed
+03-05-2016 18:50:25 EET [Login-Logout-5] [INFO] Do login using username [2b9ce00e-a887-4fc5-9b69-e9249bc94523] and passsword [2b9ce00e-a887-4fc5-9b69-e9249bc94523]
+03-05-2016 18:50:26 EET [Login-Logout-5] [INFO] Login successfully using username [2b9ce00e-a887-4fc5-9b69-e9249bc94523] and passsword [2b9ce00e-a887-4fc5-9b69-e9249bc94523]
+03-05-2016 18:50:26 EET [Login-Logout-5] [INFO] proper error message, should succeed
+03-05-2016 18:50:26 EET [Login-Logout-5] [INFO] do login using username/password, should succeed
+03-05-2016 18:50:26 EET [Login-Logout-5] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:27 EET [Login-Logout-5] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:27 EET [Login-Logout-5] [INFO] check the login successfully, should succeed
+03-05-2016 18:50:27 EET [Login-Logout-5] [INFO] do logout, should succeed
+03-05-2016 18:50:27 EET [Login-Logout-5] [INFO] Do logout
+03-05-2016 18:50:27 EET [Login-Logout-5] [INFO] Logout done successfully
+03-05-2016 18:50:27 EET [Login-Logout-5] [INFO] test005_login_wrong_username_password_0_normal_username_password ENDED
+03-05-2016 18:50:27 EET [Login-Logout-5] [INFO] Testcase test005_login_wrong_username_password_0_normal_username_password ExecutionTime is 5.28627181053 sec.
+03-05-2016 18:50:27 EET [Login-Logout-5] [INFO] Testcase test005_login_wrong_username_password_1_long_username_password Started at 1462294227.98
+03-05-2016 18:50:30 EET [Login-Logout-5] [INFO] test005_login_wrong_username_password_1_long_username_password STARTED
+03-05-2016 18:50:30 EET [Login-Logout-5] [INFO] do login using wrong username/password, should succeed
+03-05-2016 18:50:30 EET [Login-Logout-5] [INFO] Do login using username [XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX] and passsword [XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX]
+03-05-2016 18:50:38 EET [Login-Logout-5] [INFO] Login successfully using username [XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX] and passsword [XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX]
+03-05-2016 18:50:38 EET [Login-Logout-5] [INFO] proper error message, should succeed
+03-05-2016 18:50:38 EET [Login-Logout-5] [INFO] do login using username/password, should succeed
+03-05-2016 18:50:38 EET [Login-Logout-5] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:39 EET [Login-Logout-5] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:39 EET [Login-Logout-5] [INFO] check the login successfully, should succeed
+03-05-2016 18:50:39 EET [Login-Logout-5] [INFO] do logout, should succeed
+03-05-2016 18:50:39 EET [Login-Logout-5] [INFO] Do logout
+03-05-2016 18:50:40 EET [Login-Logout-5] [INFO] Logout done successfully
+03-05-2016 18:50:40 EET [Login-Logout-5] [INFO] test005_login_wrong_username_password_1_long_username_password ENDED
+03-05-2016 18:50:40 EET [Login-Logout-5] [INFO] Testcase test005_login_wrong_username_password_1_long_username_password ExecutionTime is 12.13083601 sec.
+03-05-2016 18:50:40 EET [Login-Logout-5] [INFO] Testcase test005_login_wrong_username_password_2_numeric_username_password Started at 1462294240.11
+03-05-2016 18:50:43 EET [Login-Logout-5] [INFO] test005_login_wrong_username_password_2_numeric_username_password STARTED
+03-05-2016 18:50:43 EET [Login-Logout-5] [INFO] do login using wrong username/password, should succeed
+03-05-2016 18:50:43 EET [Login-Logout-5] [INFO] Do login using username [9876543210] and passsword [9876543210]
+03-05-2016 18:50:43 EET [Login-Logout-5] [INFO] Login successfully using username [9876543210] and passsword [9876543210]
+03-05-2016 18:50:43 EET [Login-Logout-5] [INFO] proper error message, should succeed
+03-05-2016 18:50:44 EET [Login-Logout-5] [INFO] do login using username/password, should succeed
+03-05-2016 18:50:44 EET [Login-Logout-5] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:44 EET [Login-Logout-5] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:44 EET [Login-Logout-5] [INFO] check the login successfully, should succeed
+03-05-2016 18:50:44 EET [Login-Logout-5] [INFO] do logout, should succeed
+03-05-2016 18:50:44 EET [Login-Logout-5] [INFO] Do logout
+03-05-2016 18:50:45 EET [Login-Logout-5] [INFO] Logout done successfully
+03-05-2016 18:50:45 EET [Login-Logout-5] [INFO] test005_login_wrong_username_password_2_numeric_username_password ENDED
+03-05-2016 18:50:45 EET [Login-Logout-5] [INFO] Testcase test005_login_wrong_username_password_2_numeric_username_password ExecutionTime is 5.11109900475 sec.
+03-05-2016 18:50:45 EET [Login-Logout-5] [INFO] Testcase test005_login_wrong_username_password_3_special_chars_username_password Started at 1462294245.22
+03-05-2016 18:50:48 EET [Login-Logout-5] [INFO] test005_login_wrong_username_password_3_special_chars_username_password STARTED
+03-05-2016 18:50:48 EET [Login-Logout-5] [INFO] do login using wrong username/password, should succeed
+03-05-2016 18:50:48 EET [Login-Logout-5] [INFO] Do login using username [+_=-)(*&^#@!~`{}[];',.<>\/] and passsword [+_=-)(*&^#@!~`{}[];',.<>\/]
+03-05-2016 18:50:48 EET [Login-Logout-5] [INFO] Login successfully using username [+_=-)(*&^#@!~`{}[];',.<>\/] and passsword [+_=-)(*&^#@!~`{}[];',.<>\/]
+03-05-2016 18:50:48 EET [Login-Logout-5] [INFO] proper error message, should succeed
+03-05-2016 18:50:49 EET [Login-Logout-5] [INFO] do login using username/password, should succeed
+03-05-2016 18:50:49 EET [Login-Logout-5] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:49 EET [Login-Logout-5] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:49 EET [Login-Logout-5] [INFO] check the login successfully, should succeed
+03-05-2016 18:50:50 EET [Login-Logout-5] [INFO] do logout, should succeed
+03-05-2016 18:50:50 EET [Login-Logout-5] [INFO] Do logout
+03-05-2016 18:50:50 EET [Login-Logout-5] [INFO] Logout done successfully
+03-05-2016 18:50:50 EET [Login-Logout-5] [INFO] test005_login_wrong_username_password_3_special_chars_username_password ENDED
+03-05-2016 18:50:50 EET [Login-Logout-5] [INFO] Testcase test005_login_wrong_username_password_3_special_chars_username_password ExecutionTime is 5.29083800316 sec.
+03-05-2016 18:50:50 EET [Login-Logout-6] [INFO] Testcase test006_login_saved_username_password Started at 1462294250.51
+03-05-2016 18:50:53 EET [Login-Logout-6] [INFO] test006_login_saved_username_password STARTED
+03-05-2016 18:50:53 EET [Login-Logout-6] [INFO] do login using username/password without check rememberme, should succeed
+03-05-2016 18:50:53 EET [Login-Logout-6] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:53 EET [Login-Logout-6] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:53 EET [Login-Logout-6] [INFO] check the login successfully, should succeed
+03-05-2016 18:50:54 EET [Login-Logout-6] [INFO] do logout, should succeed
+03-05-2016 18:50:54 EET [Login-Logout-6] [INFO] Do logout
+03-05-2016 18:50:54 EET [Login-Logout-6] [INFO] Logout done successfully
+03-05-2016 18:50:54 EET [Login-Logout-6] [INFO] do login using empty username/password, should succeed
+03-05-2016 18:50:54 EET [Login-Logout-6] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:55 EET [Login-Logout-6] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:55 EET [Login-Logout-6] [INFO] proper error message, should succeed
+03-05-2016 18:50:55 EET [Login-Logout-6] [INFO] do login using username/password, should succeed
+03-05-2016 18:50:55 EET [Login-Logout-6] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:50:56 EET [Login-Logout-6] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:50:56 EET [Login-Logout-6] [INFO] check the login successfully, should succeed
+03-05-2016 18:50:56 EET [Login-Logout-6] [INFO] do logout, should succeed
+03-05-2016 18:50:56 EET [Login-Logout-6] [INFO] Do logout
+03-05-2016 18:50:56 EET [Login-Logout-6] [INFO] Logout done successfully
+03-05-2016 18:50:56 EET [Login-Logout-6] [INFO] test006_login_saved_username_password ENDED
+03-05-2016 18:50:56 EET [Login-Logout-6] [INFO] Testcase test006_login_saved_username_password ExecutionTime is 6.43278717995 sec.
+03-05-2016 18:50:56 EET [Register-New-User-1] [INFO] Testcase test001_register_new_user Started at 1462294256.96
+03-05-2016 18:50:59 EET [Register-New-User-1] [INFO] test001_register_new_user STARTED
+03-05-2016 18:50:59 EET [Register-New-User-1] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:51:00 EET [Register-New-User-1] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:01 EET [Register-New-User-1] [INFO] test001_register_new_user ENDED
+03-05-2016 18:51:01 EET [Register-New-User-1] [INFO] Testcase test001_register_new_user ExecutionTime is 4.29554009438 sec.
+03-05-2016 18:51:01 EET [Register-New-User-2] [INFO] Testcase test002_register_new_user_invaild_email_length_format Started at 1462294261.25
+03-05-2016 18:51:04 EET [Register-New-User-2] [INFO] test002_register_new_user_invaild_email_length_format STARTED
+03-05-2016 18:51:04 EET [Register-New-User-2] [INFO] fill email filed with invalid/short value, should succeed
+03-05-2016 18:51:04 EET [Register-New-User-2] [INFO] proper error message, should succeed
+03-05-2016 18:51:04 EET [Register-New-User-2] [INFO] fill email filed with invalid value, should succeed
+03-05-2016 18:51:05 EET [Register-New-User-2] [INFO] proper error message, should succeed
+03-05-2016 18:51:05 EET [Register-New-User-2] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:51:06 EET [Register-New-User-2] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:06 EET [Register-New-User-2] [INFO] test002_register_new_user_invaild_email_length_format ENDED
+03-05-2016 18:51:06 EET [Register-New-User-2] [INFO] Testcase test002_register_new_user_invaild_email_length_format ExecutionTime is 5.61616802216 sec.
+03-05-2016 18:51:06 EET [Register-New-User-3] [INFO] Testcase test003_register_new_user_invaild_email_0_normal_email Started at 1462294266.87
+03-05-2016 18:51:09 EET [Register-New-User-3] [INFO] test003_register_new_user_invaild_email_0_normal_email STARTED
+03-05-2016 18:51:09 EET [Register-New-User-3] [INFO] fill email filed with invalid value, should succeed
+03-05-2016 18:51:10 EET [Register-New-User-3] [INFO] proper error message, should succeed
+03-05-2016 18:51:10 EET [Register-New-User-3] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:51:11 EET [Register-New-User-3] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:11 EET [Register-New-User-3] [INFO] test003_register_new_user_invaild_email_0_normal_email ENDED
+03-05-2016 18:51:11 EET [Register-New-User-3] [INFO] Testcase test003_register_new_user_invaild_email_0_normal_email ExecutionTime is 5.05837488174 sec.
+03-05-2016 18:51:11 EET [Register-New-User-3] [INFO] Testcase test003_register_new_user_invaild_email_1_long_email Started at 1462294271.93
+03-05-2016 18:51:14 EET [Register-New-User-3] [INFO] test003_register_new_user_invaild_email_1_long_email STARTED
+03-05-2016 18:51:14 EET [Register-New-User-3] [INFO] fill email filed with invalid value, should succeed
+03-05-2016 18:51:19 EET [Register-New-User-3] [INFO] proper error message, should succeed
+03-05-2016 18:51:19 EET [Register-New-User-3] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:51:20 EET [Register-New-User-3] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:20 EET [Register-New-User-3] [INFO] test003_register_new_user_invaild_email_1_long_email ENDED
+03-05-2016 18:51:20 EET [Register-New-User-3] [INFO] Testcase test003_register_new_user_invaild_email_1_long_email ExecutionTime is 8.77057981491 sec.
+03-05-2016 18:51:20 EET [Register-New-User-3] [INFO] Testcase test003_register_new_user_invaild_email_2_numeric_email Started at 1462294280.7
+03-05-2016 18:51:23 EET [Register-New-User-3] [INFO] test003_register_new_user_invaild_email_2_numeric_email STARTED
+03-05-2016 18:51:23 EET [Register-New-User-3] [INFO] fill email filed with invalid value, should succeed
+03-05-2016 18:51:24 EET [Register-New-User-3] [INFO] proper error message, should succeed
+03-05-2016 18:51:24 EET [Register-New-User-3] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:51:24 EET [Register-New-User-3] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:25 EET [Register-New-User-3] [INFO] test003_register_new_user_invaild_email_2_numeric_email ENDED
+03-05-2016 18:51:25 EET [Register-New-User-3] [INFO] Testcase test003_register_new_user_invaild_email_2_numeric_email ExecutionTime is 4.91213798523 sec.
+03-05-2016 18:51:25 EET [Register-New-User-3] [INFO] Testcase test003_register_new_user_invaild_email_3_special_chars_email Started at 1462294285.61
+03-05-2016 18:51:28 EET [Register-New-User-3] [INFO] test003_register_new_user_invaild_email_3_special_chars_email STARTED
+03-05-2016 18:51:28 EET [Register-New-User-3] [INFO] fill email filed with invalid value, should succeed
+03-05-2016 18:51:29 EET [Register-New-User-3] [INFO] proper error message, should succeed
+03-05-2016 18:51:29 EET [Register-New-User-3] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:51:29 EET [Register-New-User-3] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:30 EET [Register-New-User-3] [INFO] test003_register_new_user_invaild_email_3_special_chars_email ENDED
+03-05-2016 18:51:30 EET [Register-New-User-3] [INFO] Testcase test003_register_new_user_invaild_email_3_special_chars_email ExecutionTime is 4.95630598068 sec.
+03-05-2016 18:51:30 EET [Register-New-User-4] [INFO] Testcase test004_register_new_user_invaild_password Started at 1462294290.57
+03-05-2016 18:51:33 EET [Register-New-User-4] [INFO] test004_register_new_user_invaild_password STARTED
+03-05-2016 18:51:33 EET [Register-New-User-4] [INFO] fill password filed with invalid/short value, should succeed
+03-05-2016 18:51:34 EET [Register-New-User-4] [INFO] proper error message, should succeed
+03-05-2016 18:51:34 EET [Register-New-User-4] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:51:34 EET [Register-New-User-4] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:35 EET [Register-New-User-4] [INFO] test004_register_new_user_invaild_password ENDED
+03-05-2016 18:51:35 EET [Register-New-User-4] [INFO] Testcase test004_register_new_user_invaild_password ExecutionTime is 5.00178217888 sec.
+03-05-2016 18:51:35 EET [Register-New-User-5] [INFO] Testcase test005_register_new_user_required_fileds Started at 1462294295.57
+03-05-2016 18:51:38 EET [Register-New-User-5] [INFO] test005_register_new_user_required_fileds STARTED
+03-05-2016 18:51:38 EET [Register-New-User-5] [INFO] fill all fields with empty values, should succeed
+03-05-2016 18:51:39 EET [Register-New-User-5] [INFO] proper error message, should succeed
+03-05-2016 18:51:39 EET [Register-New-User-5] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:51:40 EET [Register-New-User-5] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:41 EET [Register-New-User-5] [INFO] test005_register_new_user_required_fileds ENDED
+03-05-2016 18:51:41 EET [Register-New-User-5] [INFO] Testcase test005_register_new_user_required_fileds ExecutionTime is 5.47066807747 sec.
+03-05-2016 18:51:41 EET [Register-New-User-6] [INFO] Testcase test006_register_new_user_password_strength Started at 1462294301.04
+03-05-2016 18:51:44 EET [Register-New-User-6] [INFO] test006_register_new_user_password_strength STARTED
+03-05-2016 18:51:44 EET [Register-New-User-6] [INFO] fill password filed with numbers value, should succeed
+03-05-2016 18:51:44 EET [Register-New-User-6] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:45 EET [Register-New-User-6] [INFO] fill password filed with numbers/letters value, should succeed
+03-05-2016 18:51:46 EET [Register-New-User-6] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:46 EET [Register-New-User-6] [INFO] fill password filed with numbers/small/capital letters value, should succeed
+03-05-2016 18:51:47 EET [Register-New-User-6] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:48 EET [Register-New-User-6] [INFO] fill password filed with numbers/small/capital/special value, should succeed
+03-05-2016 18:51:48 EET [Register-New-User-6] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:49 EET [Register-New-User-6] [INFO] test006_register_new_user_password_strength ENDED
+03-05-2016 18:51:49 EET [Register-New-User-6] [INFO] Testcase test006_register_new_user_password_strength ExecutionTime is 8.48346018791 sec.
+03-05-2016 18:51:49 EET [Register-New-User-7] [INFO] Testcase test007_register_new_user_password_max_length Started at 1462294309.53
+03-05-2016 18:51:52 EET [Register-New-User-7] [INFO] test007_register_new_user_password_max_length STARTED
+03-05-2016 18:51:52 EET [Register-New-User-7] [INFO] fill password filed with invalid/short value, should succeed
+03-05-2016 18:51:53 EET [Register-New-User-7] [INFO] proper error message, should succeed
+03-05-2016 18:51:54 EET [Register-New-User-7] [INFO] check registeration successfully, should succeed
+03-05-2016 18:51:54 EET [Register-New-User-7] [INFO] test007_register_new_user_password_max_length ENDED
+03-05-2016 18:51:54 EET [Register-New-User-7] [INFO] Testcase test007_register_new_user_password_max_length ExecutionTime is 5.37033700943 sec.
+03-05-2016 18:51:54 EET [Register-New-User-8] [INFO] Testcase test008_register_new_user_password_not_match Started at 1462294314.9
+03-05-2016 18:51:57 EET [Register-New-User-8] [INFO] test008_register_new_user_password_not_match STARTED
+03-05-2016 18:51:57 EET [Register-New-User-8] [INFO] fill password/confirmed filed with different value, should succeed
+03-05-2016 18:51:58 EET [Register-New-User-8] [INFO] proper error message, should succeed
+03-05-2016 18:51:58 EET [Register-New-User-8] [INFO] test008_register_new_user_password_not_match ENDED
+03-05-2016 18:51:58 EET [Register-New-User-8] [INFO] Testcase test008_register_new_user_password_not_match ExecutionTime is 3.7225317955 sec.
+03-05-2016 18:51:58 EET [Account-1] [INFO] Testcase test001_view_save_account_settings Started at 1462294318.63
+03-05-2016 18:52:01 EET [Account-1] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:52:01 EET [Account-1] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:52:02 EET [Account-1] [INFO] test001_view_save_account_settings STARTED
+03-05-2016 18:52:02 EET [Account-1] [INFO] do login using admin username/password, should succeed
+03-05-2016 18:52:02 EET [Account-1] [INFO] view/fill all fields with proper values, should succeed
+03-05-2016 18:52:03 EET [Account-1] [INFO] check save settings successfully, should succeed
+03-05-2016 18:52:04 EET [Account-1] [INFO] test001_view_save_account_settings ENDED
+03-05-2016 18:52:04 EET [Account-1] [INFO] Testcase test001_view_save_account_settings ExecutionTime is 6.0300719738 sec.
+03-05-2016 18:52:04 EET [Account-2] [INFO] Testcase test002_save_account_settings_invaild_short_email Started at 1462294324.66
+03-05-2016 18:52:07 EET [Account-2] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:52:07 EET [Account-2] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:52:08 EET [Account-2] [INFO] test002_save_account_settings_invaild_short_email STARTED
+03-05-2016 18:52:08 EET [Account-2] [INFO] fill email filed with invalid/short value, should succeed
+03-05-2016 18:52:09 EET [Account-2] [INFO] proper error message, should succeed
+03-05-2016 18:52:09 EET [Account-2] [INFO] fill email filed with invalid value, should succeed
+03-05-2016 18:52:09 EET [Account-2] [INFO] proper error message, should succeed
+03-05-2016 18:52:09 EET [Account-2] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:52:10 EET [Account-2] [INFO] check save settings successfully, should succeed
+03-05-2016 18:52:10 EET [Account-2] [INFO] test002_save_account_settings_invaild_short_email ENDED
+03-05-2016 18:52:10 EET [Account-2] [INFO] Testcase test002_save_account_settings_invaild_short_email ExecutionTime is 5.9950158596 sec.
+03-05-2016 18:52:10 EET [Account-3] [INFO] Testcase test003_save_account_settings_invaild_email_0_normal_email Started at 1462294330.66
+03-05-2016 18:52:13 EET [Account-3] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:52:13 EET [Account-3] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:52:14 EET [Account-3] [INFO] test003_save_account_settings_invaild_email_0_normal_email STARTED
+03-05-2016 18:52:14 EET [Account-3] [INFO] fill email filed with invalid value, should succeed
+03-05-2016 18:52:15 EET [Account-3] [INFO] proper error message, should succeed
+03-05-2016 18:52:15 EET [Account-3] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:52:16 EET [Account-3] [INFO] check save settings successfully, should succeed
+03-05-2016 18:52:16 EET [Account-3] [INFO] test003_save_account_settings_invaild_email_0_normal_email ENDED
+03-05-2016 18:52:16 EET [Account-3] [INFO] Testcase test003_save_account_settings_invaild_email_0_normal_email ExecutionTime is 5.57922291756 sec.
+03-05-2016 18:52:16 EET [Account-3] [INFO] Testcase test003_save_account_settings_invaild_email_1_long_email Started at 1462294336.24
+03-05-2016 18:52:19 EET [Account-3] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:52:19 EET [Account-3] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:52:20 EET [Account-3] [INFO] test003_save_account_settings_invaild_email_1_long_email STARTED
+03-05-2016 18:52:20 EET [Account-3] [INFO] fill email filed with invalid value, should succeed
+03-05-2016 18:52:23 EET [Account-3] [INFO] proper error message, should succeed
+03-05-2016 18:52:23 EET [Account-3] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:52:24 EET [Account-3] [INFO] check save settings successfully, should succeed
+03-05-2016 18:52:24 EET [Account-3] [INFO] test003_save_account_settings_invaild_email_1_long_email ENDED
+03-05-2016 18:52:24 EET [Account-3] [INFO] Testcase test003_save_account_settings_invaild_email_1_long_email ExecutionTime is 8.17846298218 sec.
+03-05-2016 18:52:24 EET [Account-3] [INFO] Testcase test003_save_account_settings_invaild_email_2_numeric_email Started at 1462294344.42
+03-05-2016 18:52:27 EET [Account-3] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:52:27 EET [Account-3] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:52:28 EET [Account-3] [INFO] test003_save_account_settings_invaild_email_2_numeric_email STARTED
+03-05-2016 18:52:28 EET [Account-3] [INFO] fill email filed with invalid value, should succeed
+03-05-2016 18:52:29 EET [Account-3] [INFO] proper error message, should succeed
+03-05-2016 18:52:29 EET [Account-3] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:52:29 EET [Account-3] [INFO] check save settings successfully, should succeed
+03-05-2016 18:52:29 EET [Account-3] [INFO] test003_save_account_settings_invaild_email_2_numeric_email ENDED
+03-05-2016 18:52:29 EET [Account-3] [INFO] Testcase test003_save_account_settings_invaild_email_2_numeric_email ExecutionTime is 5.49665808678 sec.
+03-05-2016 18:52:29 EET [Account-3] [INFO] Testcase test003_save_account_settings_invaild_email_3_special_chars_email Started at 1462294349.91
+03-05-2016 18:52:32 EET [Account-3] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:52:33 EET [Account-3] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:52:33 EET [Account-3] [INFO] test003_save_account_settings_invaild_email_3_special_chars_email STARTED
+03-05-2016 18:52:33 EET [Account-3] [INFO] fill email filed with invalid value, should succeed
+03-05-2016 18:52:34 EET [Account-3] [INFO] proper error message, should succeed
+03-05-2016 18:52:34 EET [Account-3] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:52:35 EET [Account-3] [INFO] check save settings successfully, should succeed
+03-05-2016 18:52:35 EET [Account-3] [INFO] test003_save_account_settings_invaild_email_3_special_chars_email ENDED
+03-05-2016 18:52:35 EET [Account-3] [INFO] Testcase test003_save_account_settings_invaild_email_3_special_chars_email ExecutionTime is 5.66888999939 sec.
+03-05-2016 18:52:35 EET [Account-4] [INFO] Testcase test004_save_account_settings_required_fileds Started at 1462294355.58
+03-05-2016 18:52:38 EET [Account-4] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:52:38 EET [Account-4] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:52:39 EET [Account-4] [INFO] test004_save_account_settings_required_fileds STARTED
+03-05-2016 18:52:39 EET [Account-4] [INFO] fill password filed with invalid/short value, should succeed
+03-05-2016 18:52:40 EET [Account-4] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:52:41 EET [Account-4] [INFO] check save settings successfully, should succeed
+03-05-2016 18:52:41 EET [Account-4] [INFO] test004_save_account_settings_required_fileds ENDED
+03-05-2016 18:52:41 EET [Account-4] [INFO] Testcase test004_save_account_settings_required_fileds ExecutionTime is 5.70891284943 sec.
+03-05-2016 18:52:41 EET [Account-5] [INFO] Testcase test005_save_account_passwords_invaild_password Started at 1462294361.29
+03-05-2016 18:52:44 EET [Account-5] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:52:44 EET [Account-5] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:52:45 EET [Account-5] [INFO] test005_save_account_passwords_invaild_password STARTED
+03-05-2016 18:52:45 EET [Account-5] [INFO] fill password filed with invalid/short value, should succeed
+03-05-2016 18:52:46 EET [Account-5] [INFO] proper error message, should succeed
+03-05-2016 18:52:46 EET [Account-5] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:52:46 EET [Account-5] [INFO] check save password successfully, should succeed
+03-05-2016 18:52:47 EET [Account-5] [INFO] test005_save_account_passwords_invaild_password ENDED
+03-05-2016 18:52:47 EET [Account-5] [INFO] Testcase test005_save_account_passwords_invaild_password ExecutionTime is 5.91475200653 sec.
+03-05-2016 18:52:47 EET [Account-6] [INFO] Testcase test006_save_account_passwords_required_fileds Started at 1462294367.21
+03-05-2016 18:52:50 EET [Account-6] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:52:50 EET [Account-6] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:52:51 EET [Account-6] [INFO] test006_save_account_passwords_required_fileds STARTED
+03-05-2016 18:52:51 EET [Account-6] [INFO] fill password filed with invalid/short value, should succeed
+03-05-2016 18:52:51 EET [Account-6] [INFO] proper error message, should succeed
+03-05-2016 18:52:51 EET [Account-6] [INFO] fill input fields with valid parameters, should succeed
+03-05-2016 18:52:52 EET [Account-6] [INFO] check save password successfully, should succeed
+03-05-2016 18:52:52 EET [Account-6] [INFO] test006_save_account_passwords_required_fileds ENDED
+03-05-2016 18:52:52 EET [Account-6] [INFO] Testcase test006_save_account_passwords_required_fileds ExecutionTime is 5.49058294296 sec.
+03-05-2016 18:52:52 EET [Account-7] [INFO] Testcase test007_save_account_passwords_password_strength Started at 1462294372.7
+03-05-2016 18:52:55 EET [Account-7] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:52:55 EET [Account-7] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:52:56 EET [Account-7] [INFO] test007_save_account_passwords_password_strength STARTED
+03-05-2016 18:52:56 EET [Account-7] [INFO] fill password filed with numbers value, should succeed
+03-05-2016 18:52:57 EET [Account-7] [INFO] check save password successfully, should succeed
+03-05-2016 18:52:57 EET [Account-7] [INFO] fill password filed with numbers/letters value, should succeed
+03-05-2016 18:52:58 EET [Account-7] [INFO] check save password successfully, should succeed
+03-05-2016 18:52:58 EET [Account-7] [INFO] fill password filed with numbers/small/capital letters value, should succeed
+03-05-2016 18:52:58 EET [Account-7] [INFO] check save password successfully, should succeed
+03-05-2016 18:52:58 EET [Account-7] [INFO] fill password filed with numbers/small/capital/special value, should succeed
+03-05-2016 18:52:59 EET [Account-7] [INFO] check save password successfully, should succeed
+03-05-2016 18:52:59 EET [Account-7] [INFO] test007_save_account_passwords_password_strength ENDED
+03-05-2016 18:52:59 EET [Account-7] [INFO] Testcase test007_save_account_passwords_password_strength ExecutionTime is 6.63715100288 sec.
+03-05-2016 18:52:59 EET [Account-8] [INFO] Testcase test008_save_account_passwords_password_max_length Started at 1462294379.34
+03-05-2016 18:53:02 EET [Account-8] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:53:02 EET [Account-8] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:53:03 EET [Account-8] [INFO] test008_save_account_passwords_password_max_length STARTED
+03-05-2016 18:53:03 EET [Account-8] [INFO] fill password filed with invalid/long value, should succeed
+03-05-2016 18:53:03 EET [Account-8] [INFO] proper error message, should succeed
+03-05-2016 18:53:04 EET [Account-8] [INFO] fill password filed with valid value, should succeed
+03-05-2016 18:53:04 EET [Account-8] [INFO] check save password successfully, should succeed
+03-05-2016 18:53:05 EET [Account-8] [INFO] test008_save_account_passwords_password_max_length ENDED
+03-05-2016 18:53:05 EET [Account-8] [INFO] Testcase test008_save_account_passwords_password_max_length ExecutionTime is 5.90186309814 sec.
+03-05-2016 18:53:05 EET [Account-9] [INFO] Testcase test009_save_account_passwords_password_not_match Started at 1462294385.24
+03-05-2016 18:53:08 EET [Account-9] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:53:08 EET [Account-9] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:53:09 EET [Account-9] [INFO] test009_save_account_passwords_password_not_match STARTED
+03-05-2016 18:53:09 EET [Account-9] [INFO] fill password filed with invalid/short value, should succeed
+03-05-2016 18:53:09 EET [Account-9] [INFO] proper error message, should succeed
+03-05-2016 18:53:09 EET [Account-9] [INFO] test009_save_account_passwords_password_not_match ENDED
+03-05-2016 18:53:09 EET [Account-9] [INFO] Testcase test009_save_account_passwords_password_not_match ExecutionTime is 4.49458289146 sec.
+03-05-2016 18:53:09 EET [Branch-1] [INFO] Testcase test001_create_new_branch Started at 1462294389.74
+03-05-2016 18:53:12 EET [Branch-1] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:53:13 EET [Branch-1] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:53:13 EET [Branch-1] [INFO] test001_create_new_branch STARTED
+03-05-2016 18:53:13 EET [Branch-1] [INFO] do create branch with valid, should succeed
+03-05-2016 18:53:16 EET [Branch-1] [INFO] check new branch created successfully, should succeed
+03-05-2016 18:53:16 EET [Branch-1] [INFO] test001_create_new_branch ENDED
+03-05-2016 18:53:40 EET [Branch-1] [INFO] Testcase test001_create_new_branch ExecutionTime is 31.1098759174 sec.
+03-05-2016 18:53:40 EET [Branch-2] [INFO] Testcase test002_validate_create_new_branch_parameters Started at 1462294420.85
+03-05-2016 18:53:43 EET [Branch-2] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:53:44 EET [Branch-2] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:53:44 EET [Branch-2] [INFO] test002_validate_create_new_branch_parameters STARTED
+03-05-2016 18:53:44 EET [Branch-2] [INFO] click create new branch, should succeed
+03-05-2016 18:53:46 EET [Branch-2] [INFO] validate create new branch requirements, should succeed
+03-05-2016 18:53:46 EET [Branch-2] [INFO] do create branch with one character, should succeed
+03-05-2016 18:53:46 EET [Branch-2] [INFO] validate create new branch parameters, should succeed
+03-05-2016 18:53:46 EET [Branch-2] [INFO] proper error message, should succeed
+03-05-2016 18:53:47 EET [Branch-2] [INFO] do create branch with invaild characters, should succeed
+03-05-2016 18:53:47 EET [Branch-2] [INFO] validate create new branch parameters, should succeed
+03-05-2016 18:53:47 EET [Branch-2] [INFO] proper error message, should succeed
+03-05-2016 18:53:47 EET [Branch-2] [INFO] do create branch with invaild max length, should succeed
+03-05-2016 18:53:48 EET [Branch-2] [INFO] validate create new branch parameters, should succeed
+03-05-2016 18:53:48 EET [Branch-2] [INFO] proper error message, should succeed
+03-05-2016 18:53:48 EET [Branch-2] [INFO] do create branch with vaild, should succeed
+03-05-2016 18:53:49 EET [Branch-2] [INFO] click cancel branch, should succeed
+03-05-2016 18:53:49 EET [Branch-2] [INFO] check new branch not created, should succeed
+03-05-2016 18:53:50 EET [Branch-2] [INFO] test002_validate_create_new_branch_parameters ENDED
+03-05-2016 18:53:50 EET [Branch-2] [INFO] Testcase test002_validate_create_new_branch_parameters ExecutionTime is 9.43003106117 sec.
+03-05-2016 18:53:50 EET [Branch-3] [INFO] Testcase test003_view_delete_branch Started at 1462294430.28
+03-05-2016 18:53:53 EET [Branch-3] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:53:53 EET [Branch-3] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:53:54 EET [Branch-3] [INFO] test003_view_delete_branch STARTED
+03-05-2016 18:53:54 EET [Branch-3] [INFO] do create branch with valid, should succeed
+03-05-2016 18:53:56 EET [Branch-3] [INFO] check new branch created successfully, should succeed
+03-05-2016 18:53:56 EET [Branch-3] [INFO] view branch with name, should succeed
+03-05-2016 18:53:57 EET [Branch-3] [INFO] delete branch, should succeed
+03-05-2016 18:53:59 EET [Branch-3] [INFO] test003_view_delete_branch ENDED
+03-05-2016 18:53:59 EET [Branch-3] [INFO] Testcase test003_view_delete_branch ExecutionTime is 9.44919610023 sec.
+03-05-2016 18:53:59 EET [Branch-4] [INFO] Testcase test004_edit_delete_branch Started at 1462294439.73
+03-05-2016 18:54:02 EET [Branch-4] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:54:02 EET [Branch-4] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:54:03 EET [Branch-4] [INFO] test004_edit_delete_branch STARTED
+03-05-2016 18:54:03 EET [Branch-4] [INFO] do create branch with valid, should succeed
+03-05-2016 18:54:05 EET [Branch-4] [INFO] check new branch created successfully, should succeed
+03-05-2016 18:54:06 EET [Branch-4] [INFO] edit branch with valid, should succeed
+03-05-2016 18:54:08 EET [Branch-4] [INFO] check new branch updated successfully, should succeed
+03-05-2016 18:54:08 EET [Branch-4] [INFO] delete branch, should succeed
+03-05-2016 18:54:10 EET [Branch-4] [INFO] test004_edit_delete_branch ENDED
+03-05-2016 18:54:10 EET [Branch-4] [INFO] Testcase test004_edit_delete_branch ExecutionTime is 10.7263450623 sec.
+03-05-2016 18:54:10 EET [Branch-5] [INFO] Testcase test005_validate_edit_branch_parameters Started at 1462294450.46
+03-05-2016 18:54:13 EET [Branch-5] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:54:13 EET [Branch-5] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:54:14 EET [Branch-5] [INFO] test005_validate_edit_branch_parameters STARTED
+03-05-2016 18:54:14 EET [Branch-5] [INFO] do create branch with valid, should succeed
+03-05-2016 18:54:16 EET [Branch-5] [INFO] check new branch created successfully, should succeed
+03-05-2016 18:54:17 EET [Branch-5] [INFO] validate create new branch requirements, should succeed
+03-05-2016 18:54:18 EET [Branch-5] [INFO] edit branch with one character, should succeed
+03-05-2016 18:54:19 EET [Branch-5] [INFO] validate create new branch parameters, should succeed
+03-05-2016 18:54:19 EET [Branch-5] [INFO] proper error message, should succeed
+03-05-2016 18:54:19 EET [Branch-5] [INFO] edit branch with invaild characters, should succeed
+03-05-2016 18:54:20 EET [Branch-5] [INFO] validate create new branch parameters, should succeed
+03-05-2016 18:54:20 EET [Branch-5] [INFO] proper error message, should succeed
+03-05-2016 18:54:20 EET [Branch-5] [INFO] edit branch with invaild max length, should succeed
+03-05-2016 18:54:21 EET [Branch-5] [INFO] validate create new branch parameters, should succeed
+03-05-2016 18:54:21 EET [Branch-5] [INFO] proper error message, should succeed
+03-05-2016 18:54:21 EET [Branch-5] [INFO] edit branch with vaild, should succeed
+03-05-2016 18:54:22 EET [Branch-5] [INFO] click cancel branch, should succeed
+03-05-2016 18:54:22 EET [Branch-5] [INFO] check new branch not updated, should succeed
+03-05-2016 18:54:22 EET [Branch-5] [INFO] test005_validate_edit_branch_parameters ENDED
+03-05-2016 18:54:24 EET [Branch-5] [INFO] Testcase test005_validate_edit_branch_parameters ExecutionTime is 13.8956620693 sec.
+03-05-2016 18:54:24 EET [Branch-6] [INFO] Testcase test006_validate_search_delete_branch Started at 1462294464.36
+03-05-2016 18:54:27 EET [Branch-6] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:54:27 EET [Branch-6] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:54:28 EET [Branch-6] [INFO] test006_validate_search_delete_branch STARTED
+03-05-2016 18:54:28 EET [Branch-6] [INFO] do create new branch, should succeed
+03-05-2016 18:54:30 EET [Branch-6] [INFO] search new branch, should succeed
+03-05-2016 18:54:30 EET [Branch-6] [INFO] delete branch, should succeed
+03-05-2016 18:54:32 EET [Branch-6] [INFO] search new branch, should fail
+03-05-2016 18:54:32 EET [Branch-6] [INFO] test006_validate_search_delete_branch ENDED
+03-05-2016 18:54:32 EET [Branch-6] [INFO] Testcase test006_validate_search_delete_branch ExecutionTime is 8.39620018005 sec.
+03-05-2016 18:54:32 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_0_normal_name Started at 1462294472.75
+03-05-2016 18:54:36 EET [Branch-7] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:54:36 EET [Branch-7] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:54:37 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_0_normal_name STARTED
+03-05-2016 18:54:37 EET [Branch-7] [INFO] do create new branch, should succeed
+03-05-2016 18:54:39 EET [Branch-7] [INFO] search invalid branch, should fail
+03-05-2016 18:54:40 EET [Branch-7] [INFO] delete branch, should succeed
+03-05-2016 18:54:42 EET [Branch-7] [INFO] search invalid branch, should fail
+03-05-2016 18:54:42 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_0_normal_name ENDED
+03-05-2016 18:54:42 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_0_normal_name ExecutionTime is 9.99042105675 sec.
+03-05-2016 18:54:42 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_1_long_name Started at 1462294482.74
+03-05-2016 18:54:46 EET [Branch-7] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:54:46 EET [Branch-7] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:54:47 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_1_long_name STARTED
+03-05-2016 18:54:47 EET [Branch-7] [INFO] do create new branch, should succeed
+03-05-2016 18:54:49 EET [Branch-7] [INFO] search invalid branch, should fail
+03-05-2016 18:54:54 EET [Branch-7] [INFO] delete branch, should succeed
+03-05-2016 18:54:56 EET [Branch-7] [INFO] search invalid branch, should fail
+03-05-2016 18:55:00 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_1_long_name ENDED
+03-05-2016 18:55:01 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_1_long_name ExecutionTime is 18.4350779057 sec.
+03-05-2016 18:55:01 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_2_numeric_name Started at 1462294501.18
+03-05-2016 18:55:04 EET [Branch-7] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:55:05 EET [Branch-7] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:55:06 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_2_numeric_name STARTED
+03-05-2016 18:55:06 EET [Branch-7] [INFO] do create new branch, should succeed
+03-05-2016 18:55:08 EET [Branch-7] [INFO] search invalid branch, should fail
+03-05-2016 18:55:08 EET [Branch-7] [INFO] delete branch, should succeed
+03-05-2016 18:55:10 EET [Branch-7] [INFO] search invalid branch, should fail
+03-05-2016 18:55:10 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_2_numeric_name ENDED
+03-05-2016 18:55:10 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_2_numeric_name ExecutionTime is 9.53880810738 sec.
+03-05-2016 18:55:10 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_3_special_chars_name Started at 1462294510.72
+03-05-2016 18:55:14 EET [Branch-7] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:55:14 EET [Branch-7] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:55:15 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_3_special_chars_name STARTED
+03-05-2016 18:55:15 EET [Branch-7] [INFO] do create new branch, should succeed
+03-05-2016 18:55:17 EET [Branch-7] [INFO] search invalid branch, should fail
+03-05-2016 18:55:17 EET [Branch-7] [INFO] delete branch, should succeed
+03-05-2016 18:55:19 EET [Branch-7] [INFO] search invalid branch, should fail
+03-05-2016 18:55:20 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_3_special_chars_name ENDED
+03-05-2016 18:55:20 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_3_special_chars_name ExecutionTime is 9.59879899025 sec.
+03-05-2016 18:55:20 EET [Staff-1] [INFO] Testcase test001_create_new_staff Started at 1462294520.33
+03-05-2016 18:55:23 EET [Staff-1] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:55:24 EET [Staff-1] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:55:27 EET [Staff-1] [INFO] test001_create_new_staff STARTED
+03-05-2016 18:55:27 EET [Staff-1] [INFO] do create branch with valid, should succeed
+03-05-2016 18:55:29 EET [Staff-1] [INFO] check new branch created successfully, should succeed
+03-05-2016 18:55:30 EET [Staff-1] [INFO] test001_create_new_staff ENDED
+03-05-2016 18:55:34 EET [Staff-1] [INFO] Testcase test001_create_new_staff ExecutionTime is 13.9247870445 sec.
+03-05-2016 18:55:34 EET [Staff-2] [INFO] Testcase test002_validate_create_new_staff_parameters Started at 1462294534.25
+03-05-2016 18:55:37 EET [Staff-2] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:55:37 EET [Staff-2] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:55:41 EET [Staff-2] [INFO] test002_validate_create_new_staff_parameters STARTED
+03-05-2016 18:55:41 EET [Staff-2] [INFO] click create new staff, should succeed
+03-05-2016 18:55:42 EET [Staff-2] [INFO] validate create new branch requirements, should succeed
+03-05-2016 18:55:42 EET [Staff-2] [INFO] do create staff with invaild characters, should succeed
+03-05-2016 18:55:43 EET [Staff-2] [INFO] validate create new staff parameters, should succeed
+03-05-2016 18:55:43 EET [Staff-2] [INFO] proper error message, should succeed
+03-05-2016 18:55:43 EET [Staff-2] [INFO] do create staff with invaild max length, should succeed
+03-05-2016 18:55:44 EET [Staff-2] [INFO] validate create new staff parameters, should succeed
+03-05-2016 18:55:44 EET [Staff-2] [INFO] proper error message, should succeed
+03-05-2016 18:55:44 EET [Staff-2] [INFO] do create staff with vaild, should succeed
+03-05-2016 18:55:45 EET [Staff-2] [INFO] click cancel branch, should succeed
+03-05-2016 18:55:45 EET [Staff-2] [INFO] check new branch not created, should succeed
+03-05-2016 18:55:45 EET [Staff-2] [INFO] test002_validate_create_new_staff_parameters ENDED
+03-05-2016 18:55:47 EET [Staff-2] [INFO] Testcase test002_validate_create_new_staff_parameters ExecutionTime is 13.5486409664 sec.
+03-05-2016 18:55:47 EET [Staff-3] [INFO] Testcase test003_view_delete_staff Started at 1462294547.8
+03-05-2016 18:55:50 EET [Staff-3] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:55:51 EET [Staff-3] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:55:54 EET [Staff-3] [INFO] test003_view_delete_staff STARTED
+03-05-2016 18:55:54 EET [Staff-3] [INFO] do create staff with valid, should succeed
+03-05-2016 18:55:56 EET [Staff-3] [INFO] check new staff created successfully, should succeed
+03-05-2016 18:55:57 EET [Staff-3] [INFO] view staff with name, should succeed
+03-05-2016 18:55:58 EET [Staff-3] [INFO] delete staff, should succeed
+03-05-2016 18:56:00 EET [Staff-3] [INFO] test003_view_delete_staff ENDED
+03-05-2016 18:56:02 EET [Staff-3] [INFO] Testcase test003_view_delete_staff ExecutionTime is 14.8418080807 sec.
+03-05-2016 18:56:02 EET [Staff-4] [INFO] Testcase test004_edit_delete_staff Started at 1462294562.64
+03-05-2016 18:56:05 EET [Staff-4] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:56:06 EET [Staff-4] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:56:09 EET [Staff-4] [INFO] test004_edit_delete_staff STARTED
+03-05-2016 18:56:09 EET [Staff-4] [INFO] do create staff with valid, should succeed
+03-05-2016 18:56:11 EET [Staff-4] [INFO] check new staff created successfully, should succeed
+03-05-2016 18:56:12 EET [Staff-4] [INFO] edit staff with valid, should succeed
+03-05-2016 18:56:14 EET [Staff-4] [INFO] check new staff updated successfully, should succeed
+03-05-2016 18:56:14 EET [Staff-4] [INFO] delete staff, should succeed
+03-05-2016 18:56:16 EET [Staff-4] [INFO] test004_edit_delete_staff ENDED
+03-05-2016 18:56:18 EET [Staff-4] [INFO] Testcase test004_edit_delete_staff ExecutionTime is 15.9526391029 sec.
+03-05-2016 18:56:18 EET [Staff-5] [INFO] Testcase test005_validate_edit_staff_parameters Started at 1462294578.6
+03-05-2016 18:56:21 EET [Staff-5] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:56:21 EET [Staff-5] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:56:25 EET [Staff-5] [INFO] test005_validate_edit_staff_parameters STARTED
+03-05-2016 18:56:25 EET [Staff-5] [INFO] do create staff with valid, should succeed
+03-05-2016 18:56:27 EET [Staff-5] [INFO] check new staff created successfully, should succeed
+03-05-2016 18:56:28 EET [Staff-5] [INFO] validate create new staff requirements, should succeed
+03-05-2016 18:56:29 EET [Staff-5] [INFO] edit staff with invaild characters, should succeed
+03-05-2016 18:56:30 EET [Staff-5] [INFO] validate create new staff parameters, should succeed
+03-05-2016 18:56:30 EET [Staff-5] [INFO] proper error message, should succeed
+03-05-2016 18:56:30 EET [Staff-5] [INFO] edit staff with invaild max length, should succeed
+03-05-2016 18:56:31 EET [Staff-5] [INFO] validate create new staff parameters, should succeed
+03-05-2016 18:56:31 EET [Staff-5] [INFO] proper error message, should succeed
+03-05-2016 18:56:31 EET [Staff-5] [INFO] edit staff with vaild, should succeed
+03-05-2016 18:56:31 EET [Staff-5] [INFO] click cancel staff, should succeed
+03-05-2016 18:56:32 EET [Staff-5] [INFO] check new staff not updated, should succeed
+03-05-2016 18:56:32 EET [Staff-5] [INFO] test005_validate_edit_staff_parameters ENDED
+03-05-2016 18:56:36 EET [Staff-5] [INFO] Testcase test005_validate_edit_staff_parameters ExecutionTime is 17.5159549713 sec.
+03-05-2016 18:56:36 EET [Staff-6] [INFO] Testcase test006_validate_search_delete_staff Started at 1462294596.11
+03-05-2016 18:56:39 EET [Staff-6] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:56:39 EET [Staff-6] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:56:43 EET [Staff-6] [INFO] test006_validate_search_delete_staff STARTED
+03-05-2016 18:56:43 EET [Staff-6] [INFO] do create new staff, should succeed
+03-05-2016 18:56:45 EET [Staff-6] [INFO] search new branch, should succeed
+03-05-2016 18:56:45 EET [Staff-6] [INFO] delete staff, should succeed
+03-05-2016 18:56:47 EET [Staff-6] [INFO] search new staff, should fail
+03-05-2016 18:56:47 EET [Staff-6] [INFO] test006_validate_search_delete_staff ENDED
+03-05-2016 18:56:49 EET [Staff-6] [INFO] Testcase test006_validate_search_delete_staff ExecutionTime is 13.4669790268 sec.
+03-05-2016 18:56:49 EET [Staff-7] [INFO] Testcase test007_validate_search_delete_invalid_staff_0_normal_name Started at 1462294609.58
+03-05-2016 18:56:52 EET [Staff-7] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:56:52 EET [Staff-7] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:56:56 EET [Staff-7] [INFO] test007_validate_search_delete_invalid_staff_0_normal_name STARTED
+03-05-2016 18:56:56 EET [Staff-7] [INFO] do create new staff, should succeed
+03-05-2016 18:56:58 EET [Staff-7] [INFO] search invalid staff, should fail
+03-05-2016 18:56:59 EET [Staff-7] [INFO] delete staff, should succeed
+03-05-2016 18:57:00 EET [Staff-7] [INFO] search invalid staff, should fail
+03-05-2016 18:57:00 EET [Staff-7] [INFO] test007_validate_search_delete_invalid_staff_0_normal_name ENDED
+03-05-2016 18:57:03 EET [Staff-7] [INFO] Testcase test007_validate_search_delete_invalid_staff_0_normal_name ExecutionTime is 13.5422890186 sec.
+03-05-2016 18:57:03 EET [Staff-7] [INFO] Testcase test007_validate_search_delete_invalid_staff_1_long_name Started at 1462294623.13
+03-05-2016 18:57:05 EET [Staff-7] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:57:06 EET [Staff-7] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:57:10 EET [Staff-7] [INFO] test007_validate_search_delete_invalid_staff_1_long_name STARTED
+03-05-2016 18:57:10 EET [Staff-7] [INFO] do create new staff, should succeed
+03-05-2016 18:57:12 EET [Staff-7] [INFO] search invalid staff, should fail
+03-05-2016 18:57:15 EET [Staff-7] [INFO] delete staff, should succeed
+03-05-2016 18:57:17 EET [Staff-7] [INFO] search invalid staff, should fail
+03-05-2016 18:57:21 EET [Staff-7] [INFO] test007_validate_search_delete_invalid_staff_1_long_name ENDED
+03-05-2016 18:57:23 EET [Staff-7] [INFO] Testcase test007_validate_search_delete_invalid_staff_1_long_name ExecutionTime is 20.1507451534 sec.
+03-05-2016 18:57:23 EET [Staff-7] [INFO] Testcase test007_validate_search_delete_invalid_staff_2_numeric_name Started at 1462294643.28
+03-05-2016 18:57:26 EET [Staff-7] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:57:26 EET [Staff-7] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:57:30 EET [Staff-7] [INFO] test007_validate_search_delete_invalid_staff_2_numeric_name STARTED
+03-05-2016 18:57:30 EET [Staff-7] [INFO] do create new staff, should succeed
+03-05-2016 18:57:32 EET [Staff-7] [INFO] search invalid staff, should fail
+03-05-2016 18:57:32 EET [Staff-7] [INFO] delete staff, should succeed
+03-05-2016 18:57:34 EET [Staff-7] [INFO] search invalid staff, should fail
+03-05-2016 18:57:34 EET [Staff-7] [INFO] test007_validate_search_delete_invalid_staff_2_numeric_name ENDED
+03-05-2016 18:57:36 EET [Staff-7] [INFO] Testcase test007_validate_search_delete_invalid_staff_2_numeric_name ExecutionTime is 13.3502950668 sec.
+03-05-2016 18:57:36 EET [Staff-7] [INFO] Testcase test007_validate_search_delete_invalid_staff_3_special_chars_name Started at 1462294656.63
+03-05-2016 18:57:39 EET [Staff-7] [INFO] Do login using username [admin] and passsword [admin]
+03-05-2016 18:57:39 EET [Staff-7] [INFO] Login successfully using username [admin] and passsword [admin]
+03-05-2016 18:57:43 EET [Staff-7] [INFO] test007_validate_search_delete_invalid_staff_3_special_chars_name STARTED
+03-05-2016 18:57:43 EET [Staff-7] [INFO] do create new staff, should succeed
+03-05-2016 18:57:45 EET [Staff-7] [INFO] search invalid staff, should fail
+03-05-2016 18:57:46 EET [Staff-7] [INFO] delete staff, should succeed
+03-05-2016 18:57:47 EET [Staff-7] [INFO] search invalid staff, should fail
+03-05-2016 18:57:47 EET [Staff-7] [INFO] test007_validate_search_delete_invalid_staff_3_special_chars_name ENDED
+03-05-2016 18:57:50 EET [Staff-7] [INFO] Testcase test007_validate_search_delete_invalid_staff_3_special_chars_name ExecutionTime is 13.542443037 sec.
