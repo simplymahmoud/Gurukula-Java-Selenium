@@ -1,0 +1,61 @@
+Register-New-User-1: Test case for check register new user.
+Test Scenario:
+#. fill input fields with valid parameters, should succeed
+#. check registeration successfully, should succeed
+
+
+Register-New-User-2: Test case for check register new user with invaild email.
+Test Scenario:
+#. fill email filed with invalid/short value, should succeed
+#. proper error message, should succeed
+#. fill email filed with invalid value, should succeed
+#. proper error message, should succeed
+#. fill input fields with valid parameters, should succeed
+#. check registeration successfully, should succeed
+
+
+Register-New-User-3: Test case for check register new user with invaild email.
+Test Scenario:
+#. fill email filed with invalid value, should succeed
+#. proper error message, should succeed
+#. fill input fields with valid parameters, should succeed
+#. check registeration successfully, should succeed
+
+
+Register-New-User-4: Test case for check register new user with invaild password.
+Test Scenario:
+#. fill password filed with invalid/short value, should succeed
+#. proper error message, should succeed
+#. fill input fields with valid parameters, should succeed
+#. check registeration successfully, should succeed
+
+
+Register-New-User-5: Test case for check register new user with empty fields.
+Test Scenario:
+#. fill all fields with empty values, should succeed
+#. proper error message, should succeed
+#. fill input fields with valid parameters, should succeed
+#. check registeration successfully, should succeed
+
+
+Register-New-User-6: Test case for check register new user check password strength.
+Test Scenario:
+#. fill password filed with numbers value, should succeed
+#. fill password filed with numbers and letters value, should succeed
+#. fill password filed with numbers and small/capital letters value, should succeed
+#. fill password filed with numbers and small/capital/special value, should succeed
+#. check registeration successfully, should succeed
+
+
+Register-New-User-7: Test case for check register new user with password max length.
+Test Scenario:
+#. fill password filed with invalid/long value, should succeed
+#. proper error message, should succeed
+#. fill password filed with valid value, should succeed
+#. check registeration successfully, should succeed
+
+
+Register-New-User-8: Test case for check register new user with password not match.
+Test Scenario:
+#. fill password/confirmed filed with different value, should succeed
+#. proper error message, should succeed

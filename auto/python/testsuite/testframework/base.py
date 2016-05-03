@@ -2,6 +2,7 @@
 import logging
 import unittest
 import time
+
 from testconfig import config
 
 from selenium import webdriver
@@ -23,7 +24,7 @@ class BaseTest(unittest.TestCase):
         self._testID = self._testMethodName
         self._startTime = time.time()
         self._logger = logging.LoggerAdapter(logging.getLogger('portal_testsuite'),
-                                             {'testid': self.shortDescription() or self._testID})
+                                             {'testid': self.shortDescription().split(':')[0] or self._testID})
         self.lg('Testcase %s Started at %s' % (self._testID, self._startTime))
         self.set_browser()
         self.driver.get(self.environment_url)
@@ -58,15 +59,29 @@ class BaseTest(unittest.TestCase):
         self.wait_until_element_located(element)
         return self.driver.find_element_by_xpath(element).text
 
-    def login(self, username='', password=''):
+    def get_value(self, element):
+        element = self.elements[element]
+        self.wait_until_element_located(element)
+        return self.driver.find_element_by_xpath(element).get_attribute("value")
+
+    def set_text(self, element, value):
+        element = self.elements[element]
+        self.wait_until_element_located(element)
+        self.driver.find_element_by_xpath(element).clear()
+        self.driver.find_element_by_xpath(element).send_keys(value)
+
+    def get_table(self, table):
+        table = self.elements[table]
+        self.wait_until_element_located(table)
+        return self.driver.find_element_by_xpath(table)
+
+    def login(self, username='', password='', nopassword=False):
         username = username or self.admin_username
         password = password or self.admin_password
         self.lg('Do login using username [%s] and passsword [%s]' % (username, password))
-        self.wait_until_element_located(self.elements['username'])
-        self.driver.find_element_by_xpath(self.elements['username']).clear()
-        self.driver.find_element_by_xpath(self.elements['username']).send_keys(username)
-        self.driver.find_element_by_xpath(self.elements['password']).clear()
-        self.driver.find_element_by_xpath(self.elements['password']).send_keys(password)
+        self.set_text('username', username)
+        if not nopassword:
+            self.set_text('password', password)
         self.click('login_button')
         self.lg('Login successfully using username [%s] and passsword [%s]' % (username, password))
 
@@ -78,44 +93,146 @@ class BaseTest(unittest.TestCase):
         self.click('logout')
         self.lg('Logout done successfully')
 
+    def rememberme(self):
+        self.click('rememberme')
+
+    def go_to_account_menu(self):
+        self.click('account_menu')
+
+    def go_to_account_settings(self):
+        self.click('account_settings')
+
+    def go_to_account_passwords(self):
+        self.click('account_passwords')
+
+    def click_account_password_save(self):
+        self.click('passwords_save_button')
+
+    def click_account_settings_save(self):
+        self.click('settings_save_button')
+
     def fill_register_new_user(self, login='login', email='email@mail.com', newpasswd=12345,
                                passwdcfm=12345):
-        self.wait_until_element_located(self.elements['register_login'])
-        self.driver.find_element_by_xpath(self.elements['register_login']).clear()
-        self.driver.find_element_by_xpath(self.elements['register_login']).send_keys(login)
-        self.driver.find_element_by_xpath(self.elements['register_email']).clear()
-        self.driver.find_element_by_xpath(self.elements['register_email']).send_keys(email)
-        self.driver.find_element_by_xpath(self.elements['register_newpasswd']).clear()
-        self.driver.find_element_by_xpath(self.elements['register_newpasswd']).send_keys(newpasswd)
-        self.driver.find_element_by_xpath(self.elements['register_passwdcfm']).clear()
-        self.driver.find_element_by_xpath(self.elements['register_passwdcfm']).send_keys(passwdcfm)
+        self.set_text('register_login', login)
+        self.set_text('register_email', email)
+        self.set_text('register_newpasswd', newpasswd)
+        self.set_text('register_passwdcfm', passwdcfm)
 
     def fill_settings(self, firstname='Administrator', lastname='Administrator',
                             email='admin@localhost'):
-        self.wait_until_element_located(self.elements['settings_firstname'])
-        self.driver.find_element_by_xpath(self.elements['settings_firstname']).clear()
-        self.driver.find_element_by_xpath(self.elements['settings_firstname']).send_keys(firstname)
-        self.driver.find_element_by_xpath(self.elements['settings_lastname']).clear()
-        self.driver.find_element_by_xpath(self.elements['settings_lastname']).send_keys(lastname)
-        self.driver.find_element_by_xpath(self.elements['settings_email']).clear()
-        self.driver.find_element_by_xpath(self.elements['settings_email']).send_keys(email)
+        self.set_text('settings_firstname', firstname)
+        self.set_text('settings_lastname', lastname)
+        self.set_text('settings_email', email)
 
     def fill_passwords(self, newpasswd=12345, passwdcfm=12345):
-        self.wait_until_element_located(self.elements['passwords_newpasswd'])
-        self.driver.find_element_by_xpath(self.elements['passwords_newpasswd']).clear()
-        self.driver.find_element_by_xpath(self.elements['passwords_newpasswd']).send_keys(newpasswd)
-        self.driver.find_element_by_xpath(self.elements['passwords_passwdcnf']).clear()
-        self.driver.find_element_by_xpath(self.elements['passwords_passwdcnf']).send_keys(passwdcfm)
+        self.set_text('passwords_newpasswd', newpasswd)
+        self.set_text('passwords_passwdcnf', passwdcfm)
 
     def register_new_user(self):
-        self.wait_until_element_located(self.elements['register_button'])
         self.click('register_button')
+
+    def click_create_new_branch(self):
+        time.sleep(.5)
+        self.click('create_new_branch_button')
+        time.sleep(.5)
+
+    def click_save_branch(self):
+        self.click('save_branch_button')
+
+    def click_cancel_branch(self):
+        self.click('cancel_branch_button')
+
+    def click_view_back(self):
+        self.click('view_back_button')
+
+    def click_save_edit_branch(self):
+        self.click('save_edit_branch_button')
+
+    def click_cancel_edit_branch(self):
+        self.click('cancel_edit_branch_button')
+
+    def create_new_branch(self, name='', code=''):
+        name = name or 'ABCDEabcde'
+        code = code or '12345'        
+        self.set_text('new_branch_name', name)
+        self.set_text('new_branch_code', code)
+        self.name = name
+        self.code = code
+        time.sleep(.5)
+
+    def edit_created_branch(self, name='', code=''):
+        name = name or 'abcde'
+        code = code or '54321'
+        self.set_text('edit_branch_name', name)
+        self.set_text('new_branch_code', code)
+        self.name = name
+        self.code = code
+        time.sleep(.5)
+
+    def search_branch(self, name, code):
+        self.set_text('search_branch_text', name)
+        branches_table = self.get_table('search_branch_table')
+        tbody = branches_table.find_elements_by_tag_name("tbody")
+        all_rows = tbody[0].find_elements_by_tag_name("tr")
+        for row in all_rows:
+            cells = row.find_elements_by_tag_name("td")
+            if cells[1].text == name and cells[2].text == code:
+                return True
+
+        return False
+
+    def view_branch(self, name, code):
+        time.sleep(.5)
+        self.set_text('search_branch_text', name)
+        branches_table = self.get_table('search_branch_table')
+        tbody = branches_table.find_elements_by_tag_name("tbody")
+        all_rows = tbody[0].find_elements_by_tag_name("tr")
+        for row in all_rows:
+            cells = row.find_elements_by_tag_name("td")
+            if cells[1].text == name and cells[2].text == code:
+                cells[3].find_elements_by_tag_name("button")[0].click()
+                return True
+
+        return False
+
+    def edit_branch(self, name, code):
+        time.sleep(.5)
+        self.set_text('search_branch_text', name)
+        branches_table = self.get_table('search_branch_table')
+        tbody = branches_table.find_elements_by_tag_name("tbody")
+        all_rows = tbody[0].find_elements_by_tag_name("tr")
+        for row in all_rows:
+            cells = row.find_elements_by_tag_name("td")
+            if cells[1].text == name and cells[2].text == code:
+                cells[3].find_elements_by_tag_name("button")[1].click()
+                return True
+
+        return False
+
+    def delete_created_branch(self, name):
+        self.set_text('search_branch_text', name)
+        branches_table = self.get_table('search_branch_table')
+        tbody = branches_table.find_elements_by_tag_name("tbody")
+        all_rows = tbody[0].find_elements_by_tag_name("tr")
+        for _ in all_rows:
+            cells = all_rows[0].find_elements_by_tag_name("td")
+            cells[3].find_elements_by_tag_name("button")[2].click()
+            self.click('search_branch_confirm_delete')
+            time.sleep(.5)
+            self.set_text('search_branch_text', name)
+            branches_table = self.get_table('search_branch_table')
+            tbody = branches_table.find_elements_by_tag_name("tbody")
+            all_rows = tbody[0].find_elements_by_tag_name("tr")
+
 
     def element_is_enabled(self, element):
         return self.driver.find_element_by_xpath(self.elements[element]).is_enabled()
 
     def element_is_displayed(self, element):
         return self.driver.find_element_by_xpath(self.elements[element]).is_displayed()
+
+    def element_is_readonly(self, element):
+        return self.driver.find_element_by_xpath(self.elements[element]).get_attribute("readonly")
 
     def element_background_color(self, element):
         return str(self.driver.find_element_by_xpath(self.elements[element])\

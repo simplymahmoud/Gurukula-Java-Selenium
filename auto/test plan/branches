@@ -1,0 +1,74 @@
+Branch-1: Test case for check create new branch.
+Test Scenario:
+#. do create branch with valid, should succeed
+#. check new branch created successfully, should succeed
+
+
+Branch-2: Test case for validate create new branch parameters.
+Test Scenario:
+#. click create new branch, should succeed
+#. validate create new branch requirements, should succeed
+#. do create branch with one character, should succeed
+#. validate create new branch requirements, should succeed
+#. proper error message, should succeed
+#. do create branch with invaild characters, should succeed
+#. validate create new branch requirements, should succeed
+#. proper error message, should succeed
+#. do create branch with invaild max length, should succeed
+#. validate create new branch requirements, should succeed
+#. proper error message, should succeed
+#. do create branch with valid, should succeed
+#. click cancel branch, should succeed
+#. check new branch not created, should succeed
+
+
+Branch-3: Test case for check view/delete branch.
+Test Scenario:
+#. do create branch with valid, should succeed
+#. check new branch created successfully, should succeed
+#. view branch with valid, should succeed
+#. check new branch updated successfully, should succeed
+#. delete branch, should succeed
+
+
+Branch-4: Test case for check edit/delete created branch.
+Test Scenario:
+#. do create branch with valid, should succeed
+#. check new branch created successfully, should succeed
+#. edit branch with valid, should succeed
+#. check new branch updated successfully, should succeed
+#. delete branch, should succeed
+
+
+Branch-5: Test case for validate create edit branch parameters.
+Test Scenario:
+#. click create new branch, should succeed
+#. validate create new branch requirements, should succeed
+#. edit branch with one character, should succeed
+#. validate create new branch requirements, should succeed
+#. proper error message, should succeed
+#. edit branch with invaild characters, should succeed
+#. validate create new branch requirements, should succeed
+#. proper error message, should succeed
+#. edit branch with invaild max length, should succeed
+#. validate create new branch requirements, should succeed
+#. proper error message, should succeed
+#. do create branch with valid, should succeed
+#. click cancel edit branch, should succeed
+#. check created branch not updated, should succeed
+
+
+Branch-6: Test case for validate search/delete branch.
+Test Scenario:
+#. do create new branch, should succeed
+#. search new branch, should succeed
+#. delete branch, should succeed
+#. search new branch, should fail
+
+
+Branch-7: Test case for validate search/delete invalid branch.
+Test Scenario:
+#. do create new branch, should succeed
+#. search invalid branch, should fail
+#. delete branch, should succeed
+#. search invalid branch, should fail

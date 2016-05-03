@@ -1,0 +1,52 @@
+Login-Logout-1: Test case for check user potal login.
+Test Scenario:
+#. do login using username/password, should succeed
+#. check the login successfully, should succeed
+
+
+Login-Logout-2: Test case for check user potal logout.
+Test Scenario:
+#. do login using username/password, should succeed
+#. check the login successfully, should succeed
+#. do logout, should succeed
+#. do login using username/password, should succeed
+#. check the login successfully, should succeed
+
+
+Login-Logout-3: Test case for check user potal login with wrong username.
+Test Scenario:
+#. do login using wrong username, should fail
+#. proper error message, should succeed
+#. do login using username/password, should succeed
+#. check the login successfully, should succeed
+#. do logout, should succeed
+
+
+Login-Logout-4: Test case for check user potal login with wrong password.
+Test Scenario:
+#. do login using wrong password, should fail
+#. proper error message, should succeed
+#. do login using admin username/password, should succeed
+#. check the login successfully, should succeed
+#. do logout, should succeed
+
+
+Login-Logout-5: Test case for check user potal login with wrong username/password.
+Test Scenario:
+#. do login using wrong username/password, should fail
+#. proper error message, should succeed
+#. do login using username/password, should succeed
+#. check the login successfully, should succeed
+#. do logout, should succeed
+
+
+Login-Logout-6: Test case for check user potal login with saved username/password.
+Test Scenario:
+#. do login using username/password without check rememberme, should succeed
+#. check the login successfully, should succeed
+#. do logout, should succeed
+#. do login using username/empty password, should succeed
+#. proper error message, should succeed
+#. do login using username/password, should succeed
+#. check the login successfully, should succeed
+#. do logout, should succeed
