@@ -35,9 +35,9 @@ auto: for auto test cases written in (python, java, js).
 auto/testplan: containing the test plan suggested for the testsuites to cover the usecases.
 
 # Idea: 
-It was prefered to do it in Java/Selenium with junit or testng but after I made a good research I found that it will not be the best solution. As the project using AngularJs so the best solution is to use Protractor with any java script test framework like jasmine/cucumberjs/moca/karma, I made it with Jasmine. I found that we have another solution to test this project based on python/selenium/unittest but not pure selenium it's through pytractor, so I use it too.
+It was prefered to do it in Java/Selenium with junit or testng but after I made a good research I found that it will not be the best solution. As the project using AngularJs in the frontend, so the best solution is to use Protractor with any java script test framework like jasmine/cucumberjs/moca/karma, I made it with Jasmine. I found that we have another solution to test this project based on python/selenium/unittest but not pure selenium it's through pytractor, so I use it too.
 
-Testplan and test cases- > finished
+* testplan and test cases- > finished *
 
 # Used technologies:
 Java/Selenium-junit -> in progress
