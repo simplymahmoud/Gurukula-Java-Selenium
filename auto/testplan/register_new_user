@@ -59,3 +59,6 @@ Register-New-User-8: Test case for check register new user with password not mat
 Test Scenario:
 #. fill password/confirmed filed with different value, should succeed
 #. proper error message, should succeed
+
+Register-New-User-8: Test case for check register new user with same id/email.
+Test Scenario:

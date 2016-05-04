@@ -8,6 +8,7 @@ class BranchTests(BaseTest):
 
     def setUp(self):
         super(BranchTests, self).setUp()
+        self.branches = []
         self.go_to_login_page()
         self.login()
         time.sleep(.5)
@@ -16,7 +17,12 @@ class BranchTests(BaseTest):
 
     def tearDown(self):
         if hasattr(self, 'name') and self.name:
-            self.delete_created_branch(name=self.name)
+            for branch in self.branches:
+                time.sleep(1)
+                self.search_branch(branch)
+                time.sleep(1)
+                self.delete_created_branch(name=branch)
+
         super(BranchTests, self).tearDown()
 
     def test001_create_new_branch(self):
@@ -306,4 +312,48 @@ class BranchTests(BaseTest):
         self.delete_created_branch(name=self.name)
         self.lg('search invalid branch, should fail')
         self.assertFalse(self.search_branch(name, self.code))
+        self.lg('%s ENDED' % self._testID)
+
+    def test008_validate_search_different_branch(self):
+        """ Staff-08: Test case for validate search different branch.
+
+        **Test Scenario:**
+
+        #. do create new branch1, should succeed
+        #. search new branch1, should succeed
+        #. do create new branch2, should succeed
+        #. search new branch2, should succeed
+        #. search new branch1, should succeed
+        """
+        self.lg('%s STARTED' % self._testID)
+        self.lg('do create new branch1, should succeed')
+        branch_1 = 'brancha'
+        for _ in range(2):
+            self.click_create_new_branch()
+            self.create_new_branch(name=branch_1)
+            self.click_save_branch()
+            self.lg('check new branch created successfully, should succeed')
+            self.assertTrue(self.search_branch(branch_1, self.code))
+
+        self.lg('search new branch1, should succeed')
+        self.search_branch(branch_1, self.code)
+        time.sleep(.5)
+        self.assertEqual(self.get_table_count(branch_1), 2)
+        self.lg('do create new branch1, should succeed')
+        branch_2 = 'branchb'
+        for _ in range(3):
+            self.click_create_new_branch()
+            self.create_new_branch(name=branch_2)
+            self.click_save_branch()
+            self.lg('check new branch created successfully, should succeed')
+            self.assertTrue(self.search_branch(branch_2, self.code))
+
+        self.lg('search new branch1, should succeed')
+        self.search_branch(branch_2, self.code)
+        time.sleep(.5)
+        self.assertEqual(self.get_table_count(branch_2), 3)
+        self.lg('search new branch1, should succeed')
+        self.search_branch(branch_1, self.code)
+        time.sleep(.5)
+        self.assertEqual(self.get_table_count(branch_1), 2)
         self.lg('%s ENDED' % self._testID)

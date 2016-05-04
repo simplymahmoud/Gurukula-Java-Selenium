@@ -72,3 +72,12 @@ Test Scenario:
 #. search invalid branch, should fail
 #. delete branch, should succeed
 #. search invalid branch, should fail
+
+
+Staff-8: Test case for validate search different branch.
+Test Scenario:
+#. do create new branch1, should succeed
+#. search new branch1, should succeed
+#. do create new branch2, should succeed
+#. search new branch2, should succeed
+#. search new branch1, should succeed

@@ -66,3 +66,32 @@ Test Scenario:
 #. search invalid staff, should fail
 #. delete staff, should succeed
 #. search invalid staff, should fail
+
+
+Staff-8: Test case for check staff paging.
+Test Scenario:
+#. create multiple staff with valid, should succeed
+#. check paging is working successfully, should succeed
+#. check paging size is 20 record per page, should succeed
+
+
+Staff-9: Test case for check delete used branch before staff.
+Test Scenario:
+#. do create staff with valid, should succeed
+#. check new staff created successfully, should succeed
+#. try delete branch before staff, should fail
+
+
+Staff-10: Test case for check delete not used branch before staff.*
+Test Scenario:
+#. do create staff without branch, should succeed
+#. delete branch before staff, should succeed
+#. delete staff, should succeed
+
+Staff-11: Test case for validate search different staff.
+Test Scenario:
+#. do create new staff1, should succeed
+#. search new staff1, should succeed
+#. do create new staff2, should succeed
+#. search new staff2, should succeed
+#. search new staff1, should succeed

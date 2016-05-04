@@ -97,6 +97,7 @@ BaseTest.elements = {'login': "//html/body/div[3]/div[1]/div/div/div[2]/div/div[
                      'save_branch_button': ".//*[@id='saveBranchModal']/div/div/form/div[3]/button[2]",
                      'search_branch_text': ".//*[@id='searchQuery']",
                      'search_branch_button': "//html/body/div[3]/div[1]/div/div[1]/div/div[2]/form/button",
+                     'search_branch_cancel_delete': ".//*[@id='deleteBranchConfirmation']/div/div/form/div[3]/button[1]",
                      'search_branch_confirm_delete': ".//*[@id='deleteBranchConfirmation']/div/div/form/div[3]/button[2]",
                      'search_branch_table': "//html/body/div[3]/div[1]/div/div[4]/table",
                      'search_branch_view_name': "//html/body/div[3]/div[1]/div/div/table/tbody/tr[1]/td[2]/input",
@@ -118,4 +119,8 @@ BaseTest.elements = {'login': "//html/body/div[3]/div[1]/div/div/div[2]/div/div[
                      'search_staff_view_name': "//html/body/div[3]/div[1]/div/div/table/tbody/tr[1]/td[2]/input",
                      'search_staff_view_branch': "//html/body/div[3]/div[1]/div/div/table/tbody/tr[2]/td[2]/input",
                      'save_edit_staff_button': ".//*[@id='saveStaffModal']/div/div/form/div[3]/button[2]",
+                     'staff_paging_first_page': "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[1]/a",
+                     'staff_paging_previos_page': "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[2]/a",
+                     'staff_paging_next_page': "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[3]/a",
+                     'staff_paging_last_page': "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[4]/a",
                      }

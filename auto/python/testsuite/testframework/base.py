@@ -29,7 +29,7 @@ class BaseTest(unittest.TestCase):
         self.set_browser()
         self.driver.get(self.environment_url)
         self.driver.maximize_window()
-        self.wait = WebDriverWait(self.driver, 2)
+        self.wait = WebDriverWait(self.driver, 5)
 
     def tearDown(self):
         """
@@ -59,6 +59,9 @@ class BaseTest(unittest.TestCase):
     def wait_until_element_located(self, name):
         self.wait.until(EC.visibility_of_element_located((By.XPATH, name)))
 
+    def wait_unti_element_clickable(self, name):
+        self.wait.until(EC.element_to_be_clickable((By.XPATH, name)))
+
     def set_browser(self):
         if self.browser == 'chrome':
             self.driver = webdriver.Chrome()
@@ -68,6 +71,7 @@ class BaseTest(unittest.TestCase):
     def click(self, element):
         element = self.elements[element]
         self.wait_until_element_located(element)
+        self.wait_unti_element_clickable(element)
         self.driver.find_element_by_xpath(element).click()
 
     def get_text(self, element):
@@ -156,9 +160,32 @@ class BaseTest(unittest.TestCase):
     def click_cancel_edit_branch(self):
         self.click('cancel_edit_branch_button')
 
+    def click_cancel_delete_branch(self):
+        self.click('search_branch_cancel_delete')
+
     def click_create_new_staff(self):
         time.sleep(.5)
         self.click('create_new_branch_button')
+        time.sleep(.5)
+
+    def click_staff_next_page(self):
+        time.sleep(.5)
+        self.click('staff_paging_next_page')
+        time.sleep(.5)
+
+    def click_staff_previos_page(self):
+        time.sleep(.5)
+        self.click('staff_paging_previos_page')
+        time.sleep(.5)
+
+    def click_staff_first_page(self):
+        time.sleep(.5)
+        self.click('staff_paging_first_page')
+        time.sleep(.5)
+
+    def click_staff_last_page(self):
+        time.sleep(.5)
+        self.click('staff_paging_last_page')
         time.sleep(.5)
 
     def click_save_staff(self):
@@ -191,25 +218,30 @@ class BaseTest(unittest.TestCase):
         self.set_text('passwords_passwdcnf', passwdcfm)
 
     def create_new_branch(self, name='', code=''):
-        name = name or 'ABCDEabcde'
+        name = name or 'BRANCH'
         code = code or '12345'        
         self.set_text('new_branch_name', name)
         self.set_text('new_branch_code', code)
         self.name = name
         self.code = code
         time.sleep(.5)
+        self.branches.append(name)
 
     def edit_created_branch(self, name='', code=''):
-        name = name or 'abcde'
+        name = name or 'branch'
         code = code or '54321'
         self.set_text('edit_branch_name', name)
         self.set_text('new_branch_code', code)
         self.name = name
         self.code = code
         time.sleep(.5)
+        self.branches.append(self.name)
 
-    def search_branch(self, name, code):
+    def search_branch(self, name, code=''):
+        time.sleep(.5)
+        code = code or self.code
         self.set_text('search_branch_text', name)
+        self.click('search_branch_button')
         branches_table = self.get_table('search_branch_table')
         tbody = branches_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
@@ -221,8 +253,7 @@ class BaseTest(unittest.TestCase):
         return False
 
     def view_branch(self, name, code):
-        time.sleep(.5)
-        self.set_text('search_branch_text', name)
+        self.search_branch(name, code)
         branches_table = self.get_table('search_branch_table')
         tbody = branches_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
@@ -235,8 +266,7 @@ class BaseTest(unittest.TestCase):
         return False
 
     def edit_branch(self, name, code):
-        time.sleep(.5)
-        self.set_text('search_branch_text', name)
+        self.search_branch(name, code)
         branches_table = self.get_table('search_branch_table')
         tbody = branches_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
@@ -249,7 +279,7 @@ class BaseTest(unittest.TestCase):
         return False
 
     def delete_created_branch(self, name):
-        self.set_text('search_branch_text', name)
+        self.search_branch(name)
         branches_table = self.get_table('search_branch_table')
         tbody = branches_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
@@ -257,42 +287,48 @@ class BaseTest(unittest.TestCase):
             cells = all_rows[0].find_elements_by_tag_name("td")
             cells[3].find_elements_by_tag_name("button")[2].click()
             self.click('search_branch_confirm_delete')
-            time.sleep(.5)
-            self.set_text('search_branch_text', name)
-            branches_table = self.get_table('search_branch_table')
-            tbody = branches_table.find_elements_by_tag_name("tbody")
-            all_rows = tbody[0].find_elements_by_tag_name("tr")
+            break
+#            time.sleep(.5)
+#            self.search_branch(name)
+#            branches_table = self.get_table('search_branch_table')
+#            tbody = branches_table.find_elements_by_tag_name("tbody")
+#            all_rows = tbody[0].find_elements_by_tag_name("tr")
 
-
-    def create_new_staff(self, staff=''):
-        staff = staff or 'ABCDEabcde'
+    def create_new_staff(self, staff='', skip_branch=False):
+        staff = staff or 'STAFF'
         self.set_text('new_staff_name', staff)
-        self.wait_until_element_located(self.elements['staff_dropdown'])
-        self.driver.find_element_by_xpath(self.elements['staff_dropdown'] + "/option[text()='%s']" % self.name).click()
+        if not skip_branch:
+            self.wait_until_element_located(self.elements['staff_dropdown'])
+            self.driver.find_element_by_xpath(self.elements['staff_dropdown'] + \
+            "/option[text()='%s']" % self.name).click()
         self.staff = staff
         time.sleep(.5)
+        self.staffs.append(staff)
 
     def edit_created_staff(self, staff=''):
-        staff = staff or 'abcde'
+        staff = staff or 'staff'
         self.set_text('new_staff_name', staff)
         self.staff = staff
         time.sleep(.5)
+        self.staffs.append(self.staff)
 
-    def search_staff(self, staff):
+    def search_staff(self, staff, name=''):
+        time.sleep(.5)
         self.set_text('search_branch_text', staff)
+        self.click('search_branch_button')
         staff_table = self.get_table('search_branch_table')
         tbody = staff_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
         for row in all_rows:
             cells = row.find_elements_by_tag_name("td")
-            if cells[1].text == staff and cells[2].text == self.name:
+            if cells[1].text == staff and cells[2].text == name:
                 return True
 
         return False
         
-    def view_staff(self, staff, name):
+    def view_staff(self, staff, name=''):
         time.sleep(.5)
-        self.set_text('search_branch_text', staff)
+        self.search_staff(staff, name)
         staff_table = self.get_table('search_branch_table')
         tbody = staff_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
@@ -304,9 +340,9 @@ class BaseTest(unittest.TestCase):
 
         return False
 
-    def edit_staff(self, staff, name):
+    def edit_staff(self, staff, name=''):
         time.sleep(.5)
-        self.set_text('search_branch_text', staff)
+        self.search_staff(staff, name)
         staff_table = self.get_table('search_branch_table')
         tbody = staff_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
@@ -319,7 +355,8 @@ class BaseTest(unittest.TestCase):
         return False
 
     def delete_created_staff(self, staff):
-        self.set_text('search_branch_text', staff)
+        time.sleep(.5)
+        self.search_staff(staff, self.name)
         staff_table = self.get_table('search_branch_table')
         tbody = staff_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
@@ -327,8 +364,15 @@ class BaseTest(unittest.TestCase):
             cells = all_rows[0].find_elements_by_tag_name("td")
             cells[3].find_elements_by_tag_name("button")[2].click()
             self.click('search_staff_confirm_delete')
-            time.sleep(.5)
-            self.set_text('search_branch_text', staff)
-            staff_table = self.get_table('search_branch_table')
-            tbody = staff_table.find_elements_by_tag_name("tbody")
-            all_rows = tbody[0].find_elements_by_tag_name("tr")
+            break
+#            time.sleep(.5)
+#            self.search_staff(staff, self.name)
+#            staff_table = self.get_table('search_branch_table')
+#            tbody = staff_table.find_elements_by_tag_name("tbody")
+#            all_rows = tbody[0].find_elements_by_tag_name("tr")
+
+    def get_table_count(self, query=''):
+        staff_table = self.get_table('search_branch_table')
+        tbody = staff_table.find_elements_by_tag_name("tbody")
+        all_rows = tbody[0].find_elements_by_tag_name("tr")
+        return len(all_rows)

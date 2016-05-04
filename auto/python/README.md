@@ -25,10 +25,10 @@ Run the tests
 ---------------
 change the url parameter in config.ini
 ```
-python$> nosetests -xv testsuite --tc-file config.ini
+python$> nosetests -xv testsuite --tc-file config.ini  2>testresults.log
 ```
 
 or overwrite it using the following command
 ```
-python$> nosetests -xv testsuite --tc-file config.ini --tc=main.url:http://127.0.0.1:8080/gurukula
+python$> nosetests -xv testsuite --tc-file config.ini --tc=main.url:http://127.0.0.1:8080/gurukula  2>testresults.log
 ```

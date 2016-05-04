@@ -35,9 +35,9 @@ auto: for auto test cases written in (python, java, js).
 auto/testplan: containing the test plan suggested for the testsuites to cover the usecases.
 
 # Used technologies:
-Python/Selenium - > finished
+Python/Selenium-unittest - > finished
 
-Java/Selenium -> in progress
+Java/Selenium-junit -> in progress
 
 JavaScript/Protractor-Jasmine -> in progress
 
@@ -48,7 +48,6 @@ Testplan - > finished
 
 2- Edit logged user settings and password.
 
-3- Save new (staff) without selecting (branch) needs proper error message.
+3- Delete (branch) assigned with existing (staff) needs proper error message.
 
-4- Delete (branch) assigned with existing (staff) needs proper error message.
-
+4- No Paging in search.
