@@ -1,5 +1,4 @@
 from testframework.base import *
-import time
 import uuid
 from nose_parameterized import parameterized
 
@@ -11,16 +10,13 @@ class BranchTests(BaseTest):
         self.branches = []
         self.go_to_login_page()
         self.login()
-        time.sleep(.5)
         self.click('entities_menu')
         self.click('entities_branch')
 
     def tearDown(self):
         if hasattr(self, 'name') and self.name:
             for branch in self.branches:
-                time.sleep(1)
                 self.search_branch(branch)
-                time.sleep(1)
                 self.delete_created_branch(name=branch)
 
         super(BranchTests, self).tearDown()
@@ -315,7 +311,7 @@ class BranchTests(BaseTest):
         self.lg('%s ENDED' % self._testID)
 
     def test008_validate_search_different_branch(self):
-        """ Staff-08: Test case for validate search different branch.
+        """ Branch-8: Test case for validate search different branch.
 
         **Test Scenario:**
 
@@ -337,8 +333,7 @@ class BranchTests(BaseTest):
 
         self.lg('search new branch1, should succeed')
         self.search_branch(branch_1, self.code)
-        time.sleep(.5)
-        self.assertEqual(self.get_table_count(branch_1), 2)
+        self.assertEqual(self.get_table_count(), 2)
         self.lg('do create new branch1, should succeed')
         branch_2 = 'branchb'
         for _ in range(3):
@@ -350,10 +345,9 @@ class BranchTests(BaseTest):
 
         self.lg('search new branch1, should succeed')
         self.search_branch(branch_2, self.code)
-        time.sleep(.5)
-        self.assertEqual(self.get_table_count(branch_2), 3)
+        self.assertEqual(self.get_table_count(), 3)
         self.lg('search new branch1, should succeed')
         self.search_branch(branch_1, self.code)
-        time.sleep(.5)
-        self.assertEqual(self.get_table_count(branch_1), 2)
+        self.assertEqual(self.get_table_count(), 2)
         self.lg('%s ENDED' % self._testID)
+

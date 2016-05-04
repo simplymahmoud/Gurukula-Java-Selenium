@@ -5,7 +5,7 @@ import time
 
 from testconfig import config
 
-from selenium import webdriver
+from pytractor import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -219,7 +219,7 @@ class BaseTest(unittest.TestCase):
 
     def create_new_branch(self, name='', code=''):
         name = name or 'BRANCH'
-        code = code or '12345'        
+        code = code or '12345'
         self.set_text('new_branch_name', name)
         self.set_text('new_branch_code', code)
         self.name = name
@@ -283,16 +283,12 @@ class BaseTest(unittest.TestCase):
         branches_table = self.get_table('search_branch_table')
         tbody = branches_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
-        for _ in all_rows:
+        if all_rows:
             cells = all_rows[0].find_elements_by_tag_name("td")
             cells[3].find_elements_by_tag_name("button")[2].click()
             self.click('search_branch_confirm_delete')
-            break
-#            time.sleep(.5)
-#            self.search_branch(name)
-#            branches_table = self.get_table('search_branch_table')
-#            tbody = branches_table.find_elements_by_tag_name("tbody")
-#            all_rows = tbody[0].find_elements_by_tag_name("tr")
+            time.sleep(.5)
+
 
     def create_new_staff(self, staff='', skip_branch=False):
         staff = staff or 'STAFF'
@@ -325,7 +321,7 @@ class BaseTest(unittest.TestCase):
                 return True
 
         return False
-        
+
     def view_staff(self, staff, name=''):
         time.sleep(.5)
         self.search_staff(staff, name)
@@ -360,18 +356,13 @@ class BaseTest(unittest.TestCase):
         staff_table = self.get_table('search_branch_table')
         tbody = staff_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
-        for _ in all_rows:
+        if all_rows:
             cells = all_rows[0].find_elements_by_tag_name("td")
             cells[3].find_elements_by_tag_name("button")[2].click()
             self.click('search_staff_confirm_delete')
-            break
-#            time.sleep(.5)
-#            self.search_staff(staff, self.name)
-#            staff_table = self.get_table('search_branch_table')
-#            tbody = staff_table.find_elements_by_tag_name("tbody")
-#            all_rows = tbody[0].find_elements_by_tag_name("tr")
+            time.sleep(.5)
 
-    def get_table_count(self, query=''):
+    def get_table_count(self):
         staff_table = self.get_table('search_branch_table')
         tbody = staff_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")

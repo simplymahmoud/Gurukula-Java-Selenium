@@ -1,6 +1,6 @@
 from testframework.base import *
-import time
 import uuid
+import time
 from nose_parameterized import parameterized
 
 
@@ -25,20 +25,15 @@ class StaffTests(BaseTest):
     def tearDown(self):
         if hasattr(self, 'staff') and self.staff:
             for staff in self.staffs:
-                time.sleep(1)
                 self.search_staff(staff)
-                time.sleep(1)
                 self.delete_created_staff(staff)
 
 
         if hasattr(self, 'name') and self.name:
-            time.sleep(1)
             self.click('entities_menu')
             self.click('entities_branch')
             for branch in self.branches:
-                time.sleep(1)
                 self.search_branch(branch, self.code)
-                time.sleep(1)
                 self.delete_created_branch(name=branch)
                     
 
@@ -311,42 +306,42 @@ class StaffTests(BaseTest):
         self.assertTrue(self.element_is_displayed('staff_paging_next_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_last_page'))
         self.lg('check paging size is 20 record per page, should succeed')
-        self.assertEqual(self.get_table_count(self.staff), 20)
+        self.assertEqual(self.get_table_count(), 20)
         self.click_staff_next_page()
         time.sleep(1)
         self.assertTrue(self.element_is_displayed('staff_paging_first_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_previos_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_next_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_last_page'))
-        self.assertEqual(self.get_table_count(self.staff), 20)
+        self.assertEqual(self.get_table_count(), 20)
         self.click_staff_next_page()
         time.sleep(1)
         self.assertTrue(self.element_is_displayed('staff_paging_first_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_previos_page'))
         self.assertFalse(self.element_is_displayed('staff_paging_next_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_last_page'))
-        self.assertEqual(self.get_table_count(self.staff), 10)
+        self.assertEqual(self.get_table_count(), 10)
         self.click_staff_previos_page()
         time.sleep(1)
         self.assertTrue(self.element_is_displayed('staff_paging_first_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_previos_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_next_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_last_page'))
-        self.assertEqual(self.get_table_count(self.staff), 20)
+        self.assertEqual(self.get_table_count(), 20)
         self.click_staff_first_page()
         time.sleep(1)
         self.assertTrue(self.element_is_displayed('staff_paging_first_page'))
         self.assertFalse(self.element_is_displayed('staff_paging_previos_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_next_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_last_page'))
-        self.assertEqual(self.get_table_count(self.staff), 20)
+        self.assertEqual(self.get_table_count(), 20)
         self.click_staff_last_page()
         time.sleep(1)
         self.assertTrue(self.element_is_displayed('staff_paging_first_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_previos_page'))
         self.assertFalse(self.element_is_displayed('staff_paging_next_page'))
         self.assertTrue(self.element_is_displayed('staff_paging_last_page'))
-        self.assertEqual(self.get_table_count(self.staff), 10)
+        self.assertEqual(self.get_table_count(), 10)
         self.lg('%s ENDED' % self._testID)
 
     def test009_delete_used_branch_before_staff(self):
@@ -366,13 +361,12 @@ class StaffTests(BaseTest):
         self.lg('check new branch created successfully, should succeed')
         self.assertTrue(self.search_staff(self.staff))
         self.lg('try delete branch before staff, should fail')
-        time.sleep(.5)
         self.click('entities_menu')
         self.click('entities_branch')
         self.delete_created_branch(self.name)
         self.click_cancel_delete_branch()
-        self.assertEqual(self.get_table_count(self.staff), 1)
-        time.sleep(.5)
+        self.assertEqual(self.get_table_count(), 1)
+        time.sleep(1)
         self.click('entities_menu')
         self.click('entities_staff')
         self.lg('%s ENDED' % self._testID)
@@ -392,12 +386,11 @@ class StaffTests(BaseTest):
         self.create_new_staff(skip_branch=True)
         self.click_save_staff()
         self.lg('delete branch before staff, should succeed')
-        time.sleep(.5)
+        time.sleep(1)
         self.click('entities_menu')
         self.click('entities_branch')
         self.delete_created_branch(self.name)
-        self.assertEqual(self.get_table_count(self.staff), 0)
-        time.sleep(.5)
+        self.assertEqual(self.get_table_count(), 0)
         self.click('entities_menu')
         self.click('entities_staff')
         self.delete_created_staff(self.staff)
@@ -423,8 +416,9 @@ class StaffTests(BaseTest):
             self.click_save_staff()
 
         self.lg('search new staff1, should succeed')
+        time.sleep(1)
         self.search_staff(staff_1)
-        self.assertEqual(self.get_table_count(staff_1), 2)
+        self.assertEqual(self.get_table_count(), 2)
         self.lg('do create new staff1, should succeed')
         staff_2 = 'staffb'
         for _ in range(3):
@@ -433,10 +427,12 @@ class StaffTests(BaseTest):
             self.click_save_staff()
 
         self.lg('search new staff1, should succeed')
+        time.sleep(1)
         self.search_staff(staff_2)
-        self.assertEqual(self.get_table_count(staff_2), 3)
+        self.assertEqual(self.get_table_count(), 3)
         self.lg('search new staff1, should succeed')
+        time.sleep(1)
         self.search_staff(staff_1)
-        self.assertEqual(self.get_table_count(staff_1), 2)
+        self.assertEqual(self.get_table_count(), 2)
         self.lg('%s ENDED' % self._testID)
 

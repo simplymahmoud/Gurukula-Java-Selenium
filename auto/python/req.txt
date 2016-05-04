@@ -1,5 +1,6 @@
-selenium==2.48.0
+selenium==2.53.1
 nose==1.3.1
 nose_parameterized==0.3.3
 nose-progressive==1.5.1
 nose-testconfig==0.10
+pytractor==0.2.2.dev1

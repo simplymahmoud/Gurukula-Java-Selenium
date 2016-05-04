@@ -34,14 +34,17 @@ auto: for auto test cases written in (python, java, js).
 
 auto/testplan: containing the test plan suggested for the testsuites to cover the usecases.
 
-# Used technologies:
-Python/Selenium-unittest - > finished
+# Idea: 
+It was prefered to do it in Java/Selenium with junit or testng but after I made a good research I found that it will not be the best solution. As the project using AngularJs so the best solution is to use Protractor with any java script test framework like jasmine/cucumberjs/moca/karma, I made it with Jasmine. I found that we have another solution to test this project based on python/selenium/unittest but not pure selenium it's through pytractor, so I use it too.
 
+Testplan and test cases- > finished
+
+# Used technologies:
 Java/Selenium-junit -> in progress
 
-JavaScript/Protractor-Jasmine -> in progress
+Python/Selenium/Pytractor-unittest - > finished
 
-Testplan - > finished
+JavaScript/Protractor-Jasmine -> stopped
 
 # Known issues:
 1- Register new user.
@@ -50,4 +53,6 @@ Testplan - > finished
 
 3- Delete (branch) assigned with existing (staff) needs proper error message.
 
-4- No Paging in search.
+4- No Paging in (branch).
+
+5- Login automatically feature not working. 
