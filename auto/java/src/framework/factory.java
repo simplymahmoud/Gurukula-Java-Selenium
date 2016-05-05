@@ -38,13 +38,11 @@ public class factory {
 	}	
 	
 	public String get_text_filed (String selector) {
-		String content="";
-		try {
-			content = (String) driver.findElement(By.xpath(selector)).getText();
-		} catch (org.openqa.selenium.ElementNotVisibleException e) {
-			System.out.println(e);
-		}
-		return content;
+		return driver.findElement(By.xpath(selector)).getText();
+	}
+	
+	public String get_value_filed (String selector) {
+		return driver.findElement(By.xpath(selector)).getAttribute("value").toString();
 	}
 	
 	public void click_btn(String selector) throws Exception {
@@ -125,6 +123,40 @@ public class factory {
 		  } 
 	}	
 	
+	public Boolean view_branch (String branch) throws Exception {
+		set_text_field(BranchPage.search_branch_text, branch);
+		click_search_branch();
+		WebElement table = get_table(BranchPage.search_branch_table);
+		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
+		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
+		
+		if(rows.size() != 0){
+			List<WebElement> cells = rows.get(0).findElements(By.tagName("td"));
+			cells.get(3).findElements(By.tagName("button")).get(0).click();
+			Thread.sleep(500);
+			return true;	
+		}
+		
+		return false;
+	}
+	
+	public Boolean edit_branch (String branch) throws Exception {
+		set_text_field(BranchPage.search_branch_text, branch);
+		click_search_branch();
+		WebElement table = get_table(BranchPage.search_branch_table);
+		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
+		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
+		
+		if(rows.size() != 0){
+			List<WebElement> cells = rows.get(0).findElements(By.tagName("td"));
+			cells.get(3).findElements(By.tagName("button")).get(1).click();
+			Thread.sleep(500);
+			return true;	
+		}
+		
+		return false;
+	}	
+	
 	public void fill_login (String username, String password) {
 		set_text_field(LoginPage.username, username);
 		set_text_field(LoginPage.password, password);
@@ -153,6 +185,12 @@ public class factory {
 		set_text_field(BranchPage.new_branch_code, code);
 		Thread.sleep(500);
 	}		
+	
+	public void edit_created_branch (String branch, String code) throws Exception {
+		set_text_field(BranchPage.edit_branch_name, branch);
+		set_text_field(BranchPage.new_branch_code, code);
+		Thread.sleep(500);
+	}
 	
 	public void clean_driver() {
 		this.driver.quit();
