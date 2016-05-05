@@ -14,7 +14,7 @@ import framework.model.LoginPage;
 import framework.model.RegistrationPage;
 import framework.model.AccountPage;
 import framework.model.BranchPage;
-//import framework.model.StaffPage;
+import framework.model.StaffPage;
 
 
 public class factory {
@@ -157,6 +157,68 @@ public class factory {
 		return false;
 	}	
 	
+	public void delete_staff (String staff) throws Exception {
+		set_text_field(BranchPage.search_branch_text, staff);
+		click_search_staff();
+		WebElement table = get_table(BranchPage.search_branch_table);
+		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
+		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
+		
+		 if(rows.size() != 0){
+			 List<WebElement> cells = rows.get(0).findElements(By.tagName("td"));
+			 cells.get(3).findElements(By.tagName("button")).get(2).click();
+			 Thread.sleep(500);
+			 click_btn(StaffPage.search_staff_confirm_delete);
+		  } 
+	}
+	
+	public Boolean search_staff (String staff) throws Exception {
+		set_text_field(BranchPage.search_branch_text, staff);
+		click_search_staff();
+		WebElement table = get_table(BranchPage.search_branch_table);
+		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
+		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
+		
+		if(rows.size() != 0){
+			 return true;
+		} 
+		return false;
+	}
+	
+	public Boolean view_staff (String staff) throws Exception {
+		set_text_field(BranchPage.search_branch_text, staff);
+		click_search_staff();
+		WebElement table = get_table(BranchPage.search_branch_table);
+		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
+		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
+		
+		if(rows.size() != 0){
+			List<WebElement> cells = rows.get(0).findElements(By.tagName("td"));
+			cells.get(3).findElements(By.tagName("button")).get(0).click();
+			Thread.sleep(500);
+			return true;	
+		}
+		
+		return false;
+	}
+	
+	public Boolean edit_staff (String staff) throws Exception {
+		set_text_field(BranchPage.search_branch_text, staff);
+		click_search_staff();
+		WebElement table = get_table(BranchPage.search_branch_table);
+		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
+		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
+		
+		if(rows.size() != 0){
+			List<WebElement> cells = rows.get(0).findElements(By.tagName("td"));
+			cells.get(3).findElements(By.tagName("button")).get(1).click();
+			Thread.sleep(500);
+			return true;	
+		}
+		
+		return false;
+	}
+	
 	public void fill_login (String username, String password) {
 		set_text_field(LoginPage.username, username);
 		set_text_field(LoginPage.password, password);
@@ -189,6 +251,20 @@ public class factory {
 	public void edit_created_branch (String branch, String code) throws Exception {
 		set_text_field(BranchPage.edit_branch_name, branch);
 		set_text_field(BranchPage.new_branch_code, code);
+		Thread.sleep(500);
+	}
+	
+	public void fill_new_staff (String staff, String branch) throws Exception {
+		set_text_field(StaffPage.new_staff_name, staff);
+		if (branch != ""){
+			String drop_name = StaffPage.staff_dropdown + "/option[text()='" + branch + "']"; 
+			driver.findElement(By.xpath(drop_name)).click();
+		}
+		Thread.sleep(500);
+	}	
+	
+	public void edit_created_staff (String staff) throws Exception {
+		set_text_field(StaffPage.new_staff_name, staff);
 		Thread.sleep(500);
 	}
 	
@@ -237,6 +313,31 @@ public class factory {
 	public void click_search_branch() throws Exception {
 		click_btn(BranchPage.search_branch_button);
 	}	
+	
+	public void click_entities_staff_menu() throws Exception {
+		click_btn(StaffPage.entities_menu);
+		click_btn(StaffPage.entities_staff);
+	}	
+	
+	public void click_create_new_staff() throws Exception {
+		click_btn(BranchPage.create_new_branch_button);
+	}		
+	
+	public void click_save_staff() throws Exception {
+		click_btn(StaffPage.save_staff_button);
+	}	
+	
+	public void click_search_staff() throws Exception {
+		click_btn(BranchPage.search_branch_button);
+	}
+	
+	public void click_view_back_button() throws Exception {
+		click_btn(BranchPage.view_back_button);
+	}
+	
+	public void click_cancel_delete_branch() throws Exception {
+		click_btn(BranchPage.search_branch_cancel_delete);
+	}
 	
 	public String generate_string(int lenght) {
 		return RandomStringUtils.randomAlphabetic(lenght);

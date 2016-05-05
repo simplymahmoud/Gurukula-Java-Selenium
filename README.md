@@ -26,6 +26,9 @@ Register a new User
 Please use any language or framework (preferably Selenium) of your preference to automate the various use cases. Upload your automation tests to a Git hub location and share this information when done. Please add information with respect to framework, tests covered, how to launch automation tests  and any other information to a document in the same Git hub location. 
 
 
+# Prerequisets:
+Clean Environment :)
+
 # Folders:
 
 manual: for manual test cases.
@@ -37,14 +40,14 @@ auto/testplan: containing the test plan suggested for the testsuites to cover th
 # Idea: 
 It was prefered to do it in Java/Selenium with junit or testng but after I made a good research I found that it will not be the best solution. As the project using AngularJs in the frontend, so the best solution is to use Protractor with any java script test framework like jasmine/cucumberjs/moca/karma, I made it with Jasmine. I found that we have another solution to test this project based on python/selenium/unittest but not pure selenium it's through pytractor, so I use it too.
 
-* testplan and test cases- > finished *
+* testplan and test cases- > finished
 
 # Used technologies:
-Java/Selenium-junit -> in progress
+* Java/Selenium-junit -> finished
 
-Python/Selenium/Pytractor-unittest - > finished
+* Python/Selenium/Pytractor-unittest - > finished
 
-JavaScript/Protractor-Jasmine -> stopped
+* JavaScript/Protractor-Jasmine -> in progress
 
 # Known issues:
 1- Register new user.
@@ -57,4 +60,4 @@ JavaScript/Protractor-Jasmine -> stopped
 
 5- Login automatically feature not working. 
 
-6- When we search for (staff) with (branch), we got search results of (staff) table with empty (branch) field 
+6- When we search for (staff) has (branch), we got search results of (staff) table without it's (branch) field 

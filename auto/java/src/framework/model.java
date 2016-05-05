@@ -131,6 +131,7 @@ public class model {
 		public static final String search_staff_view_name = "//html/body/div[3]/div[1]/div/div/table/tbody/tr[1]/td[2]/input";
 		public static final String search_staff_view_branch = "//html/body/div[3]/div[1]/div/div/table/tbody/tr[2]/td[2]/input";
 		public static final String save_edit_staff_button = ".//*[@id='saveStaffModal']/div/div/form/div[3]/button[2]";
+		public static final String search_staff_table = "//html/body/div[3]/div[1]/div/div[4]/table";
 		public static final String staff_paging_first_page = "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[1]/a";
 		public static final String staff_paging_previos_page = "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[2]/a";
 		public static final String staff_paging_next_page = "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[3]/a";

@@ -242,6 +242,8 @@ public class Branch extends factory{
 		click_save_branch();	
 		Branches.add(branch);
 		assertFalse(search_branch(generate_string(1000).toUpperCase()));
+		assertFalse(search_branch(generate_int(1000)));
+		assertFalse(search_branch("+_=-)(*&^#!~`{}[];',.<>/"));
 		assertTrue(search_branch(branch));
 		delete_branch(branch);
 		assertFalse(search_branch(branch));
