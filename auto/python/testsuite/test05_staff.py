@@ -25,7 +25,6 @@ class StaffTests(BaseTest):
     def tearDown(self):
         if hasattr(self, 'staff') and self.staff:
             for staff in self.staffs:
-                self.search_staff(staff)
                 self.delete_created_staff(staff)
 
 
@@ -33,7 +32,6 @@ class StaffTests(BaseTest):
             self.click('entities_menu')
             self.click('entities_branch')
             for branch in self.branches:
-                self.search_branch(branch, self.code)
                 self.delete_created_branch(name=branch)
                     
 

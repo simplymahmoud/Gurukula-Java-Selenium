@@ -56,3 +56,5 @@ JavaScript/Protractor-Jasmine -> stopped
 4- No Paging in (branch).
 
 5- Login automatically feature not working. 
+
+6- When we search for (staff) with (branch), we got search results of (staff) table with empty (branch) field 

@@ -114,12 +114,10 @@ public class LoginLogout extends factory{
 		assertEquals(logged_text, expected_text);
 		click_btn(LoginPage.account_menu);
 		click_btn(LoginPage.logout);
-		Thread.sleep(500);
 		String logout_text = get_text_filed(LoginPage.login_text);
 		expected_text = "Click here to login";	
 		assertEquals(logout_text, expected_text);
 		click_btn(LoginPage.login);
-		Thread.sleep(500);
 		
 		fill_login("admin", "");
 		click_authenticat();

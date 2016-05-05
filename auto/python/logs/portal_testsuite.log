@@ -8687,3 +8687,206 @@
 05-05-2016 16:26:41 EET [Account-10] [INFO] sessions table should be reduced by one, should succeed
 05-05-2016 16:26:41 EET [Account-10] [INFO] test010_invaildate_account_sessions ENDED
 05-05-2016 16:26:41 EET [Account-10] [INFO] Testcase test010_invaildate_account_sessions ExecutionTime is 5.26915884018 sec.
+05-05-2016 18:45:07 EET [Branch-1] [INFO] Testcase test001_create_new_branch Started at 1462466707.92
+05-05-2016 18:45:10 EET [Branch-1] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:45:11 EET [Branch-1] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:45:11 EET [Branch-1] [INFO] test001_create_new_branch STARTED
+05-05-2016 18:45:11 EET [Branch-1] [INFO] do create branch with valid, should succeed
+05-05-2016 18:45:14 EET [Branch-1] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:45:15 EET [Branch-1] [INFO] test001_create_new_branch ENDED
+05-05-2016 18:45:17 EET [Branch-1] [INFO] Testcase test001_create_new_branch ExecutionTime is 9.72751092911 sec.
+05-05-2016 18:45:17 EET [Branch-2] [INFO] Testcase test002_validate_create_new_branch_parameters Started at 1462466717.65
+05-05-2016 18:45:20 EET [Branch-2] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:45:21 EET [Branch-2] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:45:21 EET [Branch-2] [INFO] test002_validate_create_new_branch_parameters STARTED
+05-05-2016 18:45:21 EET [Branch-2] [INFO] click create new branch, should succeed
+05-05-2016 18:45:22 EET [Branch-2] [INFO] validate create new branch requirements, should succeed
+05-05-2016 18:45:23 EET [Branch-2] [INFO] do create branch with one character, should succeed
+05-05-2016 18:45:23 EET [Branch-2] [INFO] validate create new branch parameters, should succeed
+05-05-2016 18:45:23 EET [Branch-2] [INFO] proper error message, should succeed
+05-05-2016 18:45:24 EET [Branch-2] [INFO] do create branch with invaild characters, should succeed
+05-05-2016 18:45:24 EET [Branch-2] [INFO] validate create new branch parameters, should succeed
+05-05-2016 18:45:25 EET [Branch-2] [INFO] proper error message, should succeed
+05-05-2016 18:45:25 EET [Branch-2] [INFO] do create branch with invaild max length, should succeed
+05-05-2016 18:45:26 EET [Branch-2] [INFO] validate create new branch parameters, should succeed
+05-05-2016 18:45:26 EET [Branch-2] [INFO] proper error message, should succeed
+05-05-2016 18:45:26 EET [Branch-2] [INFO] do create branch with vaild, should succeed
+05-05-2016 18:45:27 EET [Branch-2] [INFO] click cancel branch, should succeed
+05-05-2016 18:45:27 EET [Branch-2] [INFO] check new branch not created, should succeed
+05-05-2016 18:45:28 EET [Branch-2] [INFO] test002_validate_create_new_branch_parameters ENDED
+05-05-2016 18:45:32 EET [Branch-2] [INFO] Testcase test002_validate_create_new_branch_parameters ExecutionTime is 14.6109960079 sec.
+05-05-2016 18:45:32 EET [Branch-3] [INFO] Testcase test003_view_delete_branch Started at 1462466732.26
+05-05-2016 18:45:35 EET [Branch-3] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:45:35 EET [Branch-3] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:45:36 EET [Branch-3] [INFO] test003_view_delete_branch STARTED
+05-05-2016 18:45:36 EET [Branch-3] [INFO] do create branch with valid, should succeed
+05-05-2016 18:45:38 EET [Branch-3] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:45:39 EET [Branch-3] [INFO] view branch with name, should succeed
+05-05-2016 18:45:41 EET [Branch-3] [INFO] delete branch, should succeed
+05-05-2016 18:45:44 EET [Branch-3] [INFO] test003_view_delete_branch ENDED
+05-05-2016 18:45:45 EET [Branch-3] [INFO] Testcase test003_view_delete_branch ExecutionTime is 13.4948320389 sec.
+05-05-2016 18:45:45 EET [Branch-4] [INFO] Testcase test004_edit_delete_branch Started at 1462466745.76
+05-05-2016 18:45:48 EET [Branch-4] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:45:49 EET [Branch-4] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:45:49 EET [Branch-4] [INFO] test004_edit_delete_branch STARTED
+05-05-2016 18:45:49 EET [Branch-4] [INFO] do create branch with valid, should succeed
+05-05-2016 18:45:51 EET [Branch-4] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:45:52 EET [Branch-4] [INFO] edit branch with valid, should succeed
+05-05-2016 18:45:55 EET [Branch-4] [INFO] check new branch updated successfully, should succeed
+05-05-2016 18:45:56 EET [Branch-4] [INFO] delete branch, should succeed
+05-05-2016 18:46:00 EET [Branch-4] [INFO] test004_edit_delete_branch ENDED
+05-05-2016 18:46:02 EET [Branch-4] [INFO] Testcase test004_edit_delete_branch ExecutionTime is 16.3809559345 sec.
+05-05-2016 18:46:02 EET [Branch-5] [INFO] Testcase test005_validate_edit_branch_parameters Started at 1462466762.14
+05-05-2016 18:46:05 EET [Branch-5] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:46:05 EET [Branch-5] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:46:06 EET [Branch-5] [INFO] test005_validate_edit_branch_parameters STARTED
+05-05-2016 18:46:06 EET [Branch-5] [INFO] do create branch with valid, should succeed
+05-05-2016 18:46:08 EET [Branch-5] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:46:10 EET [Branch-5] [INFO] validate create new branch requirements, should succeed
+05-05-2016 18:46:11 EET [Branch-5] [INFO] edit branch with one character, should succeed
+05-05-2016 18:46:12 EET [Branch-5] [INFO] validate create new branch parameters, should succeed
+05-05-2016 18:46:12 EET [Branch-5] [INFO] proper error message, should succeed
+05-05-2016 18:46:12 EET [Branch-5] [INFO] edit branch with invaild characters, should succeed
+05-05-2016 18:46:13 EET [Branch-5] [INFO] validate create new branch parameters, should succeed
+05-05-2016 18:46:13 EET [Branch-5] [INFO] proper error message, should succeed
+05-05-2016 18:46:13 EET [Branch-5] [INFO] edit branch with invaild max length, should succeed
+05-05-2016 18:46:14 EET [Branch-5] [INFO] validate create new branch parameters, should succeed
+05-05-2016 18:46:15 EET [Branch-5] [INFO] proper error message, should succeed
+05-05-2016 18:46:15 EET [Branch-5] [INFO] edit branch with vaild, should succeed
+05-05-2016 18:46:16 EET [Branch-5] [INFO] click cancel branch, should succeed
+05-05-2016 18:46:16 EET [Branch-5] [INFO] check new branch not updated, should succeed
+05-05-2016 18:46:18 EET [Branch-5] [INFO] test005_validate_edit_branch_parameters ENDED
+05-05-2016 18:46:24 EET [Branch-5] [INFO] Testcase test005_validate_edit_branch_parameters ExecutionTime is 22.5252590179 sec.
+05-05-2016 18:46:24 EET [Branch-6] [INFO] Testcase test006_validate_search_delete_branch Started at 1462466784.66
+05-05-2016 18:46:27 EET [Branch-6] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:46:28 EET [Branch-6] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:46:28 EET [Branch-6] [INFO] test006_validate_search_delete_branch STARTED
+05-05-2016 18:46:28 EET [Branch-6] [INFO] do create new branch, should succeed
+05-05-2016 18:46:30 EET [Branch-6] [INFO] search new branch, should succeed
+05-05-2016 18:46:31 EET [Branch-6] [INFO] delete branch, should succeed
+05-05-2016 18:46:34 EET [Branch-6] [INFO] search new branch, should fail
+05-05-2016 18:46:35 EET [Branch-6] [INFO] test006_validate_search_delete_branch ENDED
+05-05-2016 18:46:36 EET [Branch-6] [INFO] Testcase test006_validate_search_delete_branch ExecutionTime is 11.7606291771 sec.
+05-05-2016 18:46:36 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_0_normal_name Started at 1462466796.43
+05-05-2016 18:46:39 EET [Branch-7] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:46:39 EET [Branch-7] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:46:40 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_0_normal_name STARTED
+05-05-2016 18:46:40 EET [Branch-7] [INFO] do create new branch, should succeed
+05-05-2016 18:46:42 EET [Branch-7] [INFO] search invalid branch, should fail
+05-05-2016 18:46:43 EET [Branch-7] [INFO] delete branch, should succeed
+05-05-2016 18:46:46 EET [Branch-7] [INFO] search invalid branch, should fail
+05-05-2016 18:46:47 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_0_normal_name ENDED
+05-05-2016 18:46:48 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_0_normal_name ExecutionTime is 12.0031380653 sec.
+05-05-2016 18:46:48 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_1_long_name Started at 1462466808.43
+05-05-2016 18:46:51 EET [Branch-7] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:46:51 EET [Branch-7] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:46:52 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_1_long_name STARTED
+05-05-2016 18:46:52 EET [Branch-7] [INFO] do create new branch, should succeed
+05-05-2016 18:46:54 EET [Branch-7] [INFO] search invalid branch, should fail
+05-05-2016 18:46:59 EET [Branch-7] [INFO] delete branch, should succeed
+05-05-2016 18:47:01 EET [Branch-7] [INFO] search invalid branch, should fail
+05-05-2016 18:47:06 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_1_long_name ENDED
+05-05-2016 18:47:07 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_1_long_name ExecutionTime is 18.7290868759 sec.
+05-05-2016 18:47:07 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_2_numeric_name Started at 1462466827.16
+05-05-2016 18:47:10 EET [Branch-7] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:47:10 EET [Branch-7] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:47:11 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_2_numeric_name STARTED
+05-05-2016 18:47:11 EET [Branch-7] [INFO] do create new branch, should succeed
+05-05-2016 18:47:13 EET [Branch-7] [INFO] search invalid branch, should fail
+05-05-2016 18:47:14 EET [Branch-7] [INFO] delete branch, should succeed
+05-05-2016 18:47:16 EET [Branch-7] [INFO] search invalid branch, should fail
+05-05-2016 18:47:17 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_2_numeric_name ENDED
+05-05-2016 18:47:18 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_2_numeric_name ExecutionTime is 11.5250339508 sec.
+05-05-2016 18:47:18 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_3_special_chars_name Started at 1462466838.68
+05-05-2016 18:47:21 EET [Branch-7] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:47:22 EET [Branch-7] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:47:22 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_3_special_chars_name STARTED
+05-05-2016 18:47:22 EET [Branch-7] [INFO] do create new branch, should succeed
+05-05-2016 18:47:24 EET [Branch-7] [INFO] search invalid branch, should fail
+05-05-2016 18:47:25 EET [Branch-7] [INFO] delete branch, should succeed
+05-05-2016 18:47:28 EET [Branch-7] [INFO] search invalid branch, should fail
+05-05-2016 18:47:29 EET [Branch-7] [INFO] test007_validate_search_delete_invalid_branch_3_special_chars_name ENDED
+05-05-2016 18:47:30 EET [Branch-7] [INFO] Testcase test007_validate_search_delete_invalid_branch_3_special_chars_name ExecutionTime is 11.7676229477 sec.
+05-05-2016 18:47:30 EET [Branch-8] [INFO] Testcase test008_validate_search_different_branch Started at 1462466850.45
+05-05-2016 18:47:33 EET [Branch-8] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:47:34 EET [Branch-8] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:47:34 EET [Branch-8] [INFO] test008_validate_search_different_branch STARTED
+05-05-2016 18:47:34 EET [Branch-8] [INFO] do create new branch1, should succeed
+05-05-2016 18:47:36 EET [Branch-8] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:47:40 EET [Branch-8] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:47:41 EET [Branch-8] [INFO] search new branch1, should succeed
+05-05-2016 18:47:42 EET [Branch-8] [INFO] do create new branch1, should succeed
+05-05-2016 18:47:44 EET [Branch-8] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:47:47 EET [Branch-8] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:47:51 EET [Branch-8] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:47:52 EET [Branch-8] [INFO] search new branch1, should succeed
+05-05-2016 18:47:53 EET [Branch-8] [INFO] search new branch1, should succeed
+05-05-2016 18:47:54 EET [Branch-8] [INFO] test008_validate_search_different_branch ENDED
+05-05-2016 18:48:06 EET [Branch-8] [INFO] Testcase test008_validate_search_different_branch ExecutionTime is 35.8902571201 sec.
+05-05-2016 18:48:47 EET [Staff-1] [INFO] Testcase test001_create_new_staff Started at 1462466927.89
+05-05-2016 18:48:50 EET [Staff-1] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:48:51 EET [Staff-1] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:48:55 EET [Staff-1] [INFO] test001_create_new_staff STARTED
+05-05-2016 18:48:55 EET [Staff-1] [INFO] do create branch with valid, should succeed
+05-05-2016 18:48:57 EET [Staff-1] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:48:58 EET [Staff-1] [INFO] do create branch without branch, should succeed
+05-05-2016 18:49:01 EET [Staff-1] [INFO] check new branch created successfully, should succeed
+05-05-2016 18:49:02 EET [Staff-1] [INFO] test001_create_new_staff ENDED
+05-05-2016 18:49:10 EET [Staff-1] [INFO] Testcase test001_create_new_staff ExecutionTime is 22.9248678684 sec.
+05-05-2016 18:49:10 EET [Staff-2] [INFO] Testcase test002_validate_create_new_staff_parameters Started at 1462466950.82
+05-05-2016 18:49:13 EET [Staff-2] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:49:14 EET [Staff-2] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:49:18 EET [Staff-2] [INFO] test002_validate_create_new_staff_parameters STARTED
+05-05-2016 18:49:18 EET [Staff-2] [INFO] click create new staff, should succeed
+05-05-2016 18:49:19 EET [Staff-2] [INFO] validate create new branch requirements, should succeed
+05-05-2016 18:49:19 EET [Staff-2] [INFO] do create staff with invaild characters, should succeed
+05-05-2016 18:49:20 EET [Staff-2] [INFO] validate create new staff parameters, should succeed
+05-05-2016 18:49:20 EET [Staff-2] [INFO] proper error message, should succeed
+05-05-2016 18:49:20 EET [Staff-2] [INFO] do create staff with invaild max length, should succeed
+05-05-2016 18:49:21 EET [Staff-2] [INFO] validate create new staff parameters, should succeed
+05-05-2016 18:49:21 EET [Staff-2] [INFO] proper error message, should succeed
+05-05-2016 18:49:22 EET [Staff-2] [INFO] do create staff with vaild, should succeed
+05-05-2016 18:49:22 EET [Staff-2] [INFO] click cancel branch, should succeed
+05-05-2016 18:49:23 EET [Staff-2] [INFO] check new branch not created, should succeed
+05-05-2016 18:49:24 EET [Staff-2] [INFO] test002_validate_create_new_staff_parameters ENDED
+05-05-2016 18:49:31 EET [Staff-2] [INFO] Testcase test002_validate_create_new_staff_parameters ExecutionTime is 20.6909282207 sec.
+05-05-2016 18:49:31 EET [Staff-3] [INFO] Testcase test003_view_delete_staff Started at 1462466971.51
+05-05-2016 18:49:34 EET [Staff-3] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:49:34 EET [Staff-3] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:49:38 EET [Staff-3] [INFO] test003_view_delete_staff STARTED
+05-05-2016 18:49:38 EET [Staff-3] [INFO] do create staff with valid, should succeed
+05-05-2016 18:49:40 EET [Staff-3] [INFO] check new staff created successfully, should succeed
+05-05-2016 18:49:41 EET [Staff-3] [INFO] view staff with name, should succeed
+05-05-2016 18:49:44 EET [Staff-3] [INFO] delete staff, should succeed
+05-05-2016 18:49:47 EET [Staff-3] [INFO] test003_view_delete_staff ENDED
+05-05-2016 18:49:52 EET [Staff-3] [INFO] Testcase test003_view_delete_staff ExecutionTime is 20.8980238438 sec.
+05-05-2016 18:49:52 EET [Staff-4] [INFO] Testcase test004_edit_delete_staff Started at 1462466992.41
+05-05-2016 18:49:55 EET [Staff-4] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:49:55 EET [Staff-4] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:49:59 EET [Staff-4] [INFO] test004_edit_delete_staff STARTED
+05-05-2016 18:49:59 EET [Staff-4] [INFO] do create staff with valid, should succeed
+05-05-2016 18:50:01 EET [Staff-4] [INFO] check new staff created successfully, should succeed
+05-05-2016 18:50:02 EET [Staff-4] [INFO] edit staff with valid, should succeed
+05-05-2016 18:50:06 EET [Staff-4] [INFO] check new staff updated successfully, should succeed
+05-05-2016 18:50:07 EET [Staff-4] [INFO] delete staff, should succeed
+05-05-2016 18:50:11 EET [Staff-4] [INFO] test004_edit_delete_staff ENDED
+05-05-2016 18:50:17 EET [Staff-4] [INFO] Testcase test004_edit_delete_staff ExecutionTime is 24.5958468914 sec.
+05-05-2016 18:50:17 EET [Staff-10] [INFO] Testcase test010_delete_not_used_branch_before_staff Started at 1462467017.0
+05-05-2016 18:50:19 EET [Staff-10] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:50:20 EET [Staff-10] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:50:24 EET [Staff-10] [INFO] test010_delete_not_used_branch_before_staff STARTED
+05-05-2016 18:50:24 EET [Staff-10] [INFO] do create branch without branch, should succeed
+05-05-2016 18:50:26 EET [Staff-10] [INFO] delete branch before staff, should succeed
+05-05-2016 18:50:33 EET [Staff-10] [INFO] test010_delete_not_used_branch_before_staff ENDED
+05-05-2016 18:50:36 EET [Staff-10] [INFO] Testcase test010_delete_not_used_branch_before_staff ExecutionTime is 19.9293971062 sec.
+05-05-2016 18:50:36 EET [Staff-11] [INFO] Testcase test011_validate_search_different_staff Started at 1462467036.93
+05-05-2016 18:50:39 EET [Staff-11] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 18:50:40 EET [Staff-11] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 18:50:44 EET [Staff-11] [INFO] test011_validate_search_different_staff STARTED
+05-05-2016 18:50:44 EET [Staff-11] [INFO] do create new staff1, should succeed
+05-05-2016 18:50:48 EET [Staff-11] [INFO] search new staff1, should succeed
+05-05-2016 18:50:51 EET [Staff-11] [INFO] do create new staff1, should succeed
+05-05-2016 18:50:57 EET [Staff-11] [INFO] search new staff1, should succeed
+05-05-2016 18:51:00 EET [Staff-11] [INFO] search new staff1, should succeed
+05-05-2016 18:51:02 EET [Staff-11] [INFO] test011_validate_search_different_staff ENDED
+05-05-2016 18:51:20 EET [Staff-11] [INFO] Testcase test011_validate_search_different_staff ExecutionTime is 43.0875649452 sec.

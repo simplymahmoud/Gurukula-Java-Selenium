@@ -17,17 +17,16 @@ public class RegisterNewUser extends factory{
 	}
 	
 	@Test
-	public void Register_New_User_1() throws InterruptedException {
+	public void Register_New_User_1() throws Exception {
 		fill_register_new_user("login", "email@mail.com", "12345", "12345");
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		String logged_text = get_text_filed(RegistrationPage.registration_error);
 		String expected_text = "Registration failed! Please try again later.";
 		assertEquals(logged_text, expected_text);
 	}
 
 	@Test
-	public void Register_New_User_2() throws InterruptedException {
+	public void Register_New_User_2() throws Exception {
 		String email = generate_string(2);
 		fill_register_new_user("login", email, "12345", "12345");
 		String logged_text = get_text_filed(RegistrationPage.registration_invalidmail);
@@ -55,14 +54,13 @@ public class RegisterNewUser extends factory{
 		register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertTrue(register_btn);
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(RegistrationPage.registration_error);
 		expected_text = "Registration failed! Please try again later.";
 		assertEquals(logged_text, expected_text);
 	}	
 	
 	@Test
-	public void Register_New_User_3() throws InterruptedException {
+	public void Register_New_User_3() throws Exception {
 		fill_register_new_user("login", "+_=-)(*&^#!~`{}[];',.<>/", "12345", "12345");
 		String logged_text = get_text_filed(RegistrationPage.registration_invalidmail);
 		String expected_text = "Your e-mail is invalid.";
@@ -78,7 +76,6 @@ public class RegisterNewUser extends factory{
 		register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertTrue(register_btn);
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(RegistrationPage.registration_error);
 		expected_text = "Registration failed! Please try again later.";
 		assertEquals(logged_text, expected_text);
@@ -86,7 +83,7 @@ public class RegisterNewUser extends factory{
 	
 
 	@Test
-	public void Register_New_User_4() throws InterruptedException {
+	public void Register_New_User_4() throws Exception {
 		String password = generate_string(2);
 		fill_register_new_user("login", "email@mail.com", password, password);
 		String logged_text = get_text_filed(RegistrationPage.registration_invalidpasswdlenght);
@@ -107,14 +104,13 @@ public class RegisterNewUser extends factory{
 		register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertTrue(register_btn);
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(RegistrationPage.registration_error);
 		expected_text = "Registration failed! Please try again later.";
 		assertEquals(logged_text, expected_text);
 	}			
 	
   @Test
-	public void Register_New_User_5() throws InterruptedException {
+	public void Register_New_User_5() throws Exception {
 		fill_register_new_user("login", "email@mail.com", "12345", "12345");
 		fill_register_new_user("", "", "", "");
 		String logged_text = get_text_filed(RegistrationPage.registration_loginreq);
@@ -144,14 +140,13 @@ public class RegisterNewUser extends factory{
 		register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertTrue(register_btn);
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(RegistrationPage.registration_error);
 		expected_text = "Registration failed! Please try again later.";
 		assertEquals(logged_text, expected_text);
 	}		
 	
 	@Test
-	public void Register_New_User_6() throws InterruptedException {
+	public void Register_New_User_6() throws Exception {
 		fill_register_new_user("login", "email@mail.com", "12345", "12345");
 		String bar_color = element_background_color(RegistrationPage.registration_passbar1);
 		String expected_color = "rgba(255, 0, 0, 1)";
@@ -229,7 +224,6 @@ public class RegisterNewUser extends factory{
 		assertTrue(register_btn);		
 		
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		String logged_text = get_text_filed(RegistrationPage.registration_error);
 		String expected_text = "Registration failed! Please try again later.";
 		assertEquals(logged_text, expected_text);		
@@ -237,7 +231,7 @@ public class RegisterNewUser extends factory{
 	}			
 	
 	@Test
-	public void Register_New_User_7() throws InterruptedException {
+	public void Register_New_User_7() throws Exception {
 		String password = generate_string(51);
 		fill_register_new_user("login", "email@mail.com", password, password);
 		String logged_text = get_text_filed(RegistrationPage.registration_maxpasswdlenght);
@@ -253,19 +247,17 @@ public class RegisterNewUser extends factory{
 		register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertTrue(register_btn);
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(RegistrationPage.registration_error);
 		expected_text = "Registration failed! Please try again later.";
 		assertEquals(logged_text, expected_text);
 	}	
 	
 	@Test
-	public void Register_New_User_8() throws InterruptedException {
+	public void Register_New_User_8() throws Exception {
 		String password = generate_string(10);
 		String cnf_password = generate_string(5);
 		fill_register_new_user("login", "email@mail.com", password, cnf_password);
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		String logged_text = get_text_filed(RegistrationPage.registration_passmissmatch);
 		String expected_text = "The password and its confirmation do not match!";
 		assertEquals(logged_text, expected_text);
@@ -274,7 +266,6 @@ public class RegisterNewUser extends factory{
 		cnf_password = generate_int(10);
 		fill_register_new_user("login", "email@mail.com", password, cnf_password);
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(RegistrationPage.registration_passmissmatch);
 		expected_text = "The password and its confirmation do not match!";
 		assertEquals(logged_text, expected_text);		
@@ -283,14 +274,12 @@ public class RegisterNewUser extends factory{
 		cnf_password = generate_string(10);
 		fill_register_new_user("login", "email@mail.com", password, cnf_password);
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(RegistrationPage.registration_passmissmatch);
 		expected_text = "The password and its confirmation do not match!";
 		assertEquals(logged_text, expected_text);			
 		
 		fill_register_new_user("login", "email@mail.com", password, password);
 		click_btn(RegistrationPage.register_button);
-		Thread.sleep(500);
 		boolean invalid_txt = element_is_displayed(RegistrationPage.registration_passmissmatch);
 		assertFalse(invalid_txt);		
 		logged_text = get_text_filed(RegistrationPage.registration_error);

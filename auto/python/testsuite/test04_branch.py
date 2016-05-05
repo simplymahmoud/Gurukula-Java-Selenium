@@ -16,7 +16,6 @@ class BranchTests(BaseTest):
     def tearDown(self):
         if hasattr(self, 'name') and self.name:
             for branch in self.branches:
-                self.search_branch(branch)
                 self.delete_created_branch(name=branch)
 
         super(BranchTests, self).tearDown()

@@ -84,4 +84,58 @@ public class model {
         public static final String passwords_passbar5 = ".//*[@id='strengthBar']/li[5]";
 	}		
 	
+	public interface BranchPage {
+		public static final String entities_menu = ".//*[@id='navbar-collapse']/ul/li[2]/a/span/span[2]";
+		public static final String entities_branch = ".//*[@id='navbar-collapse']/ul/li[2]/ul/li[1]/a/span[2]";
+		public static final String create_new_branch_button = "//html/body/div[3]/div[1]/div/div[1]/div/div[1]/button";
+		public static final String search_branch_button = "//html/body/div[3]/div[1]/div/div[1]/div/div[2]/form/button";
+		public static final String new_branch_id = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[1]/input";
+		public static final String new_branch_name = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[2]/input";
+		public static final String new_branch_name_req = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[2]/div/p[1]";
+		public static final String new_branch_name_invalid_length = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[2]/div/p[2]";
+		public static final String new_branch_name_invalid = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[2]/div/p[4]";
+		public static final String new_branch_name_invalid_maxlength = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[2]/div/p[3]";
+		public static final String new_branch_code = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[3]/input";
+		public static final String new_branch_code_req = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[3]/div/p[1]";
+		public static final String new_branch_code_invalid_length = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[3]/div/p[2]";
+		public static final String new_branch_code_invalid = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[3]/div/p[4]";
+		public static final String new_branch_code_invalid_maxlength = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[3]/div/p[3]";
+		public static final String cancel_branch_button = ".//*[@id='saveBranchModal']/div/div/form/div[3]/button[1]";
+		public static final String save_branch_button = ".//*[@id='saveBranchModal']/div/div/form/div[3]/button[2]";
+		public static final String search_branch_text = ".//*[@id='searchQuery']";
+		public static final String search_branch_cancel_delete = ".//*[@id='deleteBranchConfirmation']/div/div/form/div[3]/button[1]";
+		public static final String search_branch_confirm_delete = ".//*[@id='deleteBranchConfirmation']/div/div/form/div[3]/button[2]";
+		public static final String search_branch_table = "//html/body/div[3]/div[1]/div/div[4]/table";
+		public static final String search_branch_view_name = "//html/body/div[3]/div[1]/div/div/table/tbody/tr[1]/td[2]/input";
+		public static final String search_branch_view_code = "//html/body/div[3]/div[1]/div/div/table/tbody/tr[2]/td[2]/input";
+		public static final String view_back_button = "//html/body/div[3]/div[1]/div/button";
+		public static final String edit_branch_name = ".//*[@id='saveBranchModal']/div/div/form/div[2]/div[2]/input";
+		public static final String save_edit_branch_button = ".//*[@id='saveBranchModal']/div/div/form/div[3]/button[2]";
+		public static final String cancel_edit_branch_button = ".//*[@id='saveBranchModal']/div/div/form/div[3]/button[1]";
+
+	}	
+	
+	public interface StaffPage {
+		public static final String entities_menu = ".//*[@id='navbar-collapse']/ul/li[2]/a/span/span[2]";
+		public static final String entities_branch = ".//*[@id='navbar-collapse']/ul/li[2]/ul/li[1]/a/span[2]";
+		public static final String entities_staff = ".//*[@id='navbar-collapse']/ul/li[2]/ul/li[2]/a/span[2]";		
+		public static final String new_staff_id = ".//*[@id='saveStaffModal']/div/div/form/div[2]/div[1]/input";
+		public static final String new_staff_name = ".//*[@id='saveStaffModal']/div/div/form/div[2]/div[2]/input";
+		public static final String new_staff_name_req = ".//*[@id='saveStaffModal']/div/div/form/div[2]/div[2]/div/p[1]";
+		public static final String new_staff_name_invalid = ".//*[@id='saveStaffModal']/div/div/form/div[2]/div[2]/div/p[4]";
+		public static final String new_staff_name_invalid_maxlength = ".//*[@id='saveStaffModal']/div/div/form/div[2]/div[2]/div/p[3]";
+		public static final String staff_dropdown = ".//*[@id='saveStaffModal']/div/div/form/div[2]/div[3]/select";
+		public static final String save_staff_button = ".//*[@id='saveStaffModal']/div/div/form/div[3]/button[2]";
+		public static final String search_staff_confirm_delete = ".//*[@id='deleteStaffConfirmation']/div/div/form/div[3]/button[2]";
+		public static final String cancel_staff_button = ".//*[@id='saveStaffModal']/div/div/form/div[3]/button[1]";
+		public static final String search_staff_view_name = "//html/body/div[3]/div[1]/div/div/table/tbody/tr[1]/td[2]/input";
+		public static final String search_staff_view_branch = "//html/body/div[3]/div[1]/div/div/table/tbody/tr[2]/td[2]/input";
+		public static final String save_edit_staff_button = ".//*[@id='saveStaffModal']/div/div/form/div[3]/button[2]";
+		public static final String staff_paging_first_page = "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[1]/a";
+		public static final String staff_paging_previos_page = "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[2]/a";
+		public static final String staff_paging_next_page = "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[3]/a";
+		public static final String staff_paging_last_page = "//html/body/div[3]/div[1]/div/div[4]/nav/ul/li[4]/a";
+
+	}	
+	
 }

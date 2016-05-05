@@ -10,11 +10,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
-
 import framework.model.LoginPage;
 import framework.model.RegistrationPage;
 import framework.model.AccountPage;
+import framework.model.BranchPage;
+//import framework.model.StaffPage;
 
 
 public class factory {
@@ -47,9 +47,10 @@ public class factory {
 		return content;
 	}
 	
-	public void click_btn(String selector) {
+	public void click_btn(String selector) throws Exception {
 		WebElement webElement = driver.findElement(By.xpath(selector));
 		webElement.click();
+		Thread.sleep(500);
 	}	
 	
 	public boolean element_is_enabled(String selector) {
@@ -61,15 +62,15 @@ public class factory {
 		WebElement webElement = driver.findElement(By.xpath(selector));
 		return webElement.isDisplayed();
 	}		
+
+	public boolean element_is_readonly(String selector) {
+		WebElement webElement = driver.findElement(By.xpath(selector));
+		return webElement.getAttribute("readOnly").equals("true");
+	}	
 	
 	public String element_background_color (String selector) {
-		String content="";
-		try {
-			content = (String) driver.findElement(By.xpath(selector)).getCssValue("background-color");
-		} catch (org.openqa.selenium.ElementNotVisibleException e) {
-			System.out.println(e);
-		}
-		return content;
+		WebElement webElement = driver.findElement(By.xpath(selector));
+	    return webElement.getCssValue("background-color");
 	}	
 	
 	public WebElement get_table (String selector) {
@@ -84,7 +85,7 @@ public class factory {
 		return rows.size();
 	}	
 	
-	public void invalidate_session() {
+	public void invalidate_session() throws Exception {
 		WebElement table = get_table(AccountPage.account_session_table);
 		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
 		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
@@ -92,11 +93,37 @@ public class factory {
 		 if(rows.size() != 0){
 			 List<WebElement> cells = rows.get(0).findElements(By.tagName("td"));
 			 cells.get(3).findElements(By.tagName("button")).get(0).click();
+			 Thread.sleep(500);
 		  } 
 	}	
 	
+	public Boolean search_branch (String branch) throws Exception {
+		set_text_field(BranchPage.search_branch_text, branch);
+		click_search_branch();
+		WebElement table = get_table(BranchPage.search_branch_table);
+		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
+		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
+		
+		if(rows.size() != 0){
+			 return true;
+		} 
+		return false;
+	}		
 	
-	
+	public void delete_branch (String branch) throws Exception {
+		set_text_field(BranchPage.search_branch_text, branch);
+		click_search_branch();
+		WebElement table = get_table(BranchPage.search_branch_table);
+		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
+		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
+		
+		 if(rows.size() != 0){
+			 List<WebElement> cells = rows.get(0).findElements(By.tagName("td"));
+			 cells.get(3).findElements(By.tagName("button")).get(2).click();
+			 Thread.sleep(500);
+			 click_btn(BranchPage.search_branch_confirm_delete);
+		  } 
+	}	
 	
 	public void fill_login (String username, String password) {
 		set_text_field(LoginPage.username, username);
@@ -121,6 +148,12 @@ public class factory {
 		set_text_field(AccountPage.passwords_passwdcnf, passwdcfm);
 	}		
 	
+	public void fill_new_branch (String branch, String code) throws Exception {
+		set_text_field(BranchPage.new_branch_name, branch);
+		set_text_field(BranchPage.new_branch_code, code);
+		Thread.sleep(500);
+	}		
+	
 	public void clean_driver() {
 		this.driver.quit();
 	}
@@ -132,28 +165,40 @@ public class factory {
 	
 	public void click_login() throws Exception {
 		click_btn(LoginPage.login);
-		Thread.sleep(500);
 	}	
 	
 	public void click_authenticat() throws Exception {
 		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
 	}	
 	
 	public void click_account_menu() throws Exception {
 		click_btn(LoginPage.account_menu);
-		Thread.sleep(500);
 	}
 	
 	public void click_account_settings() throws Exception {
 		click_btn(AccountPage.account_settings);
-		Thread.sleep(500);
 	}	
 	
 	public void click_account_passwords() throws Exception {
 		click_btn(AccountPage.account_passwords);
-		Thread.sleep(500);
 	}		
+	
+	public void click_entities_branch_menu() throws Exception {
+		click_btn(BranchPage.entities_menu);
+		click_btn(BranchPage.entities_branch);
+	}		
+	
+	public void click_create_new_branch() throws Exception {
+		click_btn(BranchPage.create_new_branch_button);
+	}		
+	
+	public void click_save_branch() throws Exception {
+		click_btn(BranchPage.save_branch_button);
+	}	
+	
+	public void click_search_branch() throws Exception {
+		click_btn(BranchPage.search_branch_button);
+	}	
 	
 	public String generate_string(int lenght) {
 		return RandomStringUtils.randomAlphabetic(lenght);

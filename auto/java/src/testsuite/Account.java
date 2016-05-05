@@ -11,7 +11,7 @@ import framework.factory;
 import framework.model.AccountPage;
 
 
-public class Account  extends factory{
+public class Account extends factory{
 
 	@Before
 	public void test_setup() throws Exception {
@@ -28,7 +28,6 @@ public class Account  extends factory{
 		boolean register_btn = element_is_enabled(AccountPage.settings_save_button);
 		assertTrue(register_btn);
 		click_btn(AccountPage.settings_save_button);
-		Thread.sleep(500);
 		String logged_text = get_text_filed(AccountPage.settings_saved);
 		String expected_text = "Settings saved!";
 		assertEquals(logged_text, expected_text);		
@@ -64,7 +63,6 @@ public class Account  extends factory{
 		save_btn = element_is_enabled(AccountPage.settings_save_button);
 		assertTrue(save_btn);
 		click_btn(AccountPage.settings_save_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(AccountPage.settings_saved);
 		expected_text = "Settings saved!";
 		assertEquals(logged_text, expected_text);	
@@ -87,7 +85,6 @@ public class Account  extends factory{
 		save_btn = element_is_enabled(AccountPage.settings_save_button);
 		assertTrue(save_btn);
 		click_btn(AccountPage.settings_save_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(AccountPage.settings_saved);
 		expected_text = "Settings saved!";
 		assertEquals(logged_text, expected_text);
@@ -121,7 +118,6 @@ public class Account  extends factory{
 		save_btn = element_is_enabled(AccountPage.settings_save_button);
 		assertTrue(save_btn);
 		click_btn(AccountPage.settings_save_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(AccountPage.settings_saved);
 		expected_text = "Settings saved!";
 		assertEquals(logged_text, expected_text);
@@ -151,7 +147,6 @@ public class Account  extends factory{
 	    save_btn = element_is_enabled(AccountPage.passwords_save_button);
 	    assertTrue(save_btn);
 	    click_btn(AccountPage.passwords_save_button);
-	    Thread.sleep(500);
 	    //Currently save password is not available
 	    logged_text = get_text_filed(AccountPage.passwords_notsaved);
 	    expected_text = "An error has occurred!";
@@ -181,7 +176,6 @@ public class Account  extends factory{
 	    save_btn = element_is_enabled(AccountPage.passwords_save_button);
 	    assertTrue(save_btn);
 	    click_btn(AccountPage.passwords_save_button);
-	    Thread.sleep(500);
 	    //Currently save password is not available
 	    logged_text = get_text_filed(AccountPage.passwords_notsaved);
 	    expected_text = "An error has occurred!";
@@ -268,7 +262,6 @@ public class Account  extends factory{
 	    save_btn = element_is_enabled(AccountPage.passwords_save_button);
 	    assertTrue(save_btn);	
 	    click_btn(AccountPage.passwords_save_button);
-	    Thread.sleep(500);
 	    //Currently save password is not available
 	    String logged_text = get_text_filed(AccountPage.passwords_notsaved);
 	    String expected_text = "An error has occurred!";
@@ -294,7 +287,6 @@ public class Account  extends factory{
 	    save_btn = element_is_enabled(AccountPage.passwords_save_button);
 	    assertTrue(save_btn);	
 	    click_btn(AccountPage.passwords_save_button);
-	    Thread.sleep(500);
 	    //Currently save password is not available
 	    logged_text = get_text_filed(AccountPage.passwords_notsaved);
 	    expected_text = "An error has occurred!";
@@ -308,7 +300,6 @@ public class Account  extends factory{
 		String cnf_password = generate_string(5);
 		fill_passwords(password, cnf_password);
 		click_btn(AccountPage.passwords_save_button);
-		Thread.sleep(500);
 		String logged_text = get_text_filed(AccountPage.passwords_passmissmatch);
 		String expected_text = "The password and its confirmation do not match!";
 		assertEquals(logged_text, expected_text);
@@ -317,7 +308,6 @@ public class Account  extends factory{
 		cnf_password = generate_int(10);
 		fill_passwords(password, cnf_password);
 		click_btn(AccountPage.passwords_save_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(AccountPage.passwords_passmissmatch);
 		expected_text = "The password and its confirmation do not match!";
 		assertEquals(logged_text, expected_text);		
@@ -326,14 +316,12 @@ public class Account  extends factory{
 		cnf_password = generate_string(10);
 		fill_passwords(password, cnf_password);
 		click_btn(AccountPage.passwords_save_button);
-		Thread.sleep(500);
 		logged_text = get_text_filed(AccountPage.passwords_passmissmatch);
 		expected_text = "The password and its confirmation do not match!";
 		assertEquals(logged_text, expected_text);			
 		
 		fill_passwords(password, password);	
 	    click_btn(AccountPage.passwords_save_button);
-	    Thread.sleep(500);
 	    //Currently save password is not available
 	    logged_text = get_text_filed(AccountPage.passwords_notsaved);
 	    expected_text = "An error has occurred!";
@@ -347,17 +335,13 @@ public class Account  extends factory{
 		int first_count = get_table_count(AccountPage.account_session_table);
 		if(first_count != 0){
 			invalidate_session();
-			Thread.sleep(500);
 			String logged_text = get_text_filed(AccountPage.account_session_invalidate);
 			String expected_text = "Session invalidated!";
 			assertEquals(logged_text, expected_text);
 			int last_count = get_table_count(AccountPage.account_session_table);
 			assertEquals(first_count, last_count + 1);
-			
-		}
-			
-			
-		}
+			}	
+	}
 	
 	
 }
