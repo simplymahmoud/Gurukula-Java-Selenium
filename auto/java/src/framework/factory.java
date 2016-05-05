@@ -1,6 +1,8 @@
 package framework;
 
 
+import java.util.List;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.openqa.selenium.By;
@@ -69,6 +71,32 @@ public class factory {
 		}
 		return content;
 	}	
+	
+	public WebElement get_table (String selector) {
+		WebElement webElement = driver.findElement(By.xpath(selector));
+		return webElement;
+	}	
+	
+	public int get_table_count (String selector) {
+		WebElement table = get_table(selector);
+		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
+		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
+		return rows.size();
+	}	
+	
+	public void invalidate_session() {
+		WebElement table = get_table(AccountPage.account_session_table);
+		List<WebElement> tbody = table.findElements(By.tagName("tbody"));
+		List<WebElement> rows = tbody.get(0).findElements(By.tagName("tr"));
+		
+		 if(rows.size() != 0){
+			 List<WebElement> cells = rows.get(0).findElements(By.tagName("td"));
+			 cells.get(3).findElements(By.tagName("button")).get(0).click();
+		  } 
+	}	
+	
+	
+	
 	
 	public void fill_login (String username, String password) {
 		set_text_field(LoginPage.username, username);

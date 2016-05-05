@@ -75,6 +75,8 @@ public class model {
 		public static final String passwords_notsaved = "//html/body/div[3]/div[1]/div/div/div/div[2]/strong";
 		public static final String passwords_passmissmatch = "//html/body/div[3]/div[1]/div/div/div/div[3]";
 		public static final String account_session = ".//*[@id='navbar-collapse']/ul/li[3]/ul/li[3]/a/span[2]";
+		public static final String account_session_table = "//html/body/div[3]/div[1]/div/div[3]/table";
+		public static final String account_session_invalidate = "//html/body/div[3]/div[1]/div/div[1]";		
         public static final String passwords_passbar1 = ".//*[@id='strengthBar']/li[1]";
         public static final String passwords_passbar2 = ".//*[@id='strengthBar']/li[2]";
         public static final String passwords_passbar3 = ".//*[@id='strengthBar']/li[3]";

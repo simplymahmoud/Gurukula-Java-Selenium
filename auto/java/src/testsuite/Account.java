@@ -341,4 +341,23 @@ public class Account  extends factory{
 		
 	}	
 	
+	@Test
+	public void Account_10() throws Exception {
+		click_btn(AccountPage.account_session);
+		int first_count = get_table_count(AccountPage.account_session_table);
+		if(first_count != 0){
+			invalidate_session();
+			Thread.sleep(500);
+			String logged_text = get_text_filed(AccountPage.account_session_invalidate);
+			String expected_text = "Session invalidated!";
+			assertEquals(logged_text, expected_text);
+			int last_count = get_table_count(AccountPage.account_session_table);
+			assertEquals(first_count, last_count + 1);
+			
+		}
+			
+			
+		}
+	
+	
 }
