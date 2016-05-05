@@ -8,10 +8,10 @@ import org.junit.Test;
 import framework.factory;
 import framework.model.RegistrationPage;
 
-public class RegisterNewUser  extends factory{
+public class RegisterNewUser extends factory{
 
 	@Before
-	public void go_home() throws Exception {
+	public void test_setup() throws Exception {
 		click_btn(RegistrationPage.register_new_user);
 		Thread.sleep(500);
 	}
@@ -38,6 +38,7 @@ public class RegisterNewUser  extends factory{
 		assertEquals(logged_text, expected_text);
 		boolean register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertFalse(register_btn);
+		
 		email = generate_string(5);
 		fill_register_new_user("login", email, "12345", "12345");
 		logged_text = get_text_filed(RegistrationPage.registration_invalidmail);
@@ -47,6 +48,7 @@ public class RegisterNewUser  extends factory{
 		assertFalse(invalid_txt);
 		register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertFalse(register_btn);
+		
 		fill_register_new_user("login", "email@mail.com", "12345", "12345");
 		invalid_txt = element_is_displayed(RegistrationPage.registration_invalidmail);
 		assertFalse(invalid_txt);
@@ -69,6 +71,7 @@ public class RegisterNewUser  extends factory{
 		assertFalse(invalid_txt);	
 		boolean register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertFalse(register_btn);
+		
 		fill_register_new_user("login", "email@mail.com", "12345", "12345");
 		invalid_txt = element_is_displayed(RegistrationPage.registration_invalidmail);
 		assertFalse(invalid_txt);		
@@ -94,6 +97,7 @@ public class RegisterNewUser  extends factory{
 		assertEquals(logged_text, expected_text);
 		boolean register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertFalse(register_btn);
+		
 		password = generate_string(5);
 		fill_register_new_user("login", "email@mail.com", password, password);
 		boolean invalid_txt = element_is_displayed(RegistrationPage.registration_invalidpasswdlenght);
@@ -127,6 +131,7 @@ public class RegisterNewUser  extends factory{
 		assertEquals(logged_text, expected_text);
 		boolean register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertFalse(register_btn);
+		
 		fill_register_new_user("login", "email@mail.com", "12345", "12345");
 		boolean invalid_txt = element_is_displayed(RegistrationPage.registration_loginreq);
 		assertFalse(invalid_txt);
@@ -240,6 +245,7 @@ public class RegisterNewUser  extends factory{
 		assertEquals(logged_text, expected_text);		
 		boolean register_btn = element_is_enabled(RegistrationPage.register_button);
 		assertFalse(register_btn);
+		
 		password = generate_string(50);
 		fill_register_new_user("login", "email@mail.com", password, password);
 		boolean invalid_txt = element_is_displayed(RegistrationPage.registration_maxpasswdlenght);

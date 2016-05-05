@@ -12,31 +12,27 @@ import framework.model.LoginPage;
 public class LoginLogout extends factory{
 
 	@Before
-	public void go_home() throws Exception {
-		click_btn(LoginPage.login);
-		Thread.sleep(500);
+	public void test_setup() throws Exception {
+		click_login();
 	}		
 	
 	@Test
-	public void Login_Logout_1() throws InterruptedException {
-		set_text_field(LoginPage.username, "admin");
-		set_text_field(LoginPage.password, "admin");
-		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
+	public void Login_Logout_1() throws Exception {
+		fill_login("admin", "admin");
+		click_authenticat();
 		String logged_text = get_text_filed(LoginPage.logged);
 		String expected_text = "You are logged in as user \"admin\".";
 		assertEquals(logged_text, expected_text);
 	}
 
 	@Test
-	public void Login_Logout_2() throws InterruptedException {
-		set_text_field(LoginPage.username, "admin");
-		set_text_field(LoginPage.password, "admin");
-		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
+	public void Login_Logout_2() throws Exception {
+		fill_login("admin", "admin");
+		click_authenticat();
 		String logged_text = get_text_filed(LoginPage.logged);
 		String expected_text = "You are logged in as user \"admin\".";
 		assertEquals(logged_text, expected_text);
+		
 		click_btn(LoginPage.account_menu);
 		click_btn(LoginPage.logout);
 		String logout_text = get_text_filed(LoginPage.login_text);
@@ -45,19 +41,16 @@ public class LoginLogout extends factory{
 	}	
 	
 	@Test
-	public void Login_Logout_3() throws InterruptedException {
+	public void Login_Logout_3() throws Exception {
 		String username = generate_string(5);
-		set_text_field(LoginPage.username, username);
-		set_text_field(LoginPage.password, "admin");
-		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
+		fill_login(username, "admin");
+		click_authenticat();
 		String logged_text = get_text_filed(LoginPage.authentication_error);
 		String expected_text = "Authentication failed! Please check your credentials and try again.";
 		assertEquals(logged_text, expected_text);
-		set_text_field(LoginPage.username, "admin");
-		set_text_field(LoginPage.password, "admin");
-		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
+		
+		fill_login("admin", "admin");
+		click_authenticat();
 		logged_text = get_text_filed(LoginPage.logged);
 		expected_text = "You are logged in as user \"admin\".";
 		assertEquals(logged_text, expected_text);
@@ -69,19 +62,16 @@ public class LoginLogout extends factory{
 	}	
 
 	@Test
-	public void Login_Logout_4() throws InterruptedException {
+	public void Login_Logout_4() throws Exception {
 		String password = generate_string(5);
-		set_text_field(LoginPage.username, "admin");
-		set_text_field(LoginPage.password, password);
-		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
+		fill_login("admin", password);
+		click_authenticat();
 		String logged_text = get_text_filed(LoginPage.authentication_error);
 		String expected_text = "Authentication failed! Please check your credentials and try again.";
 		assertEquals(logged_text, expected_text);
-		set_text_field(LoginPage.username, "admin");
-		set_text_field(LoginPage.password, "admin");
-		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
+		
+		fill_login("admin", "admin");
+		click_authenticat();
 		logged_text = get_text_filed(LoginPage.logged);
 		expected_text = "You are logged in as user \"admin\".";
 		assertEquals(logged_text, expected_text);
@@ -93,20 +83,17 @@ public class LoginLogout extends factory{
 	}		
 	
 	@Test
-	public void Login_Logout_5() throws InterruptedException {
+	public void Login_Logout_5() throws Exception {
 		String username = generate_string(5);
-		set_text_field(LoginPage.username, username);
 		String password = generate_string(5);
-		set_text_field(LoginPage.password, password);
-		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
+		fill_login(username, password);
+		click_authenticat();
 		String logged_text = get_text_filed(LoginPage.authentication_error);
 		String expected_text = "Authentication failed! Please check your credentials and try again.";
 		assertEquals(logged_text, expected_text);
-		set_text_field(LoginPage.username, "admin");
-		set_text_field(LoginPage.password, "admin");
-		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
+		
+		fill_login("admin", "admin");
+		click_authenticat();
 		logged_text = get_text_filed(LoginPage.logged);
 		expected_text = "You are logged in as user \"admin\".";
 		assertEquals(logged_text, expected_text);
@@ -120,10 +107,8 @@ public class LoginLogout extends factory{
 	@Test
 	public void Login_Logout_6() throws Exception {
 		click_btn(LoginPage.rememberme);
-		set_text_field(LoginPage.username, "admin");
-		set_text_field(LoginPage.password, "admin");
-		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
+		fill_login("admin", "admin");
+		click_authenticat();
 		String logged_text = get_text_filed(LoginPage.logged);
 		String expected_text = "You are logged in as user \"admin\".";
 		assertEquals(logged_text, expected_text);
@@ -135,9 +120,9 @@ public class LoginLogout extends factory{
 		assertEquals(logout_text, expected_text);
 		click_btn(LoginPage.login);
 		Thread.sleep(500);
-		set_text_field(LoginPage.username, "admin");
-		click_btn(LoginPage.login_button);
-		Thread.sleep(500);
+		
+		fill_login("admin", "");
+		click_authenticat();
 		logged_text = get_text_filed(LoginPage.authentication_error);
 		expected_text = "Authentication failed! Please check your credentials and try again.";
 		assertEquals(logged_text, expected_text);				

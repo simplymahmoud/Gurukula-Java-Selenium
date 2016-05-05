@@ -8,7 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+
+
+import framework.model.LoginPage;
 import framework.model.RegistrationPage;
+import framework.model.AccountPage;
 
 
 public class factory {
@@ -66,12 +70,28 @@ public class factory {
 		return content;
 	}	
 	
+	public void fill_login (String username, String password) {
+		set_text_field(LoginPage.username, username);
+		set_text_field(LoginPage.password, password);
+	}	
+	
 	public void fill_register_new_user (String login, String email, String newpasswd, String passwdcfm) {
 		set_text_field(RegistrationPage.register_login, login);
 		set_text_field(RegistrationPage.register_email, email);
 		set_text_field(RegistrationPage.register_newpasswd, newpasswd);
 		set_text_field(RegistrationPage.register_passwdcfm, passwdcfm);	
-	}
+	}	
+
+	public void fill_settings (String firstname, String lastname, String email) {
+		set_text_field(AccountPage.settings_firstname, firstname);
+		set_text_field(AccountPage.settings_lastname, lastname);
+		set_text_field(AccountPage.settings_email, email);
+	}	
+	
+	public void fill_passwords (String newpasswd, String passwdcfm) {
+		set_text_field(AccountPage.passwords_newpasswd, newpasswd);
+		set_text_field(AccountPage.passwords_passwdcnf, passwdcfm);
+	}		
 	
 	public void clean_driver() {
 		this.driver.quit();
@@ -82,6 +102,30 @@ public class factory {
 		clean_driver();
 	}	
 	
+	public void click_login() throws Exception {
+		click_btn(LoginPage.login);
+		Thread.sleep(500);
+	}	
+	
+	public void click_authenticat() throws Exception {
+		click_btn(LoginPage.login_button);
+		Thread.sleep(500);
+	}	
+	
+	public void click_account_menu() throws Exception {
+		click_btn(LoginPage.account_menu);
+		Thread.sleep(500);
+	}
+	
+	public void click_account_settings() throws Exception {
+		click_btn(AccountPage.account_settings);
+		Thread.sleep(500);
+	}	
+	
+	public void click_account_passwords() throws Exception {
+		click_btn(AccountPage.account_passwords);
+		Thread.sleep(500);
+	}		
 	
 	public String generate_string(int lenght) {
 		return RandomStringUtils.randomAlphabetic(lenght);
