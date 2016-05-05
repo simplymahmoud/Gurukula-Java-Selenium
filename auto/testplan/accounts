@@ -71,3 +71,8 @@ Account-9: Test case for check save account passwords with password not match.
 Test Scenario:
 #. fill password/confirmed filed with different value, should succeed
 #. proper error message, should succeed
+
+Account-10: Test case for check account sessions.
+Test Scenario:
+#. click invaildate session, should succeed
+#. sessions table should be reduced by one, should succeed

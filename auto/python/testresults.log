@@ -36,6 +36,7 @@ Account-6: Test case for check save account passwords with empty fields.* ... ok
 Account-7: Test case for check register new user check password strength.* ... ok
 Account-8: Test case for check save account passwords with password max length.* ... ok
 Account-9: Test case for check save account passwords with password not match.* ... ok
+Account-10: Test case for check account sessions.* ... ok
 Branch-1: Test case for check create new branch.* ... ok
 Branch-2: Test case for validate create new branch parameters.* ... ok
 Branch-3: Test case for check view/delete branch.* ... ok

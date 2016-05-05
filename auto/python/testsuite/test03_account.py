@@ -327,3 +327,25 @@ class AccountTests(BaseTest):
         self.assertEqual(self.get_text('passwords_passmissmatch'),
                          'The password and its confirmation do not match!')
         self.lg('%s ENDED' % self._testID)
+
+    def test010_account_sessions(self):
+        """ Account-10: Test case for check account sessions.*
+
+        **Test Scenario:**
+
+        #. click invaildate session, should succeed
+        #. sessions table should be reduced by one, should succeed
+        """
+        self.lg('%s STARTED' % self._testID)
+        self.lg('click invaildate session, should succeed')
+        self.click('account_session')
+        first_count = self.get_table_count('account_session_table')
+        if first_count:
+            self.invalidate_session()
+            self.lg('sessions table should be reduced by one, should succeed')
+            self.assertEqual(self.get_text('account_session_invalidate'),
+                             'Session invalidated!')
+            last_count = self.get_table_count('account_session_table')
+            self.assertEqual(first_count, last_count + 1)
+
+        self.lg('%s ENDED' % self._testID)

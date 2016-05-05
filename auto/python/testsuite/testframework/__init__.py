@@ -77,6 +77,8 @@ BaseTest.elements = {'login': "//html/body/div[3]/div[1]/div/div/div[2]/div/div[
                      'passwords_notsaved': "//html/body/div[3]/div[1]/div/div/div/div[2]/strong",
                      'passwords_passmissmatch': "//html/body/div[3]/div[1]/div/div/div/div[3]",
                      'account_session': ".//*[@id='navbar-collapse']/ul/li[3]/ul/li[3]/a/span[2]",
+                     'account_session_table': "//html/body/div[3]/div[1]/div/div[3]/table",
+                     'account_session_invalidate': "//html/body/div[3]/div[1]/div/div[1]",
                      'entities_menu': ".//*[@id='navbar-collapse']/ul/li[2]/a/span/span[2]",
                      'entities_branch': ".//*[@id='navbar-collapse']/ul/li[2]/ul/li[1]/a/span[2]",
                      'entities_staff': ".//*[@id='navbar-collapse']/ul/li[2]/ul/li[2]/a/span[2]",

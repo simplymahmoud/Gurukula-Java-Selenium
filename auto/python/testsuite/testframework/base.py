@@ -362,8 +362,18 @@ class BaseTest(unittest.TestCase):
             self.click('search_staff_confirm_delete')
             time.sleep(.5)
 
-    def get_table_count(self):
-        staff_table = self.get_table('search_branch_table')
-        tbody = staff_table.find_elements_by_tag_name("tbody")
+    def get_table_count(self, table_name='search_branch_table'):
+        table = self.get_table(table_name)
+        tbody = table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
         return len(all_rows)
+
+    def invalidate_session(self):
+        table = self.get_table('account_session_table')
+        tbody = table.find_elements_by_tag_name("tbody")
+        all_rows = tbody[0].find_elements_by_tag_name("tr")
+        if all_rows:
+            cells = all_rows[0].find_elements_by_tag_name("td")
+            cells[3].find_elements_by_tag_name("button")[0].click()
+            time.sleep(.5)
+

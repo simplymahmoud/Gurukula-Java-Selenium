@@ -8659,3 +8659,31 @@
 05-05-2016 01:27:35 EET [Staff-11] [INFO] search new staff1, should succeed
 05-05-2016 01:27:37 EET [Staff-11] [INFO] test011_validate_search_different_staff ENDED
 05-05-2016 01:28:01 EET [Staff-11] [INFO] Testcase test011_validate_search_different_staff ExecutionTime is 50.1977050304 sec.
+05-05-2016 16:23:12 EET [Account-10] [INFO] Testcase test010_invaildate_account_sessions Started at 1462458192.96
+05-05-2016 16:23:15 EET [Account-10] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 16:23:16 EET [Account-10] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 16:23:16 EET [Account-10] [INFO] test010_invaildate_account_sessions STARTED
+05-05-2016 16:23:16 EET [Account-10] [INFO] click invaildate session, should succeed
+05-05-2016 16:23:17 EET [Account-10] [INFO] Testcase test010_invaildate_account_sessions ExecutionTime is 4.34109783173 sec.
+05-05-2016 16:23:23 EET [Account-10] [INFO] Testcase test010_invaildate_account_sessions Started at 1462458203.34
+05-05-2016 16:23:26 EET [Account-10] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 16:23:26 EET [Account-10] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 16:23:27 EET [Account-10] [INFO] test010_invaildate_account_sessions STARTED
+05-05-2016 16:23:27 EET [Account-10] [INFO] click invaildate session, should succeed
+05-05-2016 16:23:27 EET [Account-10] [INFO] Testcase test010_invaildate_account_sessions ExecutionTime is 4.33463001251 sec.
+05-05-2016 16:24:28 EET [Account-10] [INFO] Testcase test010_invaildate_account_sessions Started at 1462458268.01
+05-05-2016 16:24:30 EET [Account-10] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 16:24:31 EET [Account-10] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 16:24:31 EET [Account-10] [INFO] test010_invaildate_account_sessions STARTED
+05-05-2016 16:24:31 EET [Account-10] [INFO] click invaildate session, should succeed
+05-05-2016 16:24:32 EET [Account-10] [INFO] sessions table should be reduced by one, should succeed
+05-05-2016 16:24:33 EET [Account-10] [INFO] test010_invaildate_account_sessions ENDED
+05-05-2016 16:24:33 EET [Account-10] [INFO] Testcase test010_invaildate_account_sessions ExecutionTime is 5.09681200981 sec.
+05-05-2016 16:26:36 EET [Account-10] [INFO] Testcase test010_invaildate_account_sessions Started at 1462458396.27
+05-05-2016 16:26:39 EET [Account-10] [INFO] Do login using username [admin] and passsword [admin]
+05-05-2016 16:26:39 EET [Account-10] [INFO] Login successfully using username [admin] and passsword [admin]
+05-05-2016 16:26:40 EET [Account-10] [INFO] test010_invaildate_account_sessions STARTED
+05-05-2016 16:26:40 EET [Account-10] [INFO] click invaildate session, should succeed
+05-05-2016 16:26:41 EET [Account-10] [INFO] sessions table should be reduced by one, should succeed
+05-05-2016 16:26:41 EET [Account-10] [INFO] test010_invaildate_account_sessions ENDED
+05-05-2016 16:26:41 EET [Account-10] [INFO] Testcase test010_invaildate_account_sessions ExecutionTime is 5.26915884018 sec.
