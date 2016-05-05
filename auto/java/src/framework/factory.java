@@ -1,6 +1,7 @@
 package framework;
 
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,10 +31,10 @@ public class factory {
 		}
 	}	
 	
-	public String get_text_filed (String field) {
+	public String get_text_filed (String selector) {
 		String content="";
 		try {
-			content = (String) driver.findElement(By.xpath(field)).getText();
+			content = (String) driver.findElement(By.xpath(selector)).getText();
 		} catch (org.openqa.selenium.ElementNotVisibleException e) {
 			System.out.println(e);
 		}
@@ -43,6 +44,26 @@ public class factory {
 	public void click_btn(String selector) {
 		WebElement webElement = driver.findElement(By.xpath(selector));
 		webElement.click();
+	}	
+	
+	public boolean element_is_enabled(String selector) {
+		WebElement webElement = driver.findElement(By.xpath(selector));
+		return webElement.isEnabled();
+	}	
+	
+	public boolean element_is_displayed(String selector) {
+		WebElement webElement = driver.findElement(By.xpath(selector));
+		return webElement.isDisplayed();
+	}		
+	
+	public String element_background_color (String selector) {
+		String content="";
+		try {
+			content = (String) driver.findElement(By.xpath(selector)).getCssValue("background-color");
+		} catch (org.openqa.selenium.ElementNotVisibleException e) {
+			System.out.println(e);
+		}
+		return content;
 	}	
 	
 	public void fill_register_new_user (String login, String email, String newpasswd, String passwdcfm) {
@@ -59,6 +80,15 @@ public class factory {
 	@After
 	public void tearDown() throws Exception {
 		clean_driver();
+	}	
+	
+	
+	public String generate_string(int lenght) {
+		return RandomStringUtils.randomAlphabetic(lenght);
+	}	
+	
+	public String generate_int(int lenght) {
+		return RandomStringUtils.randomNumeric(lenght);
 	}	
 	
 }

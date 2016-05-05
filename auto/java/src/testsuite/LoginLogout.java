@@ -46,7 +46,8 @@ public class LoginLogout extends factory{
 	
 	@Test
 	public void Login_Logout_3() throws InterruptedException {
-		set_text_field(LoginPage.username, "wrong");
+		String username = generate_string(5);
+		set_text_field(LoginPage.username, username);
 		set_text_field(LoginPage.password, "admin");
 		click_btn(LoginPage.login_button);
 		Thread.sleep(500);
@@ -69,8 +70,9 @@ public class LoginLogout extends factory{
 
 	@Test
 	public void Login_Logout_4() throws InterruptedException {
+		String password = generate_string(5);
 		set_text_field(LoginPage.username, "admin");
-		set_text_field(LoginPage.password, "wrong");
+		set_text_field(LoginPage.password, password);
 		click_btn(LoginPage.login_button);
 		Thread.sleep(500);
 		String logged_text = get_text_filed(LoginPage.authentication_error);
@@ -92,8 +94,10 @@ public class LoginLogout extends factory{
 	
 	@Test
 	public void Login_Logout_5() throws InterruptedException {
-		set_text_field(LoginPage.username, "wrong");
-		set_text_field(LoginPage.password, "wrong");
+		String username = generate_string(5);
+		set_text_field(LoginPage.username, username);
+		String password = generate_string(5);
+		set_text_field(LoginPage.password, password);
 		click_btn(LoginPage.login_button);
 		Thread.sleep(500);
 		String logged_text = get_text_filed(LoginPage.authentication_error);
