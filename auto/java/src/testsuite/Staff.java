@@ -12,7 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import framework.factory;
-import framework.model.BranchPage;
 import framework.model.StaffPage;
 
 
@@ -298,7 +297,7 @@ public class Staff extends factory{
 		delete_branch(branch);
 		click_cancel_delete_branch();
 		assertTrue(search_branch(branch));
-		assertEquals(get_table_count(BranchPage.search_branch_table), 1);
+		assertEquals(get_table_count(StaffPage.search_staff_table), 1);
 		click_entities_staff_menu();
 		
 	}

@@ -2,6 +2,7 @@ package framework;
 
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
@@ -24,6 +25,7 @@ public class factory {
 		driver = new FirefoxDriver();
 		driver.get("http://127.0.0.1:8080/gurukula");
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	}
 
 
