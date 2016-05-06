@@ -24,7 +24,7 @@ class RegisterNewUserTests(BaseTest):
         self.assertTrue(self.element_is_enabled('register_button'))
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
+        #Currently registration is unavailable, so will expect that as success
         self.assertEqual(self.get_text('registration_error'),
                          'Registration failed! Please try again later.')
         self.lg('%s ENDED' % self._testID)
@@ -64,7 +64,7 @@ class RegisterNewUserTests(BaseTest):
         self.assertFalse(self.element_is_displayed('registration_invalidmaillenght'))
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
+        #Currently registration is unavailable, so will expect that as success
         self.assertEqual(self.get_text('registration_error'),
                          'Registration failed! Please try again later.')
         self.lg('%s ENDED' % self._testID)
@@ -98,7 +98,7 @@ class RegisterNewUserTests(BaseTest):
         self.assertFalse(self.element_is_displayed('registration_invalidmaillenght'))
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
+        #Currently registration is unavailable, so will expect that as success
         self.assertEqual(self.get_text('registration_error'),
                          'Registration failed! Please try again later.')
         self.lg('%s ENDED' % self._testID)
@@ -128,7 +128,7 @@ class RegisterNewUserTests(BaseTest):
         self.assertFalse(self.element_is_displayed('registration_invalidpasswdlenght'))
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
+        #Currently registration is unavailable, so will expect that as success
         self.assertEqual(self.get_text('registration_error'),
                          'Registration failed! Please try again later.')
         self.lg('%s ENDED' % self._testID)
@@ -166,7 +166,7 @@ class RegisterNewUserTests(BaseTest):
         self.assertFalse(self.element_is_displayed('registration_cnfpasswdreq'))
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
+        #Currently registration is unavailable, so will expect that as success
         self.assertEqual(self.get_text('registration_error'),
                          'Registration failed! Please try again later.')
         self.lg('%s ENDED' % self._testID)
@@ -196,7 +196,7 @@ class RegisterNewUserTests(BaseTest):
         self.assertTrue(self.element_is_enabled('register_button'))
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
+        #Currently registration is unavailable, so will expect that as success
         self.assertEqual(self.get_text('registration_error'),
                          'Registration failed! Please try again later.')
         self.lg('fill password filed with numbers/letters value, should succeed')
@@ -211,7 +211,7 @@ class RegisterNewUserTests(BaseTest):
         self.assertTrue(self.element_is_enabled('register_button'))
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
+        #Currently registration is unavailable, so will expect that as success
         self.assertEqual(self.get_text('registration_error'),
                          'Registration failed! Please try again later.')
         self.lg('fill password filed with numbers/small/capital letters value, should succeed')
@@ -230,7 +230,7 @@ class RegisterNewUserTests(BaseTest):
         self.assertTrue(self.element_is_enabled('register_button'))
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
+        #Currently registration is unavailable, so will expect that as success
         self.assertEqual(self.get_text('registration_error'),
                          'Registration failed! Please try again later.')
         self.lg('fill password filed with numbers/small/capital/special value, should succeed')
@@ -249,7 +249,7 @@ class RegisterNewUserTests(BaseTest):
         self.assertTrue(self.element_is_enabled('register_button'))
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
+        #Currently registration is unavailable, so will expect that as success
         self.assertEqual(self.get_text('registration_error'),
                          'Registration failed! Please try again later.')
         self.lg('%s ENDED' % self._testID)
@@ -265,17 +265,18 @@ class RegisterNewUserTests(BaseTest):
         #. check registeration successfully, should succeed
         """
         self.lg('%s STARTED' % self._testID)
-        self.lg('fill password filed with invalid/short value, should succeed')
+        self.lg('fill password filed with invalid/long value, should succeed')
         password = 51 * 'x'
         self.fill_register_new_user(newpasswd=password, passwdcfm=password)
         self.lg('proper error message, should succeed')
         self.assertEqual(self.get_text('registration_maxpasswdlenght'),
                          'Your password cannot be longer than 50 characters.')
+        self.lg('fill password filed with valid value, should succeed')
         password = 50 * 'x'
         self.fill_register_new_user(newpasswd=password, passwdcfm=password)
         self.register_new_user()
         self.lg('check registeration successfully, should succeed')
-        #Currently registeration is unavilable, so will expect that as success
+        #Currently registration is unavailable, so will expect that as success
         self.assertEqual(self.get_text('registration_error'),
                          'Registration failed! Please try again later.')
         self.lg('%s ENDED' % self._testID)

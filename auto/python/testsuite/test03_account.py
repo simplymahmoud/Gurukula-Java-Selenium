@@ -117,7 +117,7 @@ class AccountTests(BaseTest):
         #. check save settings successfully, should succeed
         """
         self.lg('%s STARTED' % self._testID)
-        self.lg('fill password filed with invalid/short value, should succeed')
+        self.lg('fill password filed with empty value, should succeed')
         self.go_to_account_settings()
         self.fill_settings()
         self.fill_settings(firstname='', lastname='', email='')
@@ -182,7 +182,7 @@ class AccountTests(BaseTest):
         #. check save password successfully, should succeed
         """
         self.lg('%s STARTED' % self._testID)
-        self.lg('fill password filed with invalid/short value, should succeed')
+        self.lg('fill password filed with empty value, should succeed')
         self.go_to_account_passwords()
         self.fill_passwords()
         self.fill_passwords(newpasswd='', passwdcfm='')
@@ -318,7 +318,7 @@ class AccountTests(BaseTest):
         #. proper error message, should succeed
         """
         self.lg('%s STARTED' % self._testID)
-        self.lg('fill password filed with invalid/short value, should succeed')
+        self.lg('fill password/confirmed filed with different value, should succeed')
         self.go_to_account_passwords()
         self.fill_passwords(newpasswd='sssss', passwdcfm='SSSSS')
         self.assertTrue(self.element_is_enabled('passwords_save_button'))
@@ -333,11 +333,11 @@ class AccountTests(BaseTest):
 
         **Test Scenario:**
 
-        #. click invaildate session, should succeed
+        #. click invalidate session, should succeed
         #. sessions table should be reduced by one, should succeed
         """
         self.lg('%s STARTED' % self._testID)
-        self.lg('click invaildate session, should succeed')
+        self.lg('click invalidate session, should succeed')
         self.click('account_session')
         first_count = self.get_table_count('account_session_table')
         if first_count:
