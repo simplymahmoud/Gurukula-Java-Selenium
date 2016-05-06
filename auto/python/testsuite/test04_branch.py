@@ -12,11 +12,11 @@ class BranchTests(BaseTest):
         self.login()
         self.click('entities_menu')
         self.click('entities_branch')
+        self.branch = ('BRANCH', '12345')
 
     def tearDown(self):
-        if hasattr(self, 'name') and self.name:
-            for branch in self.branches:
-                self.delete_created_branch(name=branch)
+        for branch in self.branches:
+            self.delete_created_branch(branch[0], branch[1])
 
         super(BranchTests, self).tearDown()
 
@@ -34,7 +34,7 @@ class BranchTests(BaseTest):
         self.create_new_branch()
         self.click_save_branch()
         self.lg('check new branch created successfully, should succeed')
-        self.assertTrue(self.search_branch(self.name, self.code))
+        self.assertTrue(self.search_branch(self.branch[0], self.branch[1]))
         self.lg('%s ENDED' % self._testID)
 
     def test002_validate_create_new_branch_parameters(self):
@@ -47,10 +47,10 @@ class BranchTests(BaseTest):
         #. do create branch with one character, should succeed
         #. validate create new branch requirements, should succeed
         #. proper error message, should succeed
-        #. do create branch with invaild characters, should succeed
+        #. do create branch with invalid characters, should succeed
         #. validate create new branch requirements, should succeed
         #. proper error message, should succeed
-        #. do create branch with invaild max length, should succeed
+        #. do create branch with invalid max length, should succeed
         #. validate create new branch requirements, should succeed
         #. proper error message, should succeed
         #. do create branch with valid, should succeed
@@ -67,7 +67,7 @@ class BranchTests(BaseTest):
         self.assertTrue(self.element_is_enabled('new_branch_code'))
         self.assertTrue(self.element_is_displayed('new_branch_code_req'))
         self.lg('do create branch with one character, should succeed')
-        self.create_new_branch(name='a', code='1')
+        self.create_new_branch('a', '1')
         self.lg('validate create new branch parameters, should succeed')
         self.assertFalse(self.element_is_displayed('new_branch_name_req'))
         self.assertTrue(self.element_is_displayed('new_branch_name_invalid_length'))
@@ -79,8 +79,8 @@ class BranchTests(BaseTest):
         self.assertEqual(self.get_text('new_branch_code_invalid_length'),
                          'This field is required to be at least 2 characters.')
         self.assertFalse(self.element_is_enabled('save_branch_button'))
-        self.lg('do create branch with invaild characters, should succeed')
-        self.create_new_branch(name='12345', code='ab')
+        self.lg('do create branch with invalid characters, should succeed')
+        self.create_new_branch('12345', 'ab')
         self.lg('validate create new branch parameters, should succeed')
         self.assertFalse(self.element_is_displayed('new_branch_name_invalid_length'))
         self.assertTrue(self.element_is_displayed('new_branch_name_invalid'))
@@ -92,8 +92,8 @@ class BranchTests(BaseTest):
                          'This field should follow pattern ^[a-zA-Z\s]*$.')
         self.assertEqual(self.get_text('new_branch_code_invalid'),
                          'This field should follow pattern ^[A-Z0-9]*$.')
-        self.lg('do create branch with invaild max length, should succeed')
-        self.create_new_branch(name='a'*21, code='1'*11)
+        self.lg('do create branch with invalid max length, should succeed')
+        self.create_new_branch('a'*21, '1'*11)
         self.lg('validate create new branch parameters, should succeed')
         self.assertFalse(self.element_is_displayed('new_branch_name_invalid'))
         self.assertTrue(self.element_is_displayed('new_branch_name_invalid_maxlength'))
@@ -105,12 +105,12 @@ class BranchTests(BaseTest):
                          'This field cannot be longer than 20 characters.')
         self.assertEqual(self.get_text('new_branch_code_invalid_maxlength'),
                          'This field cannot be longer than 10 characters.')
-        self.lg('do create branch with vaild, should succeed')
-        self.create_new_branch()
+        self.lg('do create branch with valid, should succeed')
+        self.create_new_branch('branch', '54321')
         self.lg('click cancel branch, should succeed')
         self.click_cancel_branch()
         self.lg('check new branch not created, should succeed')
-        self.assertFalse(self.search_branch(self.name, self.code))
+        self.assertFalse(self.search_branch('branch', '54321'))
         self.lg('%s ENDED' % self._testID)
 
     def test003_view_delete_branch(self):
@@ -130,17 +130,17 @@ class BranchTests(BaseTest):
         self.create_new_branch()
         self.click_save_branch()
         self.lg('check new branch created successfully, should succeed')
-        self.assertTrue(self.search_branch(self.name, self.code))
+        self.assertTrue(self.search_branch(self.branch[0], self.branch[1]))
         self.lg('view branch with name, should succeed')
-        self.assertTrue(self.view_branch(self.name, self.code))
+        self.assertTrue(self.view_branch(self.branch[0], self.branch[1]))
         self.assertTrue(self.element_is_readonly('search_branch_view_name'))
         self.assertTrue(self.element_is_readonly('search_branch_view_code'))
-        self.assertEqual(self.get_value('search_branch_view_name'), self.name)
-        self.assertEqual(self.get_value('search_branch_view_code'), self.code)
+        self.assertEqual(self.get_value('search_branch_view_name'), self.branch[0])
+        self.assertEqual(self.get_value('search_branch_view_code'), self.branch[1])
         self.click_view_back()
         self.lg('delete branch, should succeed')
-        self.delete_created_branch(name=self.name)
-        self.assertFalse(self.search_branch(self.name, self.code))
+        self.delete_created_branch(self.branch[0], self.branch[1])
+        self.assertFalse(self.search_branch(self.branch[0], self.branch[1]))
         self.lg('%s ENDED' % self._testID)
 
     def test004_edit_delete_branch(self):
@@ -148,11 +148,11 @@ class BranchTests(BaseTest):
 
         **Test Scenario:**
 
-        #. do create branch with valid, should succeed
-        #. check new branch created successfully, should succeed
-        #. edit branch with valid, should succeed
-        #. check new branch updated successfully, should succeed
-        #. delete branch, should succeed
+        . do create branch with valid, should succeed
+        . check new branch created successfully, should succeed
+        . edit branch with valid, should succeed
+        . check new branch updated successfully, should succeed
+        . delete branch, should succeed
         """
         self.lg('%s STARTED' % self._testID)
         self.lg('do create branch with valid, should succeed')
@@ -160,16 +160,19 @@ class BranchTests(BaseTest):
         self.create_new_branch()
         self.click_save_branch()
         self.lg('check new branch created successfully, should succeed')
-        self.assertTrue(self.search_branch(self.name, self.code))
+        self.assertTrue(self.search_branch(self.branch[0], self.branch[1]))
         self.lg('edit branch with valid, should succeed')
-        self.edit_branch(self.name, self.code)
-        self.edit_created_branch()
+        self.edit_branch(self.branch[0], self.branch[1])
+        new_branch = 'branch'
+        new_code = '54321'
+        self.edit_created_branch(new_branch, new_code)
         self.click_save_edit_branch()
+        self.branches.append((new_branch, new_code))
         self.lg('check new branch updated successfully, should succeed')
-        self.assertTrue(self.search_branch(self.name, self.code))
+        self.assertTrue(self.search_branch(new_branch, new_code))
         self.lg('delete branch, should succeed')
-        self.delete_created_branch(name=self.name)
-        self.assertFalse(self.search_branch(self.name, self.code))
+        self.delete_created_branch(new_branch, new_code)
+        self.assertFalse(self.search_branch(new_branch, new_code))
         self.lg('%s ENDED' % self._testID)
 
     def test005_validate_edit_branch_parameters(self):
@@ -182,10 +185,10 @@ class BranchTests(BaseTest):
         #. edit branch with one character, should succeed
         #. validate create new branch requirements, should succeed
         #. proper error message, should succeed
-        #. edit branch with invaild characters, should succeed
+        #. edit branch with invalid characters, should succeed
         #. validate create new branch requirements, should succeed
         #. proper error message, should succeed
-        #. edit branch with invaild max length, should succeed
+        #. edit branch with invalid max length, should succeed
         #. validate create new branch requirements, should succeed
         #. proper error message, should succeed
         #. do create branch with valid, should succeed
@@ -198,13 +201,10 @@ class BranchTests(BaseTest):
         self.create_new_branch()
         self.click_save_branch()
         self.lg('check new branch created successfully, should succeed')
-        self.assertTrue(self.search_branch(self.name, self.code))
-        start_name = self.name
-        start_code = self.code
-        self.edit_branch(self.name, self.code)
+        self.assertTrue(self.search_branch(self.branch[0], self.branch[1]))
+        self.edit_branch(self.branch[0], self.branch[1])
         self.lg('validate create new branch requirements, should succeed')
-        self.set_text('edit_branch_name', '')
-        self.set_text('new_branch_code', '')
+        self.edit_created_branch('', '')
         self.assertTrue(self.element_is_readonly('new_branch_id'))
         self.assertTrue(self.element_is_enabled('new_branch_name'))
         self.assertTrue(self.element_is_displayed('new_branch_name_req'))
@@ -212,7 +212,7 @@ class BranchTests(BaseTest):
         self.assertTrue(self.element_is_displayed('new_branch_code_req'))
 
         self.lg('edit branch with one character, should succeed')
-        self.edit_created_branch(name='a', code='1')
+        self.edit_created_branch('a', '1')
         self.lg('validate create new branch parameters, should succeed')
         self.assertFalse(self.element_is_displayed('new_branch_name_req'))
         self.assertTrue(self.element_is_displayed('new_branch_name_invalid_length'))
@@ -224,8 +224,8 @@ class BranchTests(BaseTest):
         self.assertEqual(self.get_text('new_branch_code_invalid_length'),
                          'This field is required to be at least 2 characters.')
         self.assertFalse(self.element_is_enabled('save_branch_button'))
-        self.lg('edit branch with invaild characters, should succeed')
-        self.edit_created_branch(name='12345', code='ab')
+        self.lg('edit branch with invalid characters, should succeed')
+        self.edit_created_branch('12345', 'ab')
         self.lg('validate create new branch parameters, should succeed')
         self.assertFalse(self.element_is_displayed('new_branch_name_invalid_length'))
         self.assertTrue(self.element_is_displayed('new_branch_name_invalid'))
@@ -237,8 +237,8 @@ class BranchTests(BaseTest):
                          'This field should follow pattern ^[a-zA-Z\s]*$.')
         self.assertEqual(self.get_text('new_branch_code_invalid'),
                          'This field should follow pattern ^[A-Z0-9]*$.')
-        self.lg('edit branch with invaild max length, should succeed')
-        self.edit_created_branch(name='a'*21, code='1'*11)
+        self.lg('edit branch with invalid max length, should succeed')
+        self.edit_created_branch('a'*21, '1'*11)
         self.lg('validate create new branch parameters, should succeed')
         self.assertFalse(self.element_is_displayed('new_branch_name_invalid'))
         self.assertTrue(self.element_is_displayed('new_branch_name_invalid_maxlength'))
@@ -250,13 +250,13 @@ class BranchTests(BaseTest):
                          'This field cannot be longer than 20 characters.')
         self.assertEqual(self.get_text('new_branch_code_invalid_maxlength'),
                          'This field cannot be longer than 10 characters.')
-        self.lg('edit branch with vaild, should succeed')
-        self.edit_created_branch()
+        self.lg('edit branch with valid, should succeed')
+        self.edit_created_branch('branch', '54321')
         self.lg('click cancel branch, should succeed')
         self.click_cancel_edit_branch()
         self.lg('check new branch not updated, should succeed')
-        self.assertFalse(self.search_branch(self.name, self.code))
-        self.assertTrue(self.search_branch(start_name, start_code))
+        self.assertFalse(self.search_branch('branch', '54321'))
+        self.assertTrue(self.search_branch(self.branch[0], self.branch[1]))
         self.lg('%s ENDED' % self._testID)
 
     def test006_validate_search_delete_branch(self):
@@ -275,11 +275,11 @@ class BranchTests(BaseTest):
         self.create_new_branch()
         self.click_save_branch()
         self.lg('search new branch, should succeed')
-        self.assertTrue(self.search_branch(self.name, self.code))
+        self.assertTrue(self.search_branch(self.branch[0], self.branch[1]))
         self.lg('delete branch, should succeed')
-        self.delete_created_branch(name=self.name)
+        self.delete_created_branch(self.branch[0], self.branch[1])
         self.lg('search new branch, should fail')
-        self.assertFalse(self.search_branch(self.name, self.code))
+        self.assertFalse(self.search_branch(self.branch[0], self.branch[1]))
         self.lg('%s ENDED' % self._testID)
 
     @parameterized.expand([('normal name', str(uuid.uuid4())),
@@ -302,11 +302,11 @@ class BranchTests(BaseTest):
         self.create_new_branch()
         self.click_save_branch()
         self.lg('search invalid branch, should fail')
-        self.assertFalse(self.search_branch(name, self.code))
+        self.assertFalse(self.search_branch(name, self.branch[1]))
         self.lg('delete branch, should succeed')
-        self.delete_created_branch(name=self.name)
+        self.delete_created_branch(self.branch[0], self.branch[1])
         self.lg('search invalid branch, should fail')
-        self.assertFalse(self.search_branch(name, self.code))
+        self.assertFalse(self.search_branch(name, self.branch[1]))
         self.lg('%s ENDED' % self._testID)
 
     def test008_validate_search_different_branch(self):
@@ -325,28 +325,28 @@ class BranchTests(BaseTest):
         branch_1 = 'brancha'
         for _ in range(2):
             self.click_create_new_branch()
-            self.create_new_branch(name=branch_1)
+            self.create_new_branch(branch_1)
             self.click_save_branch()
             self.lg('check new branch created successfully, should succeed')
-            self.assertTrue(self.search_branch(branch_1, self.code))
+            self.assertTrue(self.search_branch(branch_1, self.branch[1]))
 
         self.lg('search new branch1, should succeed')
-        self.search_branch(branch_1, self.code)
+        self.search_branch(branch_1, self.branch[1])
         self.assertEqual(self.get_table_count(), 2)
         self.lg('do create new branch1, should succeed')
         branch_2 = 'branchb'
         for _ in range(3):
             self.click_create_new_branch()
-            self.create_new_branch(name=branch_2)
+            self.create_new_branch(branch_2)
             self.click_save_branch()
             self.lg('check new branch created successfully, should succeed')
-            self.assertTrue(self.search_branch(branch_2, self.code))
+            self.assertTrue(self.search_branch(branch_2, self.branch[1]))
 
         self.lg('search new branch1, should succeed')
-        self.search_branch(branch_2, self.code)
+        self.search_branch(branch_2, self.branch[1])
         self.assertEqual(self.get_table_count(), 3)
         self.lg('search new branch1, should succeed')
-        self.search_branch(branch_1, self.code)
+        self.search_branch(branch_1, self.branch[1])
         self.assertEqual(self.get_table_count(), 2)
         self.lg('%s ENDED' % self._testID)
 

@@ -32,8 +32,8 @@ class AccountTests(BaseTest):
                          'Settings saved!')
         self.lg('%s ENDED' % self._testID)
 
-    def test002_save_account_settings_invaild_short_email(self):
-        """ Account-2: Test case for check save account settings with invaild/short email.*
+    def test002_save_account_settings_invalid_short_email(self):
+        """ Account-2: Test case for check save account settings with invalid/short email.*
 
         **Test Scenario:**
 
@@ -76,8 +76,8 @@ class AccountTests(BaseTest):
                            ('long email', 'X'*1000),
                            ('numeric email', 9876543210),
                            ('special chars email', '+_=-)(*&^#!~`{}[];\',.<>\/')])
-    def test003_save_account_settings_invaild_email(self, _, email):
-        """ Account-3: Test case for check save account settings with invaild email.*
+    def test003_save_account_settings_invalid_email(self, _, email):
+        """ Account-3: Test case for check save account settings with invalid email.*
 
         **Test Scenario:**
 
@@ -139,8 +139,8 @@ class AccountTests(BaseTest):
                          'Settings saved!')
         self.lg('%s ENDED' % self._testID)
 
-    def test005_save_account_passwords_invaild_password(self):
-        """ Account-5: Test case for check save account passwords with invaild password.*
+    def test005_save_account_passwords_invalid_password(self):
+        """ Account-5: Test case for check save account passwords with invalid password.*
 
         **Test Scenario:**
 

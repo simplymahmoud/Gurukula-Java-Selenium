@@ -14,26 +14,19 @@ class StaffTests(BaseTest):
         self.login()
         time.sleep(.5)
         self.click('entities_menu')
-        self.click('entities_branch')
-        self.click_create_new_branch()
-        self.create_new_branch()
-        self.click_save_branch()
-        time.sleep(.5)
-        self.click('entities_menu')
         self.click('entities_staff')
+        self.branch = ('BRANCH', '12345')
+        self.staff = ('STAFF', self.branch[0])
 
     def tearDown(self):
-        if hasattr(self, 'staff') and self.staff:
-            for staff in self.staffs:
-                self.delete_created_staff(staff)
+        for staff in self.staffs:
+            self.delete_created_staff(staff[0], staff[1])
 
-
-        if hasattr(self, 'name') and self.name:
+        if self.branches:
             self.click('entities_menu')
             self.click('entities_branch')
             for branch in self.branches:
-                self.delete_created_branch(name=branch)
-                    
+                self.delete_created_branch(branch[0], branch[1])
 
         super(StaffTests, self).tearDown()
 
@@ -48,18 +41,28 @@ class StaffTests(BaseTest):
         #. check new staff created successfully, should succeed
         """
         self.lg('%s STARTED' % self._testID)
-        self.lg('do create branch with valid, should succeed')
+        self.lg('do create branch without branch, should succeed')
         self.click_create_new_staff()
         self.create_new_staff()
         self.click_save_staff()
         self.lg('check new branch created successfully, should succeed')
-        self.assertTrue(self.search_staff(self.staff))
-        self.lg('do create branch without branch, should succeed')
+        self.assertTrue(self.search_staff(self.staff[0]))
+        self.lg('do create branch with valid, should succeed')
+        self.click('entities_menu')
+        self.click('entities_branch')
+        self.click_create_new_branch()
+        self.create_new_branch()
+        self.click_save_branch()
+        self.lg('check new branch created successfully, should succeed')
+        self.assertTrue(self.search_branch(self.branch[0], self.branch[1]))
+        self.click('entities_menu')
+        self.click('entities_staff')
         self.click_create_new_staff()
-        self.create_new_staff(skip_branch=True)
+        self.create_new_staff(self.staff[0], self.staff[1])
         self.click_save_staff()
         self.lg('check new branch created successfully, should succeed')
-        self.assertTrue(self.search_staff(self.staff))
+        self.assertEqual(self.get_table_count(), 2)
+#        self.assertTrue(self.search_staff(self.staff[0], self.staff[1]))
         self.lg('%s ENDED' % self._testID)
 
     def test002_validate_create_new_staff_parameters(self):
@@ -69,10 +72,10 @@ class StaffTests(BaseTest):
 
         #. click create new staff, should succeed
         #. validate create new staff requirements, should succeed
-        #. do create staff with invaild characters, should succeed
+        #. do create staff with invalid characters, should succeed
         #. validate create new staff requirements, should succeed
         #. proper error message, should succeed
-        #. do create staff with invaild max length, should succeed
+        #. do create staff with invalid max length, should succeed
         #. validate create new staff requirements, should succeed
         #. proper error message, should succeed
         #. do create staff with valid, should succeed
@@ -87,7 +90,7 @@ class StaffTests(BaseTest):
         self.assertTrue(self.element_is_enabled('new_staff_name'))
         self.assertTrue(self.element_is_displayed('new_staff_name_req'))
         self.assertTrue(self.element_is_enabled('staff_dropdown'))
-        self.lg('do create staff with invaild characters, should succeed')
+        self.lg('do create staff with invalid characters, should succeed')
         self.create_new_staff('12345')
         self.lg('validate create new staff parameters, should succeed')
         self.assertFalse(self.element_is_displayed('new_staff_name_req'))
@@ -96,7 +99,7 @@ class StaffTests(BaseTest):
         self.lg('proper error message, should succeed')
         self.assertEqual(self.get_text('new_staff_name_invalid'),
                          'This field should follow pattern ^[a-zA-Z\s]*$.')
-        self.lg('do create staff with invaild max length, should succeed')
+        self.lg('do create staff with invalid max length, should succeed')
         self.create_new_staff('a'*51)
         self.lg('validate create new staff parameters, should succeed')
         self.assertFalse(self.element_is_displayed('new_staff_name_req'))
@@ -106,12 +109,12 @@ class StaffTests(BaseTest):
         self.lg('proper error message, should succeed')
         self.assertEqual(self.get_text('new_staff_name_invalid_maxlength'),
                          'This field cannot be longer than 50 characters.')
-        self.lg('do create staff with vaild, should succeed')
+        self.lg('do create staff with valid, should succeed')
         self.create_new_staff()
         self.lg('click cancel branch, should succeed')
         self.click_cancel_staff()
         self.lg('check new branch not created, should succeed')
-        self.assertFalse(self.search_staff(self.staff))
+        self.assertFalse(self.search_staff(self.staff[0][0]))
         self.lg('%s ENDED' % self._testID)
 
     def test003_view_delete_staff(self):
@@ -128,20 +131,20 @@ class StaffTests(BaseTest):
         self.lg('%s STARTED' % self._testID)
         self.lg('do create staff with valid, should succeed')
         self.click_create_new_staff()
-        self.create_new_staff(skip_branch=True)
+        self.create_new_staff()
         self.click_save_staff()
         self.lg('check new staff created successfully, should succeed')
-        self.assertTrue(self.search_staff(self.staff))
+        self.assertTrue(self.search_staff(self.staff[0]))
         self.lg('view staff with name, should succeed')
-        self.assertTrue(self.view_staff(self.staff))
+        self.assertTrue(self.view_staff(self.staff[0]))
         self.assertTrue(self.element_is_readonly('search_staff_view_name'))
         self.assertTrue(self.element_is_readonly('search_staff_view_branch'))
-        self.assertEqual(self.get_value('search_staff_view_name'), self.staff)
+        self.assertEqual(self.get_value('search_staff_view_name'), self.staff[0])
         self.assertEqual(self.get_value('search_staff_view_branch'), '')
         self.click_view_back()
         self.lg('delete staff, should succeed')
-        self.delete_created_staff(self.staff)
-        self.assertFalse(self.search_staff(self.staff))
+        self.delete_created_staff(self.staff[0])
+        self.assertFalse(self.search_staff(self.staff[0]))
         self.lg('%s ENDED' % self._testID)
 
     def test004_edit_delete_staff(self):
@@ -158,19 +161,22 @@ class StaffTests(BaseTest):
         self.lg('%s STARTED' % self._testID)
         self.lg('do create staff with valid, should succeed')
         self.click_create_new_staff()
-        self.create_new_staff(skip_branch=True)
+        self.create_new_staff()
         self.click_save_staff()
         self.lg('check new staff created successfully, should succeed')
-        self.assertTrue(self.search_staff(self.staff))
+        self.assertTrue(self.search_staff(self.staff[0]))
         self.lg('edit staff with valid, should succeed')
-        self.edit_staff(self.staff, '')
-        self.edit_created_staff()
+        new_staff = 'staff'
+        self.edit_staff(self.staff[0])
+        self.edit_created_staff(new_staff)
         self.click_save_edit_staff()
+        self.staffs.append((new_staff, ''))
         self.lg('check new staff updated successfully, should succeed')
-        self.assertTrue(self.search_staff(self.staff))
+        self.assertTrue(self.search_staff(new_staff))
+        self.assertFalse(self.search_staff(self.staff[0]))
         self.lg('delete staff, should succeed')
-        self.delete_created_staff(self.staff)
-        self.assertFalse(self.search_staff(self.staff))
+        self.delete_created_staff(new_staff)
+        self.assertFalse(self.search_staff(new_staff))
         self.lg('%s ENDED' % self._testID)
 
     def test005_validate_edit_staff_parameters(self):
@@ -180,10 +186,10 @@ class StaffTests(BaseTest):
 
         #. click create new staff, should succeed
         #. validate create new staff requirements, should succeed
-        #. edit staff with invaild characters, should succeed
+        #. edit staff with invalid characters, should succeed
         #. validate create new staff requirements, should succeed
         #. proper error message, should succeed
-        #. edit staff with invaild max length, should succeed
+        #. edit staff with invalid max length, should succeed
         #. validate create new staff requirements, should succeed
         #. proper error message, should succeed
         #. do create staff with valid, should succeed
@@ -193,18 +199,17 @@ class StaffTests(BaseTest):
         self.lg('%s STARTED' % self._testID)
         self.lg('do create staff with valid, should succeed')
         self.click_create_new_staff()
-        self.create_new_staff(skip_branch=True)
+        self.create_new_staff()
         self.click_save_staff()
         self.lg('check new staff created successfully, should succeed')
-        self.assertTrue(self.search_staff(self.staff))
-        start_staff = self.staff
-        self.edit_staff(self.staff)
+        self.assertTrue(self.search_staff(self.staff[0]))
+        self.edit_staff(self.staff[0])
         self.lg('validate create new staff requirements, should succeed')
         self.set_text('new_staff_name', '')
         self.assertTrue(self.element_is_readonly('new_staff_id'))
         self.assertTrue(self.element_is_enabled('new_staff_name'))
         self.assertTrue(self.element_is_displayed('new_staff_name_req'))
-        self.lg('edit staff with invaild characters, should succeed')
+        self.lg('edit staff with invalid characters, should succeed')
         self.edit_created_staff('12345')
         self.lg('validate create new staff parameters, should succeed')
         self.assertFalse(self.element_is_displayed('new_staff_name_req'))
@@ -213,7 +218,7 @@ class StaffTests(BaseTest):
         self.lg('proper error message, should succeed')
         self.assertEqual(self.get_text('new_staff_name_invalid'),
                          'This field should follow pattern ^[a-zA-Z\s]*$.')
-        self.lg('edit staff with invaild max length, should succeed')
+        self.lg('edit staff with invalid max length, should succeed')
         self.edit_created_staff('a'*51)
         self.lg('validate create new staff parameters, should succeed')
         self.assertFalse(self.element_is_displayed('new_staff_name_invalid'))
@@ -222,13 +227,13 @@ class StaffTests(BaseTest):
         self.lg('proper error message, should succeed')
         self.assertEqual(self.get_text('new_staff_name_invalid_maxlength'),
                          'This field cannot be longer than 50 characters.')
-        self.lg('edit staff with vaild, should succeed')
-        self.edit_created_staff()
+        self.lg('edit staff with valid, should succeed')
+        self.edit_created_staff('staff')
         self.lg('click cancel staff, should succeed')
         self.click_cancel_staff()
         self.lg('check new staff not updated, should succeed')
-        self.assertFalse(self.search_staff(self.staff))
-        self.assertTrue(self.search_staff(start_staff))
+        self.assertFalse(self.search_staff('staff'))
+        self.assertTrue(self.search_staff(self.staff[0]))
         self.lg('%s ENDED' % self._testID)
 
     def test006_validate_search_delete_staff(self):
@@ -244,14 +249,14 @@ class StaffTests(BaseTest):
         self.lg('%s STARTED' % self._testID)
         self.lg('do create new staff, should succeed')
         self.click_create_new_staff()
-        self.create_new_staff(skip_branch=True)
+        self.create_new_staff()
         self.click_save_staff()
         self.lg('search new branch, should succeed')
-        self.assertTrue(self.search_staff(self.staff))
+        self.assertTrue(self.search_staff(self.staff[0]))
         self.lg('delete staff, should succeed')
-        self.delete_created_staff(self.staff)
+        self.delete_created_staff(self.staff[0])
         self.lg('search new staff, should fail')
-        self.assertFalse(self.search_staff(self.staff))
+        self.assertFalse(self.search_staff(self.staff[0]))
         self.lg('%s ENDED' % self._testID)
 
     @parameterized.expand([('normal name', str(uuid.uuid4())),
@@ -271,12 +276,12 @@ class StaffTests(BaseTest):
         self.lg('%s STARTED' % self._testID)
         self.lg('do create new staff, should succeed')
         self.click_create_new_staff()
-        self.create_new_staff(skip_branch=True)
+        self.create_new_staff()
         self.click_save_staff()
         self.lg('search invalid staff, should fail')
         self.assertFalse(self.search_staff(name))
         self.lg('delete staff, should succeed')
-        self.delete_created_staff(self.staff)
+        self.delete_created_staff(self.staff[0])
         self.lg('search invalid staff, should fail')
         self.assertFalse(self.search_staff(name))
         self.lg('%s ENDED' % self._testID)
@@ -294,7 +299,7 @@ class StaffTests(BaseTest):
         self.lg('create multiple staff with valid, should succeed')
         for _ in range(50):
             self.click_create_new_staff()
-            self.create_new_staff(skip_branch=True)
+            self.create_new_staff()
             self.click_save_staff()
 
         self.lg('check paging is working successfully, should succeed')
@@ -347,21 +352,29 @@ class StaffTests(BaseTest):
 
         **Test Scenario:**
 
-        #. do create staff with valid, should succeed
+        #. do create staff with branch, should succeed
         #. check new staff created successfully, should succeed
         #. try delete branch before staff, should fail
         """
         self.lg('%s STARTED' % self._testID)
         self.lg('do create branch with valid, should succeed')
-        self.click_create_new_staff()
-        self.create_new_staff()
-        self.click_save_staff()
+        self.click('entities_menu')
+        self.click('entities_branch')
+        self.click_create_new_branch()
+        self.create_new_branch()
+        self.click_save_branch()
         self.lg('check new branch created successfully, should succeed')
-        self.assertTrue(self.search_staff(self.staff))
+        self.assertTrue(self.search_branch(self.branch[0], self.branch[1]))
+        self.click('entities_menu')
+        self.click('entities_staff')
+        self.click_create_new_staff()
+        self.create_new_staff(self.staff[0], self.staff[1])
+        self.click_save_staff()
+        self.assertTrue(self.search_staff(self.staff[0]))
         self.lg('try delete branch before staff, should fail')
         self.click('entities_menu')
         self.click('entities_branch')
-        self.delete_created_branch(self.name)
+        self.delete_created_branch(self.branch[0], self.branch[1])
         self.click_cancel_delete_branch()
         self.assertEqual(self.get_table_count(), 1)
         time.sleep(1)
@@ -380,18 +393,28 @@ class StaffTests(BaseTest):
         """
         self.lg('%s STARTED' % self._testID)
         self.lg('do create branch without branch, should succeed')
+        self.click('entities_menu')
+        self.click('entities_branch')
+        self.click_create_new_branch()
+        self.create_new_branch()
+        self.click_save_branch()
+        self.lg('check new branch created successfully, should succeed')
+        self.assertTrue(self.search_branch(self.branch[0], self.branch[1]))
+        self.click('entities_menu')
+        self.click('entities_staff')
         self.click_create_new_staff()
-        self.create_new_staff(skip_branch=True)
+        self.create_new_staff()
         self.click_save_staff()
+        self.assertTrue(self.search_staff(self.staff[0]))
         self.lg('delete branch before staff, should succeed')
         time.sleep(1)
         self.click('entities_menu')
         self.click('entities_branch')
-        self.delete_created_branch(self.name)
+        self.delete_created_branch(self.branch[0], self.branch[1])
         self.assertEqual(self.get_table_count(), 0)
         self.click('entities_menu')
         self.click('entities_staff')
-        self.delete_created_staff(self.staff)
+        self.delete_created_staff(self.staff[0])
         self.lg('%s ENDED' % self._testID)
 
     def test011_validate_search_different_staff(self):
@@ -414,6 +437,9 @@ class StaffTests(BaseTest):
             self.click_save_staff()
 
         self.lg('search new staff1, should succeed')
+        self.search_staff(staff_1)
+        self.assertEqual(self.get_table_count(), 2)
+        self.lg('search new staff1, should succeed')
         time.sleep(1)
         self.search_staff(staff_1)
         self.assertEqual(self.get_table_count(), 2)
@@ -425,11 +451,12 @@ class StaffTests(BaseTest):
             self.click_save_staff()
 
         self.lg('search new staff1, should succeed')
-        time.sleep(1)
+        self.search_staff(staff_1)
+        self.assertEqual(self.get_table_count(), 2)
+        self.lg('search new staff2, should succeed')
         self.search_staff(staff_2)
         self.assertEqual(self.get_table_count(), 3)
         self.lg('search new staff1, should succeed')
-        time.sleep(1)
         self.search_staff(staff_1)
         self.assertEqual(self.get_table_count(), 2)
         self.lg('%s ENDED' % self._testID)

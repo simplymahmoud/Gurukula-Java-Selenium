@@ -29,8 +29,8 @@ class RegisterNewUserTests(BaseTest):
                          'Registration failed! Please try again later.')
         self.lg('%s ENDED' % self._testID)
 
-    def test002_register_new_user_invaild_email_length_format(self):
-        """ Register-New-User-2: Test case for check register new user with invaild email.*
+    def test002_register_new_user_invalid_email_length_format(self):
+        """ Register-New-User-2: Test case for check register new user with invalid email.*
 
         **Test Scenario:**
 
@@ -73,8 +73,8 @@ class RegisterNewUserTests(BaseTest):
                            ('long email', 'X'*1000),
                            ('numeric email', 9876543210),
                            ('special chars email', '+_=-)(*&^#!~`{}[];\',.<>\/')])
-    def test003_register_new_user_invaild_email(self, _, email):
-        """ Register-New-User-3: Test case for check register new user with invaild email.*
+    def test003_register_new_user_invalid_email(self, _, email):
+        """ Register-New-User-3: Test case for check register new user with invalid email.*
 
         **Test Scenario:**
 
@@ -103,8 +103,8 @@ class RegisterNewUserTests(BaseTest):
                          'Registration failed! Please try again later.')
         self.lg('%s ENDED' % self._testID)
 
-    def test004_register_new_user_invaild_password(self):
-        """ Register-New-User-4: Test case for check register new user with invaild password.*
+    def test004_register_new_user_invalid_password(self):
+        """ Register-New-User-4: Test case for check register new user with invalid password.*
 
         **Test Scenario:**
 

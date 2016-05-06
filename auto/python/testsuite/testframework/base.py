@@ -73,6 +73,7 @@ class BaseTest(unittest.TestCase):
         self.wait_until_element_located(element)
         self.wait_unti_element_clickable(element)
         self.driver.find_element_by_xpath(element).click()
+        time.sleep(.5)
 
     def get_text(self, element):
         element = self.elements[element]
@@ -164,27 +165,22 @@ class BaseTest(unittest.TestCase):
         self.click('search_branch_cancel_delete')
 
     def click_create_new_staff(self):
-        time.sleep(.5)
         self.click('create_new_branch_button')
         time.sleep(.5)
 
     def click_staff_next_page(self):
-        time.sleep(.5)
         self.click('staff_paging_next_page')
         time.sleep(.5)
 
     def click_staff_previos_page(self):
-        time.sleep(.5)
         self.click('staff_paging_previos_page')
         time.sleep(.5)
 
     def click_staff_first_page(self):
-        time.sleep(.5)
         self.click('staff_paging_first_page')
         time.sleep(.5)
 
     def click_staff_last_page(self):
-        time.sleep(.5)
         self.click('staff_paging_last_page')
         time.sleep(.5)
 
@@ -217,98 +213,95 @@ class BaseTest(unittest.TestCase):
         self.set_text('passwords_newpasswd', newpasswd)
         self.set_text('passwords_passwdcnf', passwdcfm)
 
-    def create_new_branch(self, name='', code=''):
-        name = name or 'BRANCH'
-        code = code or '12345'
-        self.set_text('new_branch_name', name)
+    def create_new_branch(self, branch='', code=''):
+        branch = branch or self.branch[0]
+        code = code or self.branch[1]
+        self.set_text('new_branch_name', branch)
         self.set_text('new_branch_code', code)
-        self.name = name
-        self.code = code
+        self.branches.append((branch, code))
         time.sleep(.5)
-        self.branches.append(name)
 
-    def edit_created_branch(self, name='', code=''):
-        name = name or 'branch'
-        code = code or '54321'
-        self.set_text('edit_branch_name', name)
+    def edit_created_branch(self, branch, code):
+        self.set_text('edit_branch_name', branch)
         self.set_text('new_branch_code', code)
-        self.name = name
-        self.code = code
         time.sleep(.5)
-        self.branches.append(self.name)
 
-    def search_branch(self, name, code=''):
-        time.sleep(.5)
-        code = code or self.code
-        self.set_text('search_branch_text', name)
+    def search_branch(self, branch, code):
+        self.set_text('search_branch_text', branch)
         self.click('search_branch_button')
         branches_table = self.get_table('search_branch_table')
         tbody = branches_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
         for row in all_rows:
             cells = row.find_elements_by_tag_name("td")
-            if cells[1].text == name and cells[2].text == code:
+            if cells[1].text == branch and cells[2].text == code:
                 return True
 
         return False
 
-    def view_branch(self, name, code):
-        self.search_branch(name, code)
+    def view_branch(self, branch, code):
+        self.search_branch(branch, code)
         branches_table = self.get_table('search_branch_table')
         tbody = branches_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
         for row in all_rows:
             cells = row.find_elements_by_tag_name("td")
-            if cells[1].text == name and cells[2].text == code:
+            if cells[1].text == branch and cells[2].text == code:
                 cells[3].find_elements_by_tag_name("button")[0].click()
+                time.sleep(.5)
                 return True
 
         return False
 
-    def edit_branch(self, name, code):
-        self.search_branch(name, code)
+    def edit_branch(self, branch, code):
+        self.search_branch(branch, code)
         branches_table = self.get_table('search_branch_table')
         tbody = branches_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
         for row in all_rows:
             cells = row.find_elements_by_tag_name("td")
-            if cells[1].text == name and cells[2].text == code:
+            if cells[1].text == branch and cells[2].text == code:
                 cells[3].find_elements_by_tag_name("button")[1].click()
+                time.sleep(.5)
                 return True
 
         return False
 
-    def delete_created_branch(self, name):
-        self.search_branch(name)
+    def delete_created_branch(self, branch, code):
+        self.search_branch(branch, code)
         branches_table = self.get_table('search_branch_table')
         tbody = branches_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
-        if all_rows:
-            cells = all_rows[0].find_elements_by_tag_name("td")
-            cells[3].find_elements_by_tag_name("button")[2].click()
-            self.click('search_branch_confirm_delete')
-            time.sleep(.5)
+        for row in all_rows:
+            cells = row.find_elements_by_tag_name("td")
+            if cells[1].text == branch and cells[2].text == code:
+                cells[3].find_elements_by_tag_name("button")[2].click()
+                self.click('search_branch_confirm_delete')
+                time.sleep(.5)
+                return True
 
+        return False
 
-    def create_new_staff(self, staff='', skip_branch=False):
-        staff = staff or 'STAFF'
+    def create_new_staff(self, staff='', branch=''):
+        staff = staff or self.staff[0]
         self.set_text('new_staff_name', staff)
-        if not skip_branch:
+        if branch:
+            time.sleep(.5)
             self.wait_until_element_located(self.elements['staff_dropdown'])
             self.driver.find_element_by_xpath(self.elements['staff_dropdown'] + \
-            "/option[text()='%s']" % self.name).click()
-        self.staff = staff
+            "/option[text()='%s']" % branch).click()
+        self.staffs.append((staff, branch))
         time.sleep(.5)
-        self.staffs.append(staff)
 
-    def edit_created_staff(self, staff=''):
-        staff = staff or 'staff'
+    def edit_created_staff(self, staff, branch=''):
         self.set_text('new_staff_name', staff)
-        self.staff = staff
+        if branch:
+            self.wait_until_element_located(self.elements['staff_dropdown'])
+            self.driver.find_element_by_xpath(self.elements['staff_dropdown'] + \
+            "/option[text()='%s']" % branch).click()
         time.sleep(.5)
-        self.staffs.append(self.staff)
 
-    def search_staff(self, staff, name=''):
+    def search_staff(self, staff, branch=''):
         time.sleep(.5)
         self.set_text('search_branch_text', staff)
         self.click('search_branch_button')
@@ -317,50 +310,56 @@ class BaseTest(unittest.TestCase):
         all_rows = tbody[0].find_elements_by_tag_name("tr")
         for row in all_rows:
             cells = row.find_elements_by_tag_name("td")
-            if cells[1].text == staff and cells[2].text == name:
+            if cells[1].text == staff and cells[2].text == branch:
                 return True
 
         return False
 
-    def view_staff(self, staff, name=''):
+    def view_staff(self, staff, branch=''):
         time.sleep(.5)
-        self.search_staff(staff, name)
+        self.search_staff(staff, branch)
         staff_table = self.get_table('search_branch_table')
         tbody = staff_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
         for row in all_rows:
             cells = row.find_elements_by_tag_name("td")
-            if cells[1].text == staff and cells[2].text == name:
+            if cells[1].text == staff and cells[2].text == branch:
                 cells[3].find_elements_by_tag_name("button")[0].click()
+                time.sleep(.5)
                 return True
 
         return False
 
-    def edit_staff(self, staff, name=''):
+    def edit_staff(self, staff, branch=''):
         time.sleep(.5)
-        self.search_staff(staff, name)
+        self.search_staff(staff, branch)
         staff_table = self.get_table('search_branch_table')
         tbody = staff_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
         for row in all_rows:
             cells = row.find_elements_by_tag_name("td")
-            if cells[1].text == staff and cells[2].text == name:
+            if cells[1].text == staff and cells[2].text == branch:
                 cells[3].find_elements_by_tag_name("button")[1].click()
+                time.sleep(.5)
                 return True
 
         return False
 
-    def delete_created_staff(self, staff):
+    def delete_created_staff(self, staff, branch=''):
         time.sleep(.5)
-        self.search_staff(staff, self.name)
+        self.search_staff(staff, branch)
         staff_table = self.get_table('search_branch_table')
         tbody = staff_table.find_elements_by_tag_name("tbody")
         all_rows = tbody[0].find_elements_by_tag_name("tr")
-        if all_rows:
-            cells = all_rows[0].find_elements_by_tag_name("td")
-            cells[3].find_elements_by_tag_name("button")[2].click()
-            self.click('search_staff_confirm_delete')
-            time.sleep(.5)
+        for row in all_rows:
+            cells = row.find_elements_by_tag_name("td")
+            if cells[1].text == staff:# and cells[2].text == branch:
+                cells[3].find_elements_by_tag_name("button")[2].click()
+                self.click('search_staff_confirm_delete')
+                time.sleep(.5)
+                return True
+
+        return False
 
     def get_table_count(self, table_name='search_branch_table'):
         table = self.get_table(table_name)
